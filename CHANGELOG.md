@@ -22,6 +22,8 @@ Import initial dans l'écosystème Noetic Physics (licence MIT).
 - Générateurs de datasets seedés (`np.random.seed(42)`) : EEG, ECG, vibrations —
   reproductibilité bit-à-bit (hashes dans `benchmarks/SHASUMS.txt`), régimes
   de classification inchangés par rapport aux valeurs de juin 2026.
+- Port C++ `src/cpp/ash_core.cpp` : FFT radix-2 interne, zéro dépendance
+  externe, compilation `g++ -std=c++17 -O2`.
 
 ### B3-FAIL — écarts documentation/code constatés lors de la consolidation
 1. **§6.1 (docs/algorithm.md)** : le ReN n'est *pas* invariant par changement
@@ -34,6 +36,13 @@ Import initial dans l'écosystème Noetic Physics (licence MIT).
    100 graines : 39 % cosmologique, 60 % méso, 1 % quantique. La propriété
    effective — absence de fausse alarme sur bruit stationnaire — est
    documentée comme telle.
+3. **Parseur CSV du port C++ (archive `ash_cpp.cpp`)** : la variable
+   `first_num` passait à `false` dès la lecture de la colonne temps, ce qui
+   empêchait toute lecture de la colonne signal — le signal analysé était
+   identiquement nul. Conséquence : tous les résultats produits par l'ancien
+   binaire C++ sont invalides. Constaté le 26/08/2026 par test sur sinus pur
+   (Rc = 0 systématique). Parseur corrigé et validé dans
+   `src/cpp/ash_core.cpp` (sinus 50 Hz → Rc ≈ 0.687, Rtop = 1).
 
 ### Modifié
 - `contrib/swarm/swarm_ash.py` : dépendance `ash_pro.ASHPro` remplacée par
