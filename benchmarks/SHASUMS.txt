@@ -5,6 +5,10 @@
 # Vérification après régénération : sha256sum <fichier> à comparer à ce fichier.
 # La CI (workflow ci.yml) régénère les 5 datasets synthétiques et vérifie
 # leurs empreintes à chaque push.
+# Environnement de référence (bit-à-bit) : Python 3.12, numpy 2.2.5,
+# pandas 2.3.2, scipy 1.16.2 — eeg_intention.py utilise scipy.signal.filtfilt
+# dont la sortie dépend du build LAPACK ; toute autre version peut décaler
+# l'empreinte de eeg_intention.csv (comportement attendu, pas un bug).
 
 # --- Datasets externes (téléchargement) ---
 b2ea3c250e56e48f4b7b90697832b8ecd1afa1e0bb31f2dcfea4ed6e1075a639  MIT-BIH/mitdb/100.dat (1950000 o, PhysioNet)
