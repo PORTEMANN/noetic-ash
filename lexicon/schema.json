@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PORTEMANN/noetic-ash/blob/main/lexicon/schema.json",
+  "title": "Lexique noétique multi-niveaux — passeport d'entrée",
+  "version": "0.1.0",
+  "description": "Schéma du lexique sémantique de l'écosystème Noetic Physics. Chaque entrée associe une signature d'invariants ASH à des interprétations à plusieurs niveaux, chacune portant un statut épistémique non mélangeable (protocole C12.1 étendu à la sémantique).",
+  "type": "object",
+  "definitions": {
+    "niveau": {
+      "type": "object",
+      "description": "Une interprétation à un niveau donné.",
+      "properties": {
+        "texte":   { "type": "string", "description": "L'interprétation / le concept associé." },
+        "statut":  { "$ref": "#/definitions/statut" },
+        "source":  { "type": "string", "description": "URL ou référence P## de la source." }
+      },
+      "required": ["texte", "statut"]
+    },
+    "statut": {
+      "type": "string",
+      "enum": ["T", "C", "E", "H"],
+      "description": "T = adossé à un théorème ou protocole figé (T1-T4, KO-6, verdict machine 'succès'). C = calibré, vérifié par test reproductible (tests unitaires, propriété B3-FAIL mesurée). E = empirique, issu d'une étude de cas P##. H = hypothèse / conjecture interprétative. Règle d'or : une entrée H ne se présente jamais comme T, C ou E."
+    },
+    "signature": {
+      "type": ["object", "null"],
+      "description": "Conditions de correspondance sur les invariants ASH. null = entrée conceptuelle sans signature (contexte, non déclenchée automatiquement). Toutes les conditions présentes doivent être satisfaites (ET logique).",
+      "properties": {
+        "regime":          { "type": "string", "enum": ["Cosmologique", "Méso", "Quantique"], "description": "Régime ReN (préfixe du régime retourné par ash_core.ASH)." },
+        "bande_dominante": { "type": "string", "pattern": "^E[1-7]$", "description": "Bande E1-E7 d'énergie maximale (argmax des bandes normalisées)." },
+        "rtop_min":        { "type": "integer", "minimum": 0 },
+        "rtop_max":        { "type": "integer", "minimum": 0 },
+        "rdyn_max":        { "type": "number", "description": "Rdyn ≤ valeur (pureté harmonique)." },
+        "rdyn_min":        { "type": "number" },
+        "ren_min":         { "type": "number" },
+        "ren_max":         { "type": "number" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "id":            { "type": "string", "pattern": "^LEX-[0-9]{3}$" },
+    "titre":         { "type": "string" },
+    "signature":     { "$ref": "#/definitions/signature" },
+    "niveaux": {
+      "type": "object",
+      "description": "Interprétations par niveau. M = mathématique (définitions exactes des invariants). S = scientifique (references.histoire-des-sciences.eu). N = machine noétique (machine-noetique.histoire-des-sciences.eu, verdicts P0-P33). T = technique/empirique (techniques.histoire-des-sciences.eu, nucléides/CODATA/pont ANU). PHI = philosophique (theosophie.histoire-des-sciences.eu, corpus Blavatsky/Besant & Leadbeater/Bailey — niveau documentaire, jamais présenté comme scientifique).",
+      "properties": {
+        "M":   { "$ref": "#/definitions/niveau" },
+        "S":   { "$ref": "#/definitions/niveau" },
+        "N":   { "$ref": "#/definitions/niveau" },
+        "T":   { "$ref": "#/definitions/niveau" },
+        "PHI": { "$ref": "#/definitions/niveau" }
+      },
+      "additionalProperties": false
+    },
+    "statut_global": { "$ref": "#/definitions/statut", "description": "Le plus faible des statuts des niveaux renseignés (T > C > E > H du plus fort au plus faible ; le global est le plancher)." },
+    "falsifieur":    { "type": ["string", "null"], "description": "Observation qui tuerait l'entrée. Obligatoire pour les niveaux C et E. Une entrée falsifiée n'est pas supprimée : elle est publiée comme falsifiée (B3-FAIL)." },
+    "sources":       { "type": "array", "items": { "type": "string" }, "description": "URL et références P## (toujours qualifier : 'P32 au sens noetic-ash' vs 'P32 au sens atlas machine' — les deux catalogues se chevauchent)." },
+    "notes":         { "type": "string" }
+  },
+  "required": ["id", "titre", "signature", "niveaux", "statut_global", "falsifieur", "sources"]
+}
