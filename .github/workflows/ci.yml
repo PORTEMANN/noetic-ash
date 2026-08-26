@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dépendances
+        run: pip install numpy pandas scipy pytest
+      - name: Tests unitaires
+        run: python -m pytest tests/test_ash.py -v
+      - name: Reproductibilité C12.1 — régénération des datasets + SHA-256
+        run: |
+          set -e
+          mkdir -p /tmp/regen && cd /tmp/regen
+          python "$GITHUB_WORKSPACE/examples/eeg_motor_intention/eeg_intention.py"
+          python "$GITHUB_WORKSPACE/examples/ecg_mitbih/ecg_normal.py"
+          python "$GITHUB_WORKSPACE/examples/vibration_bearing/vibration_moteur_sain.py"
+          python "$GITHUB_WORKSPACE/examples/vibration_bearing/generate_bearing_signal.py"
+          python "$GITHUB_WORKSPACE/contrib/finance/generate_financial_series.py"
+          for f in eeg_intention.csv ecg_normal.csv vibration_moteur_sain.csv vibration_bearing.csv financial_returns_5000.csv; do
+            expected=$(grep "  $f" "$GITHUB_WORKSPACE/benchmarks/SHASUMS.txt" | awk '{print $1}')
+            echo "$expected  $f" | sha256sum -c -
+          done
