@@ -11,6 +11,12 @@
  * aucune dépendance externe). La référence canonique reste
  * src/python/ash_core.py ; les deux implémentations partagent la même
  * grille f_n = f0 * 2^(n/12) et les mêmes invariants (Rc, Rtop, Rdyn, ReN).
+ *
+ * B3-FAIL (v1.0.0, 26/08/2026) : le parseur CSV de la version archivée
+ * (ash_cpp.cpp) ne lisait jamais la colonne signal (first_num=false dès la
+ * colonne temps) -> le signal analysé était identiquement nul et tous les
+ * résultats produits par l'ancien binaire sont invalides. Parseur corrigé
+ * et validé dans cette version (voir CHANGELOG).
  */
 
 #include <iostream>
@@ -81,41 +87,31 @@ vector<double> read_signal(const string& filename, double& fs_est) {
     vector<double> signal;
     vector<double> times;
     bool has_time = false;
+    // B3-FAIL (v1.0.0) : l'ancien parseur plaçait first_num=false après la
+    // lecture de la colonne temps, ce qui empêchait TOUTE lecture de la
+    // colonne signal -> le signal analysé était identiquement nul.
+    // Parseur corrigé : on collecte toutes les cellules numériques de la ligne.
     while (getline(file, line)) {
         stringstream ss(line);
         string cell;
-        double t = 0.0, val = 0.0;
-        int col = 0;
-        bool first_num = true;
+        vector<double> nums;
         while (getline(ss, cell, ',')) {
             char* end;
             double d = strtod(cell.c_str(), &end);
-            if (end != cell.c_str()) { // c'est un nombre
-                if (first_num) {
-                    if (col == 0) {
-                        // première colonne numérique, on suppose que c'est le temps si le nom est 'time' ou la première colonne
-                        // Pour simplifier, on stocke les deux colonnes si possible
-                        t = d;
-                        has_time = true;
-                    } else if (col == 1) {
-                        val = d;
-                        break;
-                    }
-                    first_num = false;
-                }
+            if (end != cell.c_str()) {
+                nums.push_back(d);
             }
-            col++;
         }
-        if (!first_num) {
-            if (has_time) {
-                times.push_back(t);
-                signal.push_back(val);
-            } else {
-                signal.push_back(t);
-            }
+        if (nums.empty()) continue; // en-tête ou ligne non numérique
+        if (nums.size() >= 2) {
+            times.push_back(nums[0]);
+            signal.push_back(nums[1]);
+            has_time = true;
+        } else {
+            signal.push_back(nums[0]);
         }
     }
-    if (times.size() >= 2) {
+    if (has_time && times.size() >= 2) {
         double dt = times[1] - times[0];
         fs_est = 1.0 / dt;
         cout << "Fs estimée à partir de la colonne temps : " << fs_est << " Hz" << endl;
