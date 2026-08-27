@@ -1,0 +1,54 @@
+{
+ "format": "ash-signature/0.1",
+ "ash_version": "1.0.0",
+ "signal": {
+  "sha256": "2eb6db24c06f9f86ac3da93f9f70c046ccbd4aba7b7f44c70531639624759d74",
+  "n_points": 4992,
+  "duree_s": 19.968,
+  "source": "benchmarks/p35_meso/sweep_meso.py famille A (r = 3.84, x0 = 0.3, zero-order 32 éch./it, déterministe)",
+  "generateur": "bridge/examples/generate_examples.py"
+ },
+ "grille": {
+  "fs": 250.0,
+  "f0": 1.0,
+  "n_octaves": 4,
+  "fenetre_s": 2.0,
+  "overlap": 0.5,
+  "nperseg": 250
+ },
+ "normalisation": "aucune",
+ "agregation": {
+  "n_fenetres": 18,
+  "methode": "mediane"
+ },
+ "invariants": {
+  "Rc": 4.110446,
+  "Rtop": 4,
+  "Rdyn": 0.39598,
+  "bandes": [
+   0.404073,
+   0.84896,
+   0.317173,
+   0.124252,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "H": 1.193358,
+  "D": 0.444886,
+  "ReN": 14.374909
+ },
+ "regime": "Quantique",
+ "bande_dominante": "E2",
+ "contexte": {
+  "domaine": "chaos",
+  "etiquette": "logistique_periode3",
+  "description": "Map logistique r = 3.84 (fenêtre de période 3, dynamique ordonnée), protocole P35+ figé.",
+  "date_mesure": "2026-08-27"
+ },
+ "statut": "C",
+ "falsifieur": "Ré-exécution de sweep_meso.py ne reproduisant pas 100 % quantique sur r ∈ [3.83, 3.85].",
+ "sources": [
+  "https://github.com/PORTEMANN/noetic-ash/tree/main/benchmarks/p35_meso"
+ ]
+}

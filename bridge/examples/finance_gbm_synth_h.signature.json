@@ -1,0 +1,54 @@
+{
+ "format": "ash-signature/0.1",
+ "ash_version": "1.0.0",
+ "signal": {
+  "sha256": "e65957f529a8e56fb61c8c13f2e2bfc03e115acd70ac323c1f792a89ba60f5fa",
+  "n_points": 2500,
+  "duree_s": 10.0,
+  "source": "Marche aléatoire géométrique synthétique (rendements gaussiens, seed 42) — échantillon exploratoire, PAS une donnée de marché réelle",
+  "generateur": "bridge/examples/generate_examples.py"
+ },
+ "grille": {
+  "fs": 250.0,
+  "f0": 1.0,
+  "n_octaves": 4,
+  "fenetre_s": 2.0,
+  "overlap": 0.5,
+  "nperseg": 250
+ },
+ "normalisation": "aucune",
+ "agregation": {
+  "n_fenetres": 9,
+  "methode": "mediane"
+ },
+ "invariants": {
+  "Rc": 327.31207,
+  "Rtop": 1,
+  "Rdyn": 1.0,
+  "bandes": [
+   0.913463,
+   0.367885,
+   0.154181,
+   0.080464,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "H": 1.037172,
+  "D": 0.545578,
+  "ReN": 1e-06
+ },
+ "regime": "Cosmologique",
+ "bande_dominante": "E1",
+ "contexte": {
+  "domaine": "finance",
+  "etiquette": "finance_echantillon",
+  "description": "Échantillon exploratoire finance (statut H strict) : série (temps, valeur) analysable comme toute autre ; aucune prédiction, la banque consigne.",
+  "date_mesure": "2026-08-27"
+ },
+ "statut": "H",
+ "falsifieur": "Sur N séries financières réelles à protocole figé, une distribution des régimes indiscernable de surrogates aléatoires tue la piste d'une structure spectrale spécifique.",
+ "sources": [
+  "https://github.com/PORTEMANN/noetic-ash/tree/main/contrib"
+ ]
+}

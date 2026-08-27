@@ -1,0 +1,54 @@
+{
+ "format": "ash-signature/0.1",
+ "ash_version": "1.0.0",
+ "signal": {
+  "sha256": "7624230bc06d018d1cab77ea3d11e3e89740d96551c1b3e1a150137af47a076f",
+  "n_points": 10000,
+  "duree_s": 10.0,
+  "source": "examples/vibration_bearing/generate_bearing_signal.py (seed 42, dataset régénérable)",
+  "generateur": "bridge/examples/generate_examples.py"
+ },
+ "grille": {
+  "fs": 1000.0,
+  "f0": 10.0,
+  "n_octaves": 5,
+  "fenetre_s": 1.0,
+  "overlap": 0.5,
+  "nperseg": 500
+ },
+ "normalisation": "aucune",
+ "agregation": {
+  "n_fenetres": 19,
+  "methode": "mediane"
+ },
+ "invariants": {
+  "Rc": 0.732625,
+  "Rtop": 3,
+  "Rdyn": 0.263158,
+  "bandes": [
+   0.017616,
+   0.94489,
+   0.309026,
+   0.10353,
+   0.023311,
+   0.0,
+   0.0
+  ],
+  "H": 0.914575,
+  "D": 0.635863,
+  "ReN": 78.118132
+ },
+ "regime": "Quantique",
+ "bande_dominante": "E2",
+ "contexte": {
+  "domaine": "vibration",
+  "etiquette": "vibration_roulement_defaut",
+  "description": "Vibration de roulement 1 kHz, 10 s : rotation 30 Hz + harmoniques ; défaut BPFO ~129 Hz émergeant à t = 5 s.",
+  "date_mesure": "2026-08-27"
+ },
+ "statut": "E",
+ "falsifieur": "Sur un dataset public (ex. CWRU), défectueux classés cosmologiques ou sains classés quantiques de façon systématique.",
+ "sources": [
+  "https://github.com/PORTEMANN/noetic-ash/tree/main/examples/vibration_bearing"
+ ]
+}

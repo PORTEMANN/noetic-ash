@@ -1,0 +1,54 @@
+{
+ "format": "ash-signature/0.1",
+ "ash_version": "1.0.0",
+ "signal": {
+  "sha256": "d032d4481c58d60f826628452adde5b561629118639ed85f20fa684b8d5181b1",
+  "n_points": 2500,
+  "duree_s": 10.0,
+  "source": "Sinus pur 4 Hz, fs = 250 Hz, 10 s (déterministe, sans RNG)",
+  "generateur": "bridge/examples/generate_examples.py"
+ },
+ "grille": {
+  "fs": 250.0,
+  "f0": 1.0,
+  "n_octaves": 4,
+  "fenetre_s": 2.0,
+  "overlap": 0.5,
+  "nperseg": 250
+ },
+ "normalisation": "aucune",
+ "agregation": {
+  "n_fenetres": 9,
+  "methode": "mediane"
+ },
+ "invariants": {
+  "Rc": 5.230982,
+  "Rtop": 1,
+  "Rdyn": 1.0,
+  "bandes": [
+   0.0,
+   0.750398,
+   0.660986,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "H": 0.691139,
+  "D": 0.089413,
+  "ReN": 2.473153
+ },
+ "regime": "Méso",
+ "bande_dominante": "E2",
+ "contexte": {
+  "domaine": "acoustique",
+  "etiquette": "ton_pur",
+  "description": "Sinusoïde pure 4 Hz — étalon du fallback Rdyn (Rtop = 1 → méso par construction).",
+  "date_mesure": "2026-08-27"
+ },
+ "statut": "C",
+ "falsifieur": "Un sinus pur classé hors méso en configuration generic figée.",
+ "sources": [
+  "https://github.com/PORTEMANN/noetic-ash/tree/main/benchmarks/p35_meso"
+ ]
+}
