@@ -14,7 +14,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Dépendances
-        run: pip install numpy pandas scipy pytest
+        # Versions ÉPINÉES : les empreintes SHA-256 de SHASUMS.txt ont été
+        # calculées avec numpy 2.2.5 / pandas 2.3.2 / scipy 1.16.2.
+        # eeg_intention.py utilise scipy.signal.butter/filtfilt dont la
+        # sortie dépend du build (LAPACK) — la reproductibilité bit-à-bit
+        # (C12.1) exige les mêmes wheels PyPI.
+        run: pip install numpy==2.2.5 pandas==2.3.2 scipy==1.16.2 pytest
       - name: Tests unitaires
         run: python -m pytest tests/test_ash.py -v
       - name: Reproductibilité C12.1 — régénération des datasets + SHA-256
@@ -28,5 +33,11 @@ jobs:
           python "$GITHUB_WORKSPACE/contrib/finance/generate_financial_series.py"
           for f in eeg_intention.csv ecg_normal.csv vibration_moteur_sain.csv vibration_bearing.csv financial_returns_5000.csv; do
             expected=$(grep "  $f" "$GITHUB_WORKSPACE/benchmarks/SHASUMS.txt" | awk '{print $1}')
-            echo "$expected  $f" | sha256sum -c -
+            computed=$(sha256sum "$f" | awk '{print $1}')
+            echo "$f : attendu=$expected calculé=$computed"
+            if [ "$expected" != "$computed" ]; then
+              echo "::error::SHA-256 mismatch sur $f"
+              exit 1
+            fi
           done
+          echo "Reproductibilité bit-à-bit vérifiée : 5/5 datasets conformes."
