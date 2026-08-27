@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.3.0] — 2026-08-27
+
+### Campagnes — 2026-08-27
+- **`campagnes/signaux_reels_2026-08-27/`** : première campagne sur signaux
+  réels publics (MIT-BIH 100 & 106, NSRDB 16265, CWRU 97 & 105) — 5
+  signatures + 5 verdicts figés (3 CONFORME, 1 EXPLORATION, 1 DIVERGENT).
+  EXP-002 (ECG normal) consolidée du synthétique P33+ au réel public.
+  **B3-FAIL publié** : sur CWRU réel, sain (97) et défectueux (105) lisent
+  quantiques — la grille vibration 10–320 Hz est aveugle aux lignes de défaut
+  kHz (≈1037/3586 Hz) ; EXP-003/EXP-008 décrivent la grille simulée P34+, pas
+  le roulement réel. Domaine `vibration_hf` requis.
+- **`campagnes/vibration_hf_2026-08-27/`** : suite du B3-FAIL CWRU — domaine
+  `vibration_hf` (enveloppe Hilbert 2–5 kHz, RMS=1, grille 10–320 Hz) éprouvé
+  sur 9 fichiers CWRU réels : séparation sain/défectueux parfaite sur le
+  corpus (ReN 67–178 vs 1,8–21,3), 9/9 CONFORME contre EXP-010/EXP-011
+  (attentes calibrées, falsifieurs définis pour défauts 14/21 mil et autres
+  machines). Le brut haute fréquence (grille 100 Hz – 6,4 kHz) est testé et
+  rejeté : pas de séparation sans enveloppe.
+- `bridge/expectations.json` v0.3.0 : ajout append-only d'EXP-008
+  (vibration_roulement_sain, E), EXP-009 (ecg_arythmie, H), EXP-010
+  (vibration_hf_roulement_sain) et EXP-011 (vibration_hf_roulement_defaut) —
+  EXP-001…007 inchangées (leur `source` entre dans l'empreinte des verdicts).
+  (La v0.2.0 — EXP-008/EXP-009 seules — est restée une version intermédiaire
+  non publiée.)
+- Registre `noetic-ash-corpus` v0.3.0 : SIG-008…SIG-021 (campagnes signaux
+  réels + vibration_hf), avec documentation de la convention d'empreintes
+  (`convention_empreintes`).
+
+### Corrigé
+- Falsifieur d'EXP-011 resserré avant publication : la clause « bande
+  dominante E2 » était non distinctive (les sains la partagent) ; le
+  falsifieur porte désormais sur ReN > 30 pour un défaut avéré. Signatures,
+  verdicts et registre réévalués en conséquence (empreintes recalculées,
+  chaîne vérifiée 14/14).
+- Durées des signaux de la campagne signaux réels alignées sur les
+  signatures (MIT-BIH : 100 s, CWRU brut : 1 s) dans le README et le
+  rapport de campagne.
+
 ## [1.2.0] — 2026-08-27
 
 ### Ajouté

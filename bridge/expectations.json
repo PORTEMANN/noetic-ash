@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.3.0",
   "date": "2026-08-27",
   "description": "Registre d'attentes du pont mesure ↔ interprétation. Chaque attente relie une étiquette de contexte à un régime attendu, avec son statut épistémique (T>C>E>H), sa source et son falsifieur. Une attente de statut H sans prédiction (regime_attendu = null) déclenche le verdict EXPLORATION : la banque consigne, rien n'est conclu. Le pont n'est pas un niveau du lexique (v0.3.0) : ce registre consigne des confrontations datées, jamais des interprétations projetées.",
   "attentes": [
@@ -75,6 +75,49 @@
       "source": "contrib/finance/ ; décision de session du 2026-08-27",
       "falsifieur": "Sur N séries financières réelles à protocole figé, une distribution des régimes indiscernable de surrogates aléatoires (mêmes statistiques du premier ordre) tue la piste d'une structure spectrale spécifique en finance.",
       "notes": "La grille f0·2^(n/12) est justifiée physiquement (T1, KO-6) : rien ne garantit sa pertinence pour des séries de prix. Verdict EXPLORATION attendu : la banque consigne contexte + signature, l'interprétation n'advient que si une distribution non triviale émerge sur échantillon. Toute série (temps, valeur) reste analysable — l'agnosticisme de l'instrument n'est pas une promesse de structure."
+    },
+    {
+      "id": "EXP-008",
+      "titre": "Vibration roulement sain — pression dominante",
+      "contexte_etiquette": "vibration_roulement_sain",
+      "regime_attendu": "Cosmologique",
+      "statut": "E",
+      "source": "examples/vibration_bearing/ (P34+, moteur sain) ; lexique LEX-009",
+      "falsifieur": "Des roulements sains classés quantiques de façon systématique.",
+      "notes": "Miroir d'EXP-003 pour le cas sain."
+    },
+    {
+      "id": "EXP-009",
+      "titre": "ECG arythmie — exploration",
+      "contexte_etiquette": "ecg_arythmie",
+      "regime_attendu": null,
+      "statut": "H",
+      "source": "Campagne MIT-BIH 2026-08-27",
+      "falsifieur": "Une séparation nette et reproductible normal/arythmie sur cohorte MIT-BIH complète invaliderait le statut exploratoire (elle le ferait passer E).",
+      "notes": "L'arythmie n'a pas d'attente figée : l'instrument consigne."
+    },
+    {
+      "id": "EXP-010",
+      "titre": "Roulement sain réel (protocole vibration_hf) — enveloppe plate, ReN élevé",
+      "contexte_etiquette": "vibration_hf_roulement_sain",
+      "regime_attendu": "Quantique",
+      "statut": "E",
+      "source": "campagnes/vibration_hf_2026-08-27/ (CWRU 97/98/99, charges 0–2 hp)",
+      "falsifieur": "Un roulement sain réel lu non-quantique, ou avec ReN < 30, sur le protocole vibration_hf déclaré (enveloppe Hilbert 2–5 kHz, RMS=1, grille f0=10 Hz 5 octaves).",
+      "notes": "Attente CALIBRÉE sur la campagne 2026-08-27 (9 fichiers CWRU, défauts 7 mil) : valeur prédictive à tester sur défauts 14/21 mil et autres machines. Lecture : enveloppe quasiment plate → pression faible → ReN élevé (sains mesurés : 67–178)."
+    },
+    {
+      "id": "EXP-011",
+      "titre": "Roulement défectueux réel (protocole vibration_hf) — modulation périodique, ReN bas",
+      "contexte_etiquette": "vibration_hf_roulement_defaut",
+      "regime_attendu": [
+        "Méso",
+        "Quantique"
+      ],
+      "statut": "E",
+      "source": "campagnes/vibration_hf_2026-08-27/ (CWRU 105/106/118/119/130/131)",
+      "falsifieur": "Un défaut avéré (bague interne, externe ou bille) avec ReN > 30 sur le protocole vibration_hf déclaré.",
+      "notes": "Attente CALIBRÉE sur la campagne 2026-08-27. Le défaut imprime une modulation périodique (BPFI/BPFO/BSF) → pression organisée → ReN bas (défectueux mesurés : 1.8–21.3, séparation 3.2× sous le plus bas sain). Bande dominante indicative : E4 ≈ externe (BPFO ≈107 Hz), E5/E3 ≈ interne (BPFI ≈162 Hz), bille non localisée (dominance E2 non distinctive : les sains la partagent — clause retirée du falsifieur)."
     }
   ]
 }
