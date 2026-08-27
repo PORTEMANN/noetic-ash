@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0] — 2026-08-27
+
+### Ajouté
+- **Programme P35+ : le régime Méso devient un objet mesuré** (`benchmarks/p35_meso/`).
+  Corpus déterministe (logistique × 61 r, mélange harmonique+chaos × 51 λ, octave
+  désaccordée × 13 δ), 125 points de mesure, hash gelé dans `benchmarks/SHASUMS.txt`.
+- **Lexique d'interprétation multi-niveaux v0.2.0** (`lexicon/`) : 5 niveaux
+  (M/S/N/T/PHI), 4 statuts (T>C>E>H), 14 entrées, moteur `contrib/lexicon/interpret.py`.
+
+### B3-FAIL n°4
+- **Conjecture LEX-004 falsifiée** (« méso = frontière entre ordre et chaos ») :
+  le chaos logistique est lu 100 % cosmologique (la naissance du chaos à r∞ est
+  invisible), la fenêtre de période 3 ordonnée est lue 100 % quantique, et le méso
+  n'apparaît que sur des îlots épars (max 55,6 % des fenêtres à r=3.98).
+  ReN mesure l'alignement spectral sur la grille f0·2^(n/12), pas l'ordre dynamique.
+  L'entrée LEX-004 est **publiée comme falsifiée**, pas supprimée (C12.1).
+- Propriétés mesurées ajoutées au lexique (statut C) : LEX-012 (ordre lu comme
+  quantique), LEX-013 (ton pur = méso par construction), LEX-014 (Rdyn aveugle au
+  désaccord sub-demi-ton).
+
 ## [1.0.0] — 2026-08-26
 
 Import initial dans l'écosystème Noetic Physics (licence MIT).
