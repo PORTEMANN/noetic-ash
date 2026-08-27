@@ -1,27 +1,29 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Programme P35+ — Le régime Méso comme objet mesuré.
+sweep_meso.py — Programme P35+ : campagne d'étalonnage du régime Méso.
 
-Objectif : tester la conjecture LEX-004 (« méso = frontière entre ordre et chaos »,
- analogue du point auto-dual ρ*≈0.75 du diagramme de phases de la machine noétique).
+Question : à quoi l'instrument ASH répond-il dans la zone 1 ≤ ReN ≤ 10 ?
+Note : une piste d'analogie entre le méso et le point auto-dual ρ* ≈ 0,75 du
+diagramme de phases de la machine noétique avait été évoquée (LEX-004) ; elle
+n'est pas retenue — l'ASH est antérieur à la machine, approches distinctes.
 
-Trois familles de signaux DÉTERMINISTES (aucun RNG) :
+Stratégie C12.1 : corpus de signaux à paramètre de contrôle dont la
+transition de régime est connue (ground truth mathématique), balayage ASH à
+protocole figé, mesures publiées quelle que soit l'issue.
 
-  A. Balayage de la logistique x_{n+1} = r·x_n(1-x_n) pour r ∈ [3.40, 4.00]
-     (61 valeurs), en traversant r∞ = 3.56995 (Feigenbaum) et la fenêtre de
-     période 3 (~3.83–3.86). Orbite tenue par zero-order hold (32 éch./itér.).
-  B. Mélange harmonique + chaos : signal = (1-λ)·harmonique + λ·chaos normalisé,
-     λ ∈ [0, 1] (51 valeurs). L'harmonique est un méso parfait (ton pur 100 Hz),
-     le chaos est la logistique à r=4.
-  C. Octave désaccordée : deux tons à f et 4f·2^(δ/12), δ ∈ [0, 6] (13 valeurs).
-     Teste la sensibilité de Rdyn au désaccord sub-demi-ton.
+Trois familles, toutes DÉTERMINISTES (aucune RNG, x0 figé) :
+  A — map logistique x_{n+1} = r·x_n(1-x_n), r ∈ [3.4, 4.0]
+      Route au chaos par doublement de période ; transition exacte connue :
+      r∞ ≈ 3.56995 (Feigenbaum). Maintien zero-order 32 éch./itération
+      (fs=250 Hz → fondamentale période-2 ≈ 3.9 Hz, dans la grille 1-16 Hz).
+  B — mélange (1-λ)·sin(4 Hz) + λ·chaos(logistique r=4), λ ∈ [0, 1]
+      Interpolation continue entre cohérence pure et chaos pur.
+  C — octave désaccordée : sin(4 Hz) + sin(4·2^((12+δ)/12) Hz), δ ∈ [0, 6]
+      δ = 0 : octave exacte (Rdyn = 0). Sonde la sémantique de Rdyn.
 
-Protocole C12.1 : aucun paramètre ajusté, corpus régénérable à l'identique,
-hash SHA-256 des résultats gelé dans benchmarks/SHASUMS.txt.
+Sorties : results_p35_meso.csv (non commité, cf. .gitignore ; empreinte
+SHA-256 consignée dans benchmarks/SHASUMS.txt) + tableau résumé stdout.
 
-Usage :  python3 sweep_meso.py
-Sortie : results_p35_meso.csv (125 points de mesure)
+Usage : python sweep_meso.py
 """
 
 import os
@@ -30,23 +32,24 @@ import sys
 import numpy as np
 import pandas as pd
 
-_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
 sys.path.insert(0, os.path.join(_ROOT, "src", "python"))
-from ash_core import ASHConfig, process_signal  # noqa: E402
+from ash_core import ASH  # noqa: E402
 
-# --- Constantes du corpus (gelées) -----------------------------------------
-FS = 250.0              # fréquence d'échantillonnage (Hz)
-DUREE_ANALYSE = 20.0    # fenêtre analysée (s) après suppression du transitoire
-SAMPLES_PAR_ITER = 32   # tenue d'ordre zéro : échantillons par itéré logistique
-TRANSIENT_ITER = 1000   # itérés logistiques jetés avant enregistrement
-X0 = 0.3                # condition initiale — PAS 0.5 : à r=4, l'orbite
-                        # 0.5 → 1 → 0 est dégénérée (point fixe trivial)
-R_INFINITY = 3.56995    # accumulation de Feigenbaum (naissance du chaos)
+# --- Protocole figé (C12.1) ---------------------------------------------------
+FS = 250.0               # Hz
+DUREE_ANALYSE = 20.0     # s analysés
+SAMPLES_PAR_ITER = 32    # maintien zero-order pour la map logistique
+TRANSIENT_ITER = 1000    # itérations jetées
+X0 = 0.3                 # condition initiale figée — PAS 0.5 : à r=4,
+                         # l'orbite 0.5 → 1 → 0 est dégénérée (signal nul)
+
+R_INFINITY = 3.56995     # point d'accumulation de Feigenbaum (ground truth A)
 
 
-# --- Générateurs -----------------------------------------------------------
 def orbite_logistique(r, n_iter, x0=X0):
-    """Orbite de la logistique après suppression du transitoire."""
+    """Orbite de la map logistique, transitoire écarté. Déterministe."""
     x = x0
     for _ in range(TRANSIENT_ITER):
         x = r * x * (1.0 - x)
@@ -58,75 +61,87 @@ def orbite_logistique(r, n_iter, x0=X0):
 
 
 def signal_logistique(r):
-    """Famille A : orbite logistique tenue (zero-order hold) à FS Hz."""
-    n_iter = int(DUREE_ANALYSE * FS / SAMPLES_PAR_ITER)
-    return np.repeat(orbite_logistique(r, n_iter), SAMPLES_PAR_ITER)
+    """Famille A : orbite tenue (zero-order hold), durée DUREE_ANALYSE."""
+    n_iter = int(FS * DUREE_ANALYSE / SAMPLES_PAR_ITER)
+    orbite = orbite_logistique(r, n_iter)
+    return np.repeat(orbite, SAMPLES_PAR_ITER)
 
 
 def signal_melange(lam):
-    """Famille B : (1-λ)·ton pur 100 Hz + λ·chaos logistique (r=4) normalisé."""
+    """Famille B : (1-λ)·sinus 4 Hz + λ·chaos normalisé (logistique r=4)."""
     chaos = signal_logistique(4.0)
+    chaos = (chaos - chaos.mean()) / chaos.std()
     n = len(chaos)
     t = np.arange(n) / FS
-    harm = np.sin(2.0 * np.pi * 100.0 * t)
-    c = (chaos - chaos.mean()) / (chaos.std() + 1e-12)
-    return (1.0 - lam) * harm + lam * c
+    coherent = np.sin(2 * np.pi * 4.0 * t)
+    return (1.0 - lam) * coherent + lam * chaos
 
 
 def signal_octave_desaccordee(delta):
-    """Famille C : tons à 100 Hz et 400·2^(δ/12) Hz (octave + δ demi-tons)."""
-    n = int(DUREE_ANALYSE * FS)
+    """Famille C : octave + δ demi-tons de désaccord (δ=0 → octave exacte)."""
+    n = int(FS * DUREE_ANALYSE)
     t = np.arange(n) / FS
-    f2 = 400.0 * 2.0 ** (delta / 12.0)
-    return np.sin(2.0 * np.pi * 100.0 * t) + np.sin(2.0 * np.pi * f2 * t)
+    f1 = 4.0
+    f2 = 4.0 * 2.0 ** ((12.0 + delta) / 12.0)
+    return np.sin(2 * np.pi * f1 * t) + np.sin(2 * np.pi * f2 * t)
 
 
-# --- Mesure ----------------------------------------------------------------
 def mesurer(signal, ash):
-    """Agrège les invariants ASH sur toutes les fenêtres du signal."""
-    df = process_signal(signal, FS, ash)
-    ren = df["ReN"].to_numpy(dtype=float)
-    return dict(
-        ReN_med=float(np.median(ren)),
-        ReN_mean=float(ren.mean()),
-        Rtop_med=float(df["Rtop"].median()),
-        Rdyn_med=float(df["Rdyn"].median()),
-        Rc_mean=float(df["Rc"].mean()),
-        pct_cosmo=float(100.0 * (ren < 1.0).mean()),
-        pct_meso=float(100.0 * ((ren >= 1.0) & (ren <= 10.0)).mean()),
-        pct_quant=float(100.0 * (ren > 10.0).mean()),
-        n_fenetres=int(len(df)),
-    )
+    """Invariants agrégés + occupation des régimes (% de fenêtres)."""
+    df = ash.process_signal(np.asarray(signal, dtype=float))
+    regimes = df["regime"].astype(str)
+    return {
+        "ReN_med": float(np.median(df["ReN"])),
+        "ReN_mean": float(np.mean(df["ReN"])),
+        "Rtop_med": float(np.median(df["Rtop"])),
+        "Rdyn_med": float(np.median(df["Rdyn"])),
+        "Rc_mean": float(np.mean(df["Rc"])),
+        "pct_cosmo": float(100 * regimes.str.startswith("Cosmologique").mean()),
+        "pct_meso": float(100 * regimes.str.startswith("Méso").mean()),
+        "pct_quant": float(100 * regimes.str.startswith("Quantique").mean()),
+        "n_fenetres": int(len(df)),
+    }
 
 
 def main():
-    ash = ASHConfig()
+    ash = ASH(fs=FS, signal_type="generic")
     lignes = []
 
-    # Famille A — balayage du paramètre de la logistique
-    for r in np.arange(3.40, 4.001, 0.01):
-        m = mesurer(signal_logistique(float(r)), ash)
-        lignes.append(dict(famille="A_logistique", parametre=round(float(r), 4), **m))
-        print(f"A r={r:.2f}  ReN_med={m['ReN_med']:.3f}  méso={m['pct_meso']:.0f}%")
+    print("=== Famille A — route de Feigenbaum (map logistique) ===")
+    print(f"{'r':>7} {'ReN_med':>10} {'Rtop':>5} {'Rdyn':>6} "
+          f"{'%cosmo':>7} {'%méso':>6} {'%quant':>7}")
+    for r in np.linspace(3.4, 4.0, 61):
+        m = mesurer(signal_logistique(r), ash)
+        lignes.append({"famille": "A_logistique", "parametre": r, **m})
+        print(f"{r:7.4f} {m['ReN_med']:10.3f} {m['Rtop_med']:5.0f} "
+              f"{m['Rdyn_med']:6.3f} {m['pct_cosmo']:7.1f} "
+              f"{m['pct_meso']:6.1f} {m['pct_quant']:7.1f}")
 
-    # Famille B — mélange harmonique / chaos
-    for lam in np.arange(0.0, 1.001, 0.02):
-        m = mesurer(signal_melange(float(lam)), ash)
-        lignes.append(dict(famille="B_melange", parametre=round(float(lam), 4), **m))
-        print(f"B λ={lam:.2f}  ReN_med={m['ReN_med']:.3f}  méso={m['pct_meso']:.0f}%")
+    print("\n=== Famille B — mélange cohérence/chaos ===")
+    print(f"{'λ':>6} {'ReN_med':>10} {'Rtop':>5} {'Rdyn':>6} "
+          f"{'%cosmo':>7} {'%méso':>6} {'%quant':>7}")
+    for lam in np.linspace(0.0, 1.0, 51):
+        m = mesurer(signal_melange(lam), ash)
+        lignes.append({"famille": "B_melange", "parametre": lam, **m})
+        print(f"{lam:6.2f} {m['ReN_med']:10.3f} {m['Rtop_med']:5.0f} "
+              f"{m['Rdyn_med']:6.3f} {m['pct_cosmo']:7.1f} "
+              f"{m['pct_meso']:6.1f} {m['pct_quant']:7.1f}")
 
-    # Famille C — octave désaccordée
-    for delta in np.arange(0.0, 6.001, 0.5):
-        m = mesurer(signal_octave_desaccordee(float(delta)), ash)
-        lignes.append(dict(famille="C_octave_desaccordee",
-                           parametre=round(float(delta), 4), **m))
-        print(f"C δ={delta:.1f}  ReN_med={m['ReN_med']:.3f}  Rdyn={m['Rdyn_med']:.3f}")
+    print("\n=== Famille C — octave désaccordée ===")
+    print(f"{'δ':>5} {'ReN_med':>10} {'Rtop':>5} {'Rdyn':>6} "
+          f"{'%cosmo':>7} {'%méso':>6} {'%quant':>7}")
+    for delta in np.linspace(0.0, 6.0, 13):
+        m = mesurer(signal_octave_desaccordee(delta), ash)
+        lignes.append({"famille": "C_desaccord", "parametre": delta, **m})
+        print(f"{delta:5.2f} {m['ReN_med']:10.3f} {m['Rtop_med']:5.0f} "
+              f"{m['Rdyn_med']:6.3f} {m['pct_cosmo']:7.1f} "
+              f"{m['pct_meso']:6.1f} {m['pct_quant']:7.1f}")
 
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                       "results_p35_meso.csv")
-    pd.DataFrame(lignes).to_csv(out, index=False)
-    print(f"\n{len(lignes)} points de mesure → {out}")
-    print("Penser à geler le SHA-256 dans benchmarks/SHASUMS.txt (C12.1).")
+    df = pd.DataFrame(lignes)
+    out = os.path.join(_HERE, "results_p35_meso.csv")
+    df.to_csv(out, index=False)
+    print(f"\nRésultats écrits : {out} ({len(df)} points de mesure)")
+    print(f"Repère famille A : r∞ = {R_INFINITY} (transition exacte connue).")
 
 
 if __name__ == "__main__":
