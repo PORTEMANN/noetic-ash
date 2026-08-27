@@ -3,22 +3,32 @@
 ## [1.1.0] — 2026-08-27
 
 ### Ajouté
-- **Programme P35+ : le régime Méso devient un objet mesuré** (`benchmarks/p35_meso/`).
+- **Programme P35+ : campagne d'étalonnage du régime Méso** (`benchmarks/p35_meso/`).
   Corpus déterministe (logistique × 61 r, mélange harmonique+chaos × 51 λ, octave
   désaccordée × 13 δ), 125 points de mesure, hash gelé dans `benchmarks/SHASUMS.txt`.
-- **Lexique d'interprétation multi-niveaux v0.2.0** (`lexicon/`) : 5 niveaux
-  (M/S/N/T/PHI), 4 statuts (T>C>E>H), 14 entrées, moteur `contrib/lexicon/interpret.py`.
+- **Lexique d'étalonnage et d'explicabilité** (`lexicon/`) : 5 niveaux
+  (M/E/I/X/PHI), 4 statuts (T>C>E>H), 14 entrées, moteur `contrib/lexicon/interpret.py`.
 
-### B3-FAIL n°4
-- **Conjecture LEX-004 falsifiée** (« méso = frontière entre ordre et chaos ») :
-  le chaos logistique est lu 100 % cosmologique (la naissance du chaos à r∞ est
-  invisible), la fenêtre de période 3 ordonnée est lue 100 % quantique, et le méso
-  n'apparaît que sur des îlots épars (max 55,6 % des fenêtres à r=3.98).
-  ReN mesure l'alignement spectral sur la grille f0·2^(n/12), pas l'ordre dynamique.
-  L'entrée LEX-004 est **publiée comme falsifiée**, pas supprimée (C12.1).
-- Propriétés mesurées ajoutées au lexique (statut C) : LEX-012 (ordre lu comme
-  quantique), LEX-013 (ton pur = méso par construction), LEX-014 (Rdyn aveugle au
-  désaccord sub-demi-ton).
+### Étalonage — propriétés mesurées (lexique, statut C)
+- LEX-012 : l'ordre périodique multi-composantes (fenêtre de période 3) est lu
+  comme quantique ; la naissance du chaos logistique (r∞ = 3,56995) est invisible.
+- LEX-013 : le ton pur est méso par construction (repli Rdyn = 1.0).
+- LEX-014 : Rdyn est aveugle au désaccord sub-demi-ton (résolution = pas de grille).
+- Leçon d'étalonnage : ReN mesure l'alignement spectral sur la grille
+  f0·2^(n/12), pas l'ordre dynamique. Les régimes sont des lectures au cadran
+  de l'instrument, dans ses propres coordonnées.
+
+### Modifié
+- **Positionnement** : l'ASH est la couche acquisition/mesure de l'écosystème,
+  conçue pour l'industrie embarquée et la xAI — antérieure à la machine
+  noétique (approches distinctes). La piste d'analogie LEX-004 (méso ↔ point
+  auto-dual ρ* ≈ 0,75) n'est pas retenue ; elle reste documentée dans les
+  notes de l'entrée.
+- **Lexique v0.3.0** : niveau N (machine noétique) supprimé ; niveaux I
+  (industriel/embarqué) et X (xAI) ajoutés.
+- **Convention de numérotation** : les programmes de ce dépôt portent le
+  suffixe « + » (P32+, P33+, P34+, P35+) ; les numéros nus P0–P33 appartiennent
+  à l'atlas machine. Appliqué rétroactivement dans toute la documentation.
 
 ## [1.0.0] — 2026-08-26
 
@@ -29,7 +39,7 @@ Import initial dans l'écosystème Noetic Physics (licence MIT).
   `ash_optimized.py` et `noetic_core_analyzer.py/_v2/_v3` — formules
   numériques identiques, vérifiées.
 - API publique figée : `process_window()`, `process_signal()`, `from_csv()`.
-- Exemples P32 (EEG intention motrice), P33 (ECG MIT-BIH), P34 (vibrations
+- Exemples P32+ (EEG intention motrice), P33+ (ECG MIT-BIH), P34+ (vibrations
   roulement) + cas synthétique sinusoïdal.
 - Benchmarks : robustesse au bruit (SNR 20/10/5 dB), suite locale, pipelines
   MIT-BIH (wfdb, SMOTE+RF). Résultats de référence figés, `benchmarks/SHASUMS.txt`.
