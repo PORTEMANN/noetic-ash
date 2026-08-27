@@ -1,0 +1,21 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "3ee65a742b4b9291b2429e71a45c4acd262d70512f8fcb74fbca330e699d0090",
+ "contexte": {
+  "domaine": "soliton_radial",
+  "etiquette": "monopole_su2_h_controle"
+ },
+ "attente": null,
+ "mesure": {
+  "regime": "Quantique",
+  "ReN": 374.480763,
+  "Rtop": 1.0,
+  "Rdyn": 1.0,
+  "bande_dominante": "E1"
+ },
+ "verdict": "HORS-CONTRAT",
+ "explication": "ReN = 374.5 (agrégation mediane de 7 fenêtres) → régime Quantique ; Rtop = 1.0, Rdyn = 1, bande dominante E1. Aucune attente enregistrée pour le contexte « monopole_su2_h_controle » : la mesure est consignée sans confrontation. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) — un ton pur se classe méso par construction, cf. LEX-013 ; Rdyn est aveugle au désaccord sub-demi-ton, cf. LEX-014.",
+ "horodatage": "2026-08-27T16:45:00+00:00",
+ "sha256": "13a52c6f73d8d9e36022f7c9fff81de141bdb12ac655ba98416c5b358f9477fb"
+}

@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "8d00c938128397bdeabe72d5c5c64c4187df99b32d1ecff8667614215138aecb",
+ "contexte": {
+  "domaine": "soliton_radial",
+  "etiquette": "monopole_su2_radial"
+ },
+ "attente": {
+  "id": "EXP-012",
+  "statut": "E",
+  "regime_attendu": "Méso",
+  "source": "noetic-machine P0 (p0_monopole_su2.py 52929bda0603, p0_r05.json, p0_r1.json) ; campagne monopole_ash à paraître",
+  "falsifieur": "Sur les branches convergées ρ ∈ {0,1 ; 0,25 ; 0,5 ; 1 ; 2 ; 4} à protocole C13.1 figé : (a) le profil BPS (branche ρ → 0⁺, ancrée sur ρ = 0,5 calibré C ≃ 1) lit hors méso ; ou (b) ReN n'est pas monotone en ρ (à grille et normalisation communes). L'un des deux tue la correspondance phénoménologique pression/torsion entre le fonctionnel C(ρ) et le ReN."
+ },
+ "mesure": {
+  "regime": "Quantique",
+  "ReN": 607.995653,
+  "Rtop": 1.0,
+  "Rdyn": 1.0,
+  "bande_dominante": "E1"
+ },
+ "verdict": "DIVERGENT",
+ "explication": "ReN = 608 (agrégation mediane de 7 fenêtres) → régime Quantique ; Rtop = 1.0, Rdyn = 1, bande dominante E1. DIVERGENCE : l'attente EXP-012 (statut E, source : noetic-machine P0 (p0_monopole_su2.py 52929bda0603, p0_r05.json, p0_r1.json) ; campagne monopole_ash à paraître) prévoit Méso, le régime mesuré est Quantique. Consignée avec la même rigueur qu'une conformité (B3-FAIL) — falsifieur de l'attente : Sur les branches convergées ρ ∈ {0,1 ; 0,25 ; 0,5 ; 1 ; 2 ; 4} à protocole C13.1 figé : (a) le profil BPS (branche ρ → 0⁺, ancrée sur ρ = 0,5 calibré C ≃ 1) lit hors méso ; ou (b) ReN n'est pas monotone en ρ (à grille et normalisation communes). L'un des deux tue la correspondance phénoménologique pression/torsion entre le fonctionnel C(ρ) et le ReN. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) — un ton pur se classe méso par construction, cf. LEX-013 ; Rdyn est aveugle au désaccord sub-demi-ton, cf. LEX-014.",
+ "horodatage": "2026-08-27T16:45:00+00:00",
+ "sha256": "cf62edef0ea6cf0bbfbaa2055d7415980ea685bae552d8bfbe35d57aed2a6b54"
+}
