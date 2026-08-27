@@ -138,8 +138,8 @@ float compute_ren(float Rc, uint8_t Rtop, float Rdyn, const float* bands);
 1. **Fork** the repository
 2. **Branch**: `git checkout -b feature/noetic-description`
 3. **Commit format**: `type(scope): description [PXX]`
-   - `feat(benchmarks): add NASA Bearing benchmark [P34]`
-   - `fix(embedded): correct FFT overflow on ESP32 [P32]`
+   - `feat(benchmarks): add NASA Bearing benchmark [P34+]`
+   - `fix(embedded): correct FFT overflow on ESP32 [P32+]`
    - `docs(algorithm): clarify Koilon-grid relation [P0]`
 4. **SHA-256**: Include hashes of all datasets and results
 5. **B3-FAIL**: If the contribution includes negative results, document them fully
