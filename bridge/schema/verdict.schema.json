@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PORTEMANN/noetic-ash/blob/main/bridge/schema/verdict.schema.json",
+  "title": "Verdict ASH — confrontation d'une signature à une attente",
+  "version": "0.1.0",
+  "description": "Résultat du pont mesure ↔ interprétation : une signature ASH confrontée au registre d'attentes (bridge/expectations.json). Quatre issues : CONFORME (régime mesuré = régime attendu), DIVERGENT (écart — consigné avec la même rigueur, B3-FAIL), EXPLORATION (attente sans prédiction, statut H : la banque consigne, rien n'est conclu), HORS-CONTRAT (aucune attente pour ce contexte). Le sha256 du verdict porte sur le JSON canonique SANS les champs 'horodatage' et 'sha256' (reproductibilité : un même couple signature+attentes redonne le même verdict).",
+  "type": "object",
+  "properties": {
+    "format":           { "const": "ash-verdict/0.1" },
+    "pont_version":     { "type": "string" },
+    "signature_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "Empreinte du JSON canonique de la signature confrontée." },
+    "contexte": {
+      "type": "object",
+      "properties": {
+        "domaine":   { "type": "string" },
+        "etiquette": { "type": "string" }
+      },
+      "required": ["domaine", "etiquette"]
+    },
+    "attente": {
+      "type": ["object", "null"],
+      "description": "Attente mobilisée (null si HORS-CONTRAT).",
+      "properties": {
+        "id":             { "type": "string", "pattern": "^EXP-[0-9]{3}$" },
+        "statut":         { "type": "string", "enum": ["T", "C", "E", "H"] },
+        "regime_attendu": { "type": ["string", "array", "null"], "description": "Régime(s) attendu(s) ; null = attente exploratoire (H)." },
+        "source":         { "type": "string" },
+        "falsifieur":     { "type": ["string", "null"] }
+      },
+      "required": ["id", "statut", "regime_attendu"]
+    },
+    "mesure": {
+      "type": "object",
+      "properties": {
+        "regime":          { "type": "string", "enum": ["Cosmologique", "Méso", "Quantique", "indéfini"] },
+        "ReN":             { "type": "number" },
+        "Rtop":            { "type": "integer" },
+        "Rdyn":            { "type": "number" },
+        "bande_dominante": { "type": "string", "pattern": "^E[1-7]$" }
+      },
+      "required": ["regime", "ReN", "Rtop", "Rdyn", "bande_dominante"]
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["CONFORME", "DIVERGENT", "EXPLORATION", "HORS-CONTRAT"]
+    },
+    "explication": { "type": "string", "description": "Lecture xAI : quels invariants ont décidé, et les mises en garde d'étalonnage applicables (ex. fallback Rdyn si Rtop < 2)." },
+    "horodatage":  { "type": "string", "description": "Horodatage de la confrontation — EXCLU du sha256 (reproductibilité)." },
+    "sha256":      { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "Empreinte du verdict canonique sans 'horodatage' ni 'sha256'." }
+  },
+  "required": ["format", "pont_version", "signature_sha256", "contexte", "attente", "mesure", "verdict", "explication", "sha256"]
+}
