@@ -1,5 +1,19 @@
 # Changelog
 
+## [Unreleased]
+
+### Ajouté
+- `bridge/expectations.json` v0.4.0 : ajout append-only d'EXP-012
+  (`monopole_su2_radial`, statut E conjectural déclaré AVANT mesure) —
+  EXP-001…011 inchangées (leur `source` entre dans l'empreinte des verdicts).
+  Attente : le profil BPS du monopole SU(2) radial (équilibre exact pression
+  ↔ torsion) lit au voisinage de la frontière méso (ReN ≈ 1–10) et ReN est
+  monotone en ρ. Falsifieur dual : branche BPS lue hors méso, ou migration
+  non monotone en ρ sur {0,1 ; 0,25 ; 0,5 ; 1 ; 2 ; 4}. Prépare la campagne
+  `monopole_ash` (protocole C13.1 figé) — première confrontation du pont à
+  un soliton de la machine noétique (dépôt `non-abelian-gauge-model`,
+  artefact P0 hash 52929bda0603).
+
 ## [1.3.0] — 2026-08-27
 
 ### Campagnes — 2026-08-27
