@@ -1,0 +1,27 @@
+{
+  "attente": {
+    "falsifieur": "Sur un dataset public de roulements (ex. CWRU), des défectueux classés cosmologiques ou des sains classés quantiques de façon systématique.",
+    "id": "EXP-003",
+    "regime_attendu": "Quantique",
+    "source": "examples/vibration_bearing/ (P34+, seed 42) ; lexique LEX-009",
+    "statut": "E"
+  },
+  "contexte": {
+    "domaine": "vibration",
+    "etiquette": "vibration_roulement_defaut"
+  },
+  "explication": "ReN = 1904 (agrégation mediane de 7 fenêtres) → régime Quantique ; Rtop = 3, Rdyn = 0.2673, bande dominante E5. L'attente EXP-003 (statut E, source : examples/vibration_bearing/ (P34+, seed 42) ; lexique LEX-009) prévoit Quantique pour le contexte « vibration_roulement_defaut » : régime mesuré dans l'attente. Mises en garde : ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+  "format": "ash-verdict/0.1",
+  "horodatage": "2026-08-27T16:00:00Z",
+  "mesure": {
+    "Rdyn": 0.267261,
+    "ReN": 1904.415365,
+    "Rtop": 3,
+    "bande_dominante": "E5",
+    "regime": "Quantique"
+  },
+  "pont_version": "0.1.0",
+  "sha256": "b4f190772d5afa482acf9957d11fe8653708dd87d82eed6e6022d4a0e52c5b07",
+  "signature_sha256": "e97433abe067d1fc61490769d6f8d785a47e6b69e1e753c1cc0130f3765028aa",
+  "verdict": "CONFORME"
+}

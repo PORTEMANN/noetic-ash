@@ -1,0 +1,53 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 7
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E4",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "Vibration réelle CWRU roulement sain (1 s, canal drive-end, 12 kHz). Énergie dominante ~1 kHz.",
+    "domaine": "vibration",
+    "etiquette": "vibration_roulement_sain"
+  },
+  "falsifieur": "Des roulements sains classés quantiques de façon systématique (observé : cf. verdict) — remet en cause la lecture directe du seuil sur ce protocole.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 10.0,
+    "fenetre_s": 0.25,
+    "fs": 12000.0,
+    "n_octaves": 5,
+    "nperseg": 1024,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.169647,
+    "H": 1.453192,
+    "Rc": 0.082906,
+    "Rdyn": 0.717137,
+    "ReN": 535.088186,
+    "Rtop": 6,
+    "bandes": [
+      0.072755,
+      0.296253,
+      0.435154,
+      0.674135,
+      0.504488,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "aucune",
+  "regime": "Quantique",
+  "signal": {
+    "duree_s": 1.0,
+    "n_points": 12000,
+    "sha256": "0c7b004e36fb9829c7255f4454f43a366c2832eaa194a630588f8e7a58fc3824",
+    "source": "Case Western Reserve University Bearing Data Center, fichier 97.mat (roulement sain, canal DE, 12 kHz)"
+  },
+  "sources": [
+    "https://engineering.case.edu/bearingdatacenter"
+  ],
+  "statut": "E"
+}

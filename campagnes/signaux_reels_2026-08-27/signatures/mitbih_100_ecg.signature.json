@@ -1,0 +1,54 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 99
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E3",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "ECG réel MIT-BIH 100 (100 s, MLII, 360 Hz) : rythme sinusal avec quelques APC.",
+    "domaine": "ecg",
+    "etiquette": "ecg_normal"
+  },
+  "falsifieur": "Des ECG normaux (MIT-BIH NSRDB, ex. record 16265) classés majoritairement quantiques par le pipeline figé.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 1.0,
+    "fenetre_s": 2.0,
+    "fs": 360.0,
+    "n_octaves": 4,
+    "nperseg": 360,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.027097,
+    "H": 1.383118,
+    "Rc": 1.572091,
+    "Rdyn": 0.225806,
+    "ReN": 0.630721,
+    "Rtop": 3,
+    "bandes": [
+      0.509595,
+      0.433135,
+      0.538421,
+      0.511324,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "aucune",
+  "regime": "Cosmologique",
+  "signal": {
+    "duree_s": 100.0,
+    "n_points": 36000,
+    "sha256": "30cb983873a06ffced152b431f6fad6cf98c5ede72b48ed63760d682e0c89639",
+    "source": "PhysioNet MIT-BIH Arrhythmia (mitdb) record 100, canal MLII — données réelles"
+  },
+  "sources": [
+    "https://physionet.org/content/mitdb/",
+    "https://github.com/PORTEMANN/noetic-ash/tree/main/benchmarks/mitdb"
+  ],
+  "statut": "E"
+}

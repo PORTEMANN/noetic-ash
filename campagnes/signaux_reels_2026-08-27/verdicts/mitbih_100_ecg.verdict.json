@@ -1,0 +1,27 @@
+{
+  "attente": {
+    "falsifieur": "Des ECG normaux (MIT-BIH NSRDB, ex. record 16265) classés majoritairement quantiques par le pipeline figé.",
+    "id": "EXP-002",
+    "regime_attendu": "Cosmologique",
+    "source": "examples/ecg_mitbih/ (P33+, seed 42) ; benchmarks/mitdb/ ; lexique LEX-008",
+    "statut": "E"
+  },
+  "contexte": {
+    "domaine": "ecg",
+    "etiquette": "ecg_normal"
+  },
+  "explication": "ReN = 0.6307 (agrégation mediane de 99 fenêtres) → régime Cosmologique ; Rtop = 3, Rdyn = 0.2258, bande dominante E3. L'attente EXP-002 (statut E, source : examples/ecg_mitbih/ (P33+, seed 42) ; benchmarks/mitdb/ ; lexique LEX-008) prévoit Cosmologique pour le contexte « ecg_normal » : régime mesuré dans l'attente. Mises en garde : ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+  "format": "ash-verdict/0.1",
+  "horodatage": "2026-08-27T16:00:00Z",
+  "mesure": {
+    "Rdyn": 0.225806,
+    "ReN": 0.630721,
+    "Rtop": 3,
+    "bande_dominante": "E3",
+    "regime": "Cosmologique"
+  },
+  "pont_version": "0.1.0",
+  "sha256": "c378e408cbdeb92b117f8169882b4c81c9746c2c255082c8adaf26fff6babf97",
+  "signature_sha256": "5385c62340454ecf2870e2b2a47d346db250432113ab4dc3648129deb0bb3428",
+  "verdict": "CONFORME"
+}

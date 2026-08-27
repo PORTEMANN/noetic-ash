@@ -1,0 +1,27 @@
+{
+  "attente": {
+    "falsifieur": "Une séparation nette et reproductible normal/arythmie sur cohorte MIT-BIH complète invaliderait le statut exploratoire (elle le ferait passer E).",
+    "id": "EXP-009",
+    "regime_attendu": null,
+    "source": "Campagne MIT-BIH 2026-08-27",
+    "statut": "H"
+  },
+  "contexte": {
+    "domaine": "ecg",
+    "etiquette": "ecg_arythmie"
+  },
+  "explication": "ReN = 7e-06 (agrégation mediane de 99 fenêtres) → régime Cosmologique ; Rtop = 2, Rdyn = 0, bande dominante E2. L'attente EXP-009 (statut H, source : Campagne MIT-BIH 2026-08-27) ne porte aucune prédiction (exploration, statut H) : la banque consigne la signature, rien n'est conclu. Mises en garde : ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+  "format": "ash-verdict/0.1",
+  "horodatage": "2026-08-27T16:00:00Z",
+  "mesure": {
+    "Rdyn": 0.0,
+    "ReN": 7e-06,
+    "Rtop": 2,
+    "bande_dominante": "E2",
+    "regime": "Cosmologique"
+  },
+  "pont_version": "0.1.0",
+  "sha256": "b45ee4ff3404b6159842b1da3df6d33b398ccc438833d8c108663015a10bf571",
+  "signature_sha256": "4d34a231f41e3f02f59265e641e1a42aefefdab972d529958962ec9e3fdccf3d",
+  "verdict": "EXPLORATION"
+}

@@ -1,0 +1,53 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 59
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E3",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "ECG réel NSRDB 16265 (30 s, 128 Hz) : rythme sinusal normal longue durée (falsifieur EXP-002).",
+    "domaine": "ecg",
+    "etiquette": "ecg_normal"
+  },
+  "falsifieur": "Des ECG normaux (MIT-BIH NSRDB, ex. record 16265) classés majoritairement quantiques par le pipeline figé.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 1.0,
+    "fenetre_s": 1.0,
+    "fs": 128.0,
+    "n_octaves": 4,
+    "nperseg": 64,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.058371,
+    "H": 1.371532,
+    "Rc": 5.237801,
+    "Rdyn": 1.0,
+    "ReN": 0.608946,
+    "Rtop": 1,
+    "bandes": [
+      0.364703,
+      0.480746,
+      0.590336,
+      0.531964,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "aucune",
+  "regime": "Cosmologique",
+  "signal": {
+    "duree_s": 30.0,
+    "n_points": 3840,
+    "sha256": "8a696283f83d2b3cc6a87b6a15ebe659d5b07c7dbcd1ef8546f880ad2b7015b0",
+    "source": "PhysioNet MIT-BIH Normal Sinus Rhythm (nsrdb) record 16265, ECG1 — données réelles"
+  },
+  "sources": [
+    "https://physionet.org/content/nsrdb/"
+  ],
+  "statut": "E"
+}

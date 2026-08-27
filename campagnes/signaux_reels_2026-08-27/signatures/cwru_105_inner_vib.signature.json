@@ -1,0 +1,53 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 7
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E5",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "Vibration réelle CWRU défaut inner race (1 s, canal drive-end, 12 kHz). Raies de défaut ~3,6 kHz.",
+    "domaine": "vibration",
+    "etiquette": "vibration_roulement_defaut"
+  },
+  "falsifieur": "Sur un dataset public (ex. CWRU), défectueux classés cosmologiques ou sains classés quantiques de façon systématique.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 10.0,
+    "fenetre_s": 0.25,
+    "fs": 12000.0,
+    "n_octaves": 5,
+    "nperseg": 1024,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.4234,
+    "H": 1.171718,
+    "Rc": 0.01865,
+    "Rdyn": 0.267261,
+    "ReN": 1904.415365,
+    "Rtop": 3,
+    "bandes": [
+      0.081552,
+      0.049514,
+      0.15508,
+      0.449896,
+      0.873296,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "aucune",
+  "regime": "Quantique",
+  "signal": {
+    "duree_s": 1.0,
+    "n_points": 12000,
+    "sha256": "83de7e8ed901e7f446a5c68766a6a3d948dbc74585c5c9b9397a49c8f0c89a0d",
+    "source": "Case Western Reserve University Bearing Data Center, fichier 105.mat (défaut inner race, canal DE, 12 kHz)"
+  },
+  "sources": [
+    "https://engineering.case.edu/bearingdatacenter"
+  ],
+  "statut": "E"
+}

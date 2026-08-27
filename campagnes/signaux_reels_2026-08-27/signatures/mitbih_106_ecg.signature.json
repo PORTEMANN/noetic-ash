@@ -1,0 +1,53 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 99
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E2",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "ECG réel MIT-BIH 106 (100 s, MLII) : arythmie marquée (contraste avec le normal).",
+    "domaine": "ecg",
+    "etiquette": "ecg_arythmie"
+  },
+  "falsifieur": "Un ECG à arythmie documentée classé cosmologique de façon stable remettrait en cause la sensibilité du régime.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 1.0,
+    "fenetre_s": 2.0,
+    "fs": 360.0,
+    "n_octaves": 4,
+    "nperseg": 360,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.162464,
+    "H": 1.369287,
+    "Rc": 3.51167,
+    "Rdyn": 0.0,
+    "ReN": 7e-06,
+    "Rtop": 2,
+    "bandes": [
+      0.467233,
+      0.629697,
+      0.464187,
+      0.379114,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "aucune",
+  "regime": "Cosmologique",
+  "signal": {
+    "duree_s": 100.0,
+    "n_points": 36000,
+    "sha256": "05cec24747ddcc3bd85880bbac53d59755d9c1df9a0cce72f43f3b845ee49737",
+    "source": "PhysioNet MIT-BIH Arrhythmia (mitdb) record 106, canal MLII — données réelles"
+  },
+  "sources": [
+    "https://physionet.org/content/mitdb/"
+  ],
+  "statut": "E"
+}

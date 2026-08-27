@@ -1,0 +1,27 @@
+{
+  "attente": {
+    "falsifieur": "Des roulements sains classés quantiques de façon systématique.",
+    "id": "EXP-008",
+    "regime_attendu": "Cosmologique",
+    "source": "examples/vibration_bearing/ (P34+, moteur sain) ; lexique LEX-009",
+    "statut": "E"
+  },
+  "contexte": {
+    "domaine": "vibration",
+    "etiquette": "vibration_roulement_sain"
+  },
+  "explication": "ReN = 535.1 (agrégation mediane de 7 fenêtres) → régime Quantique ; Rtop = 6, Rdyn = 0.7171, bande dominante E4. DIVERGENCE : l'attente EXP-008 (statut E, source : examples/vibration_bearing/ (P34+, moteur sain) ; lexique LEX-009) prévoit Cosmologique, le régime mesuré est Quantique. Consignée avec la même rigueur qu'une conformité (B3-FAIL) — falsifieur de l'attente : Des roulements sains classés quantiques de façon systématique. Mises en garde : ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+  "format": "ash-verdict/0.1",
+  "horodatage": "2026-08-27T16:00:00Z",
+  "mesure": {
+    "Rdyn": 0.717137,
+    "ReN": 535.088186,
+    "Rtop": 6,
+    "bande_dominante": "E4",
+    "regime": "Quantique"
+  },
+  "pont_version": "0.1.0",
+  "sha256": "d5ac52344846bac4c20bb0b10d5092d3fd837cf8545f6880667c09a7f84c739d",
+  "signature_sha256": "a9eb041c25996c05301163eba019efc4ae12d2c183ecef50d56a119dddf4edb7",
+  "verdict": "DIVERGENT"
+}
