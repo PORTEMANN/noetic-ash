@@ -22,7 +22,7 @@
 │  • Interprétation physique du ReN                                   │
 ├─────────────────────────────────────────────────────────────────────┤
 │  COUCHE 4 : RECHERCHE ACTIVE (private)                              │
-│  gauge-non-abelian                                                  │
+│  non-abelian-gauge-model                                            │
 │  • Modèle non-abélien                                               │
 │  • Fonctionnel C(ρ)                                                 │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -65,6 +65,32 @@ Signal physique (EEG/ECG/vibration)
 │   (vitrine)     │    Études de cas P32+–P34+
 └─────────────────┘
 ```
+
+
+## Pont mesure ↔ interprétation (`bridge/`)
+
+Le bridge rend exécutable le « protocole de contribution cross-repo »
+ci-dessous : il fige la mesure ASH en une **signature** JSON
+(`ash-signature/0.1` : invariants, grille, contexte, SHA-256 du signal),
+la confronte à un **registre d'attentes** et émet un **verdict**
+(`ash-verdict/0.1` : CONFORME / DIVERGENT / EXPLORATION / HORS-CONTRAT).
+
+```
+série (temps, valeur) → ASH → signature → verdict → banque de signaux
+```
+
+- L'ASH est **agnostique** : toute série (temps, valeur) est analysable ;
+  c'est le contexte déclaré qui consolide la sémantique des régimes.
+- Le bridge n'est **pas un niveau du lexique** (v0.3.0) : il consigne des
+  confrontations datées et falsifiables, sans projeter la phénoménologie
+  de la machine sur l'instrument.
+- Les verdicts alimentent la banque de signaux (registre contexte +
+  résultats) : à terme, un signal inconnu peut être rapproché des
+  signatures connues.
+- Statuts et falsifieurs voyagent avec chaque attente ; la finance reste
+  en exploration (EXP-007, statut H, contrôle négatif).
+
+Voir [bridge/README.md](../bridge/README.md).
 
 ## Dépendances
 
