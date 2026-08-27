@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "efd6c2d4e449dad47b41d48632f84fc778c27670189591a26e46f6a06fb2247a",
+ "contexte": {
+  "domaine": "acoustique",
+  "etiquette": "ton_pur"
+ },
+ "attente": {
+  "id": "EXP-004",
+  "statut": "C",
+  "regime_attendu": "Méso",
+  "source": "benchmarks/p35_meso/sweep_meso.py (famille B, λ = 0) ; lexique LEX-013",
+  "falsifieur": "Un sinus pur classé hors méso en configuration generic figée."
+ },
+ "mesure": {
+  "regime": "Méso",
+  "ReN": 2.473153,
+  "Rtop": 1,
+  "Rdyn": 1.0,
+  "bande_dominante": "E2"
+ },
+ "verdict": "CONFORME",
+ "explication": "ReN = 2.473 (agrégation mediane de 9 fenêtres) → régime Méso ; Rtop = 1, Rdyn = 1, bande dominante E2. L'attente EXP-004 (statut C, source : benchmarks/p35_meso/sweep_meso.py (famille B, λ = 0) ; lexique LEX-013) prévoit Méso pour le contexte « ton_pur » : régime mesuré dans l'attente. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) — un ton pur se classe méso par construction, cf. LEX-013 ; Rdyn est aveugle au désaccord sub-demi-ton, cf. LEX-014. ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+ "horodatage": "2026-08-27T12:00:00Z",
+ "sha256": "d941cef5b58d96e226a4d6ddb1f4719002516793b39d7375da071074d58d950d"
+}

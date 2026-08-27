@@ -1,0 +1,54 @@
+{
+ "format": "ash-signature/0.1",
+ "ash_version": "1.0.0",
+ "signal": {
+  "sha256": "b2d16f8dad1556880670c1375830798724cef5eaacaa27c90bb3a7fb10803d8c",
+  "n_points": 2500,
+  "duree_s": 10.0,
+  "source": "examples/eeg_motor_intention/eeg_intention.py (seed 42, dataset régénérable)",
+  "generateur": "bridge/examples/generate_examples.py"
+ },
+ "grille": {
+  "fs": 250.0,
+  "f0": 1.0,
+  "n_octaves": 4,
+  "fenetre_s": 2.0,
+  "overlap": 0.5,
+  "nperseg": 250
+ },
+ "normalisation": "aucune",
+ "agregation": {
+  "n_fenetres": 9,
+  "methode": "mediane"
+ },
+ "invariants": {
+  "Rc": 1.682259,
+  "Rtop": 1,
+  "Rdyn": 1.0,
+  "bandes": [
+   0.163246,
+   0.160439,
+   0.14522,
+   0.956727,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "H": 0.994323,
+  "D": 0.793481,
+  "ReN": 45.575542
+ },
+ "regime": "Quantique",
+ "bande_dominante": "E4",
+ "contexte": {
+  "domaine": "eeg",
+  "etiquette": "eeg_intention_motrice",
+  "description": "EEG synthétique 10 s : alpha 10 Hz en fond, bêta 20 Hz modulé entre 4 et 7 s (intention motrice), bruits rose et blanc.",
+  "date_mesure": "2026-08-27"
+ },
+ "statut": "E",
+ "falsifieur": "La régénération du dataset seedé ne reproduisant pas ReN > 10 pendant la fenêtre d'intention.",
+ "sources": [
+  "https://github.com/PORTEMANN/noetic-ash/tree/main/examples/eeg_motor_intention"
+ ]
+}

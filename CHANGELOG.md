@@ -1,5 +1,26 @@
 # Changelog
 
+## [Unreleased]
+
+### Ajouté
+- **Pont mesure ↔ interprétation** (`bridge/`) : contrat d'échange
+  `ash-signature/0.1` (invariants + grille + contexte + SHA-256 du signal),
+  registre d'attentes `expectations.json` (EXP-001…EXP-007, statuts et
+  falsifieurs), moteur `noetic_bridge.py` (stdlib uniquement) émettant des
+  verdicts `ash-verdict/0.1` — CONFORME / DIVERGENT / EXPLORATION /
+  HORS-CONTRAT. Le pont n'est pas un niveau du lexique (v0.3.0) : il
+  consigne des confrontations datées et falsifiables.
+- `bridge/examples/` : 7 signatures réelles + verdicts figés (EEG P32+,
+  ECG P33+, vibration P34+, ton pur LEX-013, logistique période 3 LEX-012,
+  bruit blanc LEX-005, finance GBM synthétique EXP-007 en statut H),
+  régénérables par `generate_examples.py` (seedé).
+- `tests/test_bridge.py` : 11 tests (validation, quatre issues de verdict,
+  discipline H, reproductibilité des empreintes).
+
+### Corrigé
+- `docs/ecosystem.md` : le dépôt privé de la couche 4 s'appelle
+  `non-abelian-gauge-model` (et non « gauge-non-abelian »).
+
 ## [1.1.0] — 2026-08-27
 
 ### Ajouté

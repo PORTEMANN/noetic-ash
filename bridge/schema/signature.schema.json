@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PORTEMANN/noetic-ash/blob/main/bridge/schema/signature.schema.json",
+  "title": "Signature ASH — contrat d'échange mesure ↔ interprétation",
+  "version": "0.1.0",
+  "description": "Format d'échange du pont mesure ↔ interprétation (bridge/). Une signature fige le résultat de l'analyse ASH d'une série (temps, valeur) — tout domaine est analysable ; c'est le contexte déclaré qui consolide la sémantique d'interprétation des régimes. Le pont n'est pas un niveau du lexique (v0.3.0) : il consigne des confrontations datées, falsifiables, sans projeter la phénoménologie de la machine noétique sur l'instrument.",
+  "type": "object",
+  "definitions": {
+    "statut": {
+      "type": "string",
+      "enum": ["T", "C", "E", "H"],
+      "description": "Statut épistémique de la signature (C12.1 étendu) : T = adossé à un théorème/protocole figé ; C = corpus figé vérifié par test reproductible ; E = étude de cas P##+ ; H = hypothèse / exploration. Une signature H ne se présente jamais comme T, C ou E."
+    },
+    "regime": {
+      "type": "string",
+      "enum": ["Cosmologique", "Méso", "Quantique", "indéfini"],
+      "description": "Préfixe du régime retourné par ash_core.ASH (seuils C12.1 : ReN < 1 cosmologique, 1–10 méso, > 10 quantique)."
+    }
+  },
+  "properties": {
+    "format":      { "const": "ash-signature/0.1" },
+    "ash_version": { "type": "string", "description": "Version du noyau ash_core.py ayant produit la mesure (ex. 1.0.0)." },
+    "signal": {
+      "type": "object",
+      "properties": {
+        "sha256":     { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "Empreinte SHA-256 du CSV canonique (colonnes time,signal ; flottants %.10e)." },
+        "n_points":   { "type": "integer", "minimum": 1 },
+        "duree_s":    { "type": "number", "exclusiveMinimum": 0 },
+        "source":     { "type": "string", "description": "Provenance du signal (dataset, capteur, script générateur seedé)." },
+        "generateur": { "type": "string", "description": "Script régénérant le signal à l'identique (le cas échéant)." }
+      },
+      "required": ["sha256", "n_points", "duree_s", "source"],
+      "additionalProperties": false
+    },
+    "grille": {
+      "type": "object",
+      "description": "Paramètres de la grille noétique — fixés par le domaine physique, jamais ajustés sur les données (pilier 1, C12.1).",
+      "properties": {
+        "fs":        { "type": "number", "exclusiveMinimum": 0 },
+        "f0":        { "type": "number", "exclusiveMinimum": 0 },
+        "n_octaves": { "type": "integer", "minimum": 1, "maximum": 7 },
+        "fenetre_s": { "type": "number", "exclusiveMinimum": 0 },
+        "overlap":   { "type": "number", "minimum": 0, "exclusiveMaximum": 1 },
+        "nperseg":   { "type": "integer", "minimum": 64, "maximum": 1024 }
+      },
+      "required": ["fs", "f0", "n_octaves", "fenetre_s", "overlap", "nperseg"],
+      "additionalProperties": false
+    },
+    "normalisation": {
+      "type": "string",
+      "description": "Normalisation d'amplitude DÉCLARÉE (ex. 'aucune', 'rms_1'). Obligatoire car ReN ∝ 1/amplitude (B3-FAIL #1) : toute comparaison de ReN entre signaux exige une normalisation commune déclarée."
+    },
+    "agregation": {
+      "type": "object",
+      "properties": {
+        "n_fenetres": { "type": "integer", "minimum": 1 },
+        "methode":    { "type": "string", "enum": ["mediane", "moyenne"], "description": "Convention d'agrégation des fenêtres (médiane = convention contrib/lexicon/interpret.py)." }
+      },
+      "required": ["n_fenetres", "methode"],
+      "additionalProperties": false
+    },
+    "invariants": {
+      "type": "object",
+      "properties": {
+        "Rc":     { "type": "number", "description": "Énergie spectrale totale sur la grille." },
+        "Rtop":   { "type": "integer", "minimum": 0, "description": "Nombre de pics locaux (> 10 % du max)." },
+        "Rdyn":   { "type": "number", "description": "Désaccord harmonique inter-pics (1.0 par convention si < 2 pics)." },
+        "bandes": { "type": "array", "items": { "type": "number" }, "minItems": 7, "maxItems": 7, "description": "Projection normalisée sur les plans E1..E7." },
+        "H":      { "type": "number", "description": "Entropie de Shannon des bandes." },
+        "D":      { "type": "number", "description": "Dominance spectrale (max − second max des bandes)." },
+        "ReN":    { "type": "number", "description": "Nombre de Reynolds noétique agrégé." }
+      },
+      "required": ["Rc", "Rtop", "Rdyn", "bandes", "ReN"],
+      "additionalProperties": false
+    },
+    "regime":           { "$ref": "#/definitions/regime" },
+    "bande_dominante":  { "type": "string", "pattern": "^E[1-7]$" },
+    "contexte": {
+      "type": "object",
+      "description": "Le contexte consolide la sémantique d'interprétation : l'étiquette relie la mesure aux attentes du registre (bridge/expectations.json) et à la banque de signaux.",
+      "properties": {
+        "domaine":      { "type": "string", "description": "Domaine du signal (eeg, ecg, vibration, finance, chaos, acoustique…)." },
+        "etiquette":    { "type": "string", "description": "Étiquette de contexte stable (clé de jointure avec les attentes)." },
+        "description":  { "type": "string" },
+        "date_mesure":  { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+      },
+      "required": ["domaine", "etiquette", "date_mesure"],
+      "additionalProperties": false
+    },
+    "statut":     { "$ref": "#/definitions/statut" },
+    "falsifieur": { "type": ["string", "null"], "description": "Observation qui tuerait la lecture associée. Obligatoire pour les statuts C et E." },
+    "sources":    { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["format", "ash_version", "signal", "grille", "normalisation", "agregation", "invariants", "regime", "bande_dominante", "contexte", "statut", "falsifieur"]
+}

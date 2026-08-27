@@ -1,0 +1,54 @@
+{
+ "format": "ash-signature/0.1",
+ "ash_version": "1.0.0",
+ "signal": {
+  "sha256": "575d306f84d471709f4e63acfb9536c201ce5a658b6defefa7227e706a2e1411",
+  "n_points": 3600,
+  "duree_s": 10.0,
+  "source": "examples/ecg_mitbih/ecg_normal.py (seed 42, dataset régénérable)",
+  "generateur": "bridge/examples/generate_examples.py"
+ },
+ "grille": {
+  "fs": 360.0,
+  "f0": 1.0,
+  "n_octaves": 4,
+  "fenetre_s": 2.0,
+  "overlap": 0.5,
+  "nperseg": 360
+ },
+ "normalisation": "aucune",
+ "agregation": {
+  "n_fenetres": 9,
+  "methode": "mediane"
+ },
+ "invariants": {
+  "Rc": 1.195856,
+  "Rtop": 2,
+  "Rdyn": 0.0,
+  "bandes": [
+   0.593836,
+   0.586601,
+   0.48819,
+   0.262922,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "H": 1.343612,
+  "D": 0.007235,
+  "ReN": 9e-06
+ },
+ "regime": "Cosmologique",
+ "bande_dominante": "E1",
+ "contexte": {
+  "domaine": "ecg",
+  "etiquette": "ecg_normal",
+  "description": "ECG synthétique 72 bpm, 10 s : QRS + ondes P/T, bruit 5 %, dérive lente 0,5 Hz.",
+  "date_mesure": "2026-08-27"
+ },
+ "statut": "E",
+ "falsifieur": "Des ECG normaux (MIT-BIH NSRDB) classés majoritairement quantiques par le pipeline figé.",
+ "sources": [
+  "https://github.com/PORTEMANN/noetic-ash/tree/main/examples/ecg_mitbih"
+ ]
+}

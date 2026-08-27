@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "1465e41bae94b757e9423113d76fbe3ba936c38887cb34e8caad6c4b0f838d2a",
+ "contexte": {
+  "domaine": "eeg",
+  "etiquette": "eeg_intention_motrice"
+ },
+ "attente": {
+  "id": "EXP-001",
+  "statut": "E",
+  "regime_attendu": "Quantique",
+  "source": "examples/eeg_motor_intention/ (P32+, seed 42) ; lexique LEX-007",
+  "falsifieur": "La régénération du dataset seedé (SHA-256 228c6155…) ne reproduisant pas ReN > 10 pendant la fenêtre d'intention."
+ },
+ "mesure": {
+  "regime": "Quantique",
+  "ReN": 45.575542,
+  "Rtop": 1,
+  "Rdyn": 1.0,
+  "bande_dominante": "E4"
+ },
+ "verdict": "CONFORME",
+ "explication": "ReN = 45.58 (agrégation mediane de 9 fenêtres) → régime Quantique ; Rtop = 1, Rdyn = 1, bande dominante E4. L'attente EXP-001 (statut E, source : examples/eeg_motor_intention/ (P32+, seed 42) ; lexique LEX-007) prévoit Quantique pour le contexte « eeg_intention_motrice » : régime mesuré dans l'attente. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) — un ton pur se classe méso par construction, cf. LEX-013 ; Rdyn est aveugle au désaccord sub-demi-ton, cf. LEX-014. ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+ "horodatage": "2026-08-27T12:00:00Z",
+ "sha256": "c760359ff734166cf6bf332c4b4f51c9b079c6daa5288bcba1845c35cede3f58"
+}

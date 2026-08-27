@@ -1,0 +1,80 @@
+{
+  "version": "0.1.0",
+  "date": "2026-08-27",
+  "description": "Registre d'attentes du pont mesure ↔ interprétation. Chaque attente relie une étiquette de contexte à un régime attendu, avec son statut épistémique (T>C>E>H), sa source et son falsifieur. Une attente de statut H sans prédiction (regime_attendu = null) déclenche le verdict EXPLORATION : la banque consigne, rien n'est conclu. Le pont n'est pas un niveau du lexique (v0.3.0) : ce registre consigne des confrontations datées, jamais des interprétations projetées.",
+  "attentes": [
+    {
+      "id": "EXP-001",
+      "titre": "EEG intention motrice — torsion dominante pendant l'intention",
+      "contexte_etiquette": "eeg_intention_motrice",
+      "regime_attendu": "Quantique",
+      "statut": "E",
+      "source": "examples/eeg_motor_intention/ (P32+, seed 42) ; lexique LEX-007",
+      "falsifieur": "La régénération du dataset seedé (SHA-256 228c6155…) ne reproduisant pas ReN > 10 pendant la fenêtre d'intention.",
+      "notes": "Modulation bêta (13–30 Hz) attendue pendant l'intention : fait électrophysiologique établi, lu par l'instrument comme passage au régime quantique (bande E4 dominante)."
+    },
+    {
+      "id": "EXP-002",
+      "titre": "ECG normal — cœur en régime cosmologique",
+      "contexte_etiquette": "ecg_normal",
+      "regime_attendu": "Cosmologique",
+      "statut": "E",
+      "source": "examples/ecg_mitbih/ (P33+, seed 42) ; benchmarks/mitdb/ ; lexique LEX-008",
+      "falsifieur": "Des ECG normaux (MIT-BIH NSRDB, ex. record 16265) classés majoritairement quantiques par le pipeline figé.",
+      "notes": "Rythme sinusal quasi-périodique : torsion faible, pression dominante."
+    },
+    {
+      "id": "EXP-003",
+      "titre": "Vibration de roulement défectueux — passage au régime quantique",
+      "contexte_etiquette": "vibration_roulement_defaut",
+      "regime_attendu": "Quantique",
+      "statut": "E",
+      "source": "examples/vibration_bearing/ (P34+, seed 42) ; lexique LEX-009",
+      "falsifieur": "Sur un dataset public de roulements (ex. CWRU), des défectueux classés cosmologiques ou des sains classés quantiques de façon systématique.",
+      "notes": "Le défaut enrichit le spectre (chocs périodiques, modulation) : Rtop et Rdyn croissent, ReN franchit le seuil 10."
+    },
+    {
+      "id": "EXP-004",
+      "titre": "Ton pur — méso par construction (fallback Rdyn)",
+      "contexte_etiquette": "ton_pur",
+      "regime_attendu": "Méso",
+      "statut": "C",
+      "source": "benchmarks/p35_meso/sweep_meso.py (famille B, λ = 0) ; lexique LEX-013",
+      "falsifieur": "Un sinus pur classé hors méso en configuration generic figée.",
+      "notes": "Propriété de la définition (Rtop = 1 → Rdyn = 1.0), pas de la physique du signal : le verdict CONFORME n'atteste ici que la spécification."
+    },
+    {
+      "id": "EXP-005",
+      "titre": "Logistique en fenêtre de période 3 — ordre lu comme quantique",
+      "contexte_etiquette": "logistique_periode3",
+      "regime_attendu": "Quantique",
+      "statut": "C",
+      "source": "benchmarks/p35_meso/sweep_meso.py (famille A, r ∈ [3.83, 3.86], protocole figé) ; lexique LEX-012",
+      "falsifieur": "Ré-exécution de sweep_meso.py ne reproduisant pas 100 % quantique sur r ∈ [3.83, 3.85].",
+      "notes": "La période 3 est hors-grille d'octaves : 'quantique' ne veut PAS dire 'chaotique'. L'instrument répond à l'alignement spectral sur la grille, pas à l'ordre dynamique."
+    },
+    {
+      "id": "EXP-006",
+      "titre": "Bruit blanc stationnaire — absence de fausse alarme quantique",
+      "contexte_etiquette": "bruit_blanc_stationnaire",
+      "regime_attendu": [
+        "Cosmologique",
+        "Méso"
+      ],
+      "statut": "C",
+      "source": "CHANGELOG v1.0.0 (B3-FAIL #2, 100 graines) ; tests/test_ash.py ; lexique LEX-005",
+      "falsifieur": "Plus de 5 % de fenêtres quantiques sur le protocole figé 100 graines (seed 42, fs = 250 Hz, fenêtre 2 s).",
+      "notes": "Propriété de spécificité : un analyseur de régimes ne doit pas crier au chaos sur un bruit stationnaire."
+    },
+    {
+      "id": "EXP-007",
+      "titre": "Finance — échantillonnage exploratoire (contrôle négatif)",
+      "contexte_etiquette": "finance_echantillon",
+      "regime_attendu": null,
+      "statut": "H",
+      "source": "contrib/finance/ ; décision de session du 2026-08-27",
+      "falsifieur": "Sur N séries financières réelles à protocole figé, une distribution des régimes indiscernable de surrogates aléatoires (mêmes statistiques du premier ordre) tue la piste d'une structure spectrale spécifique en finance.",
+      "notes": "La grille f0·2^(n/12) est justifiée physiquement (T1, KO-6) : rien ne garantit sa pertinence pour des séries de prix. Verdict EXPLORATION attendu : la banque consigne contexte + signature, l'interprétation n'advient que si une distribution non triviale émerge sur échantillon. Toute série (temps, valeur) reste analysable — l'agnosticisme de l'instrument n'est pas une promesse de structure."
+    }
+  ]
+}
