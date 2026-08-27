@@ -1,0 +1,21 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "55042c91c3f0ee4770066f03b96714b0a920d6847ceaf2bcf46e9d2b2a799f13",
+ "contexte": {
+  "domaine": "etalonnage",
+  "etiquette": "controle_bruit"
+ },
+ "attente": null,
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 0.331841,
+  "Rtop": 13.0,
+  "Rdyn": 0.433903,
+  "bande_dominante": "E5"
+ },
+ "verdict": "HORS-CONTRAT",
+ "explication": "ReN = 0.3318 (agr\u00e9gation mediane de 7 fen\u00eatres) \u2192 r\u00e9gime Cosmologique ; Rtop = 13.0, Rdyn = 0.4339, bande dominante E5. Aucune attente enregistr\u00e9e pour le contexte \u00ab controle_bruit \u00bb : la mesure est consign\u00e9e sans confrontation.",
+ "horodatage": "2026-08-28T00:00:00+00:00",
+ "sha256": "131b1139464ea26209bc48bc896993c3bbead08622b359e5c33b3c3c893990cb"
+}

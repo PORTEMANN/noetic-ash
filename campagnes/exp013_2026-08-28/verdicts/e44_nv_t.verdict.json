@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "de63d6f3a30291894ea04a0f1c03c1a112be9ee32705b2bcbe56601edad3da16",
+ "contexte": {
+  "domaine": "dynamique_vortex",
+  "etiquette": "gp_vortex_relax"
+ },
+ "attente": {
+  "id": "EXP-013a",
+  "statut": "E",
+  "regime_attendu": "M\u00e9so",
+  "source": "noetic-machine src/core/e44_core.py (GP amorti 3D, vorticit\u00e9 plaquette, traceur de filaments) ; campagne exp013 locale (protocole C14 fig\u00e9)",
+  "falsifieur": "Sur les s\u00e9ries fig\u00e9es du protocole C14 volet a (graine 2026, 2048 pas, dt=0,1) : (a) la s\u00e9rie N_v(t) (plaquettes de vorticit\u00e9, \u00e9chantillonn\u00e9e \u00e0 chaque pas) OU la s\u00e9rie L(t) (longueur totale des boucles ferm\u00e9es, \u00e9chantillonn\u00e9e tous les 4 pas) lit Quantique (ReN > 10) \u2014 la dynamique d'annihilation \u00e9v\u00e9nementielle est alors lue comme un profil mono-pic, et le d\u00e9faut r\u00e9v\u00e9l\u00e9 par EXP-012 n'est pas lev\u00e9 par le passage au dynamique ; ou (b) les deux s\u00e9ries donnent des r\u00e9gimes diff\u00e9rents \u2014 l'instrument est alors instable sur deux mesures du m\u00eame processus."
+ },
+ "mesure": {
+  "regime": "Quantique",
+  "ReN": 168.162181,
+  "Rtop": 10.0,
+  "Rdyn": 0.55857,
+  "bande_dominante": "E1"
+ },
+ "verdict": "DIVERGENT",
+ "explication": "ReN = 168.2 (agr\u00e9gation mediane de 7 fen\u00eatres) \u2192 r\u00e9gime Quantique ; Rtop = 10.0, Rdyn = 0.5586, bande dominante E1. DIVERGENCE : l'attente EXP-013a (statut E, source : noetic-machine src/core/e44_core.py (GP amorti 3D, vorticit\u00e9 plaquette, traceur de filaments) ; campagne exp013 locale (protocole C14 fig\u00e9)) pr\u00e9voit M\u00e9so, le r\u00e9gime mesur\u00e9 est Quantique. Consign\u00e9e avec la m\u00eame rigueur qu'une conformit\u00e9 (B3-FAIL) \u2014 falsifieur de l'attente : Sur les s\u00e9ries fig\u00e9es du protocole C14 volet a (graine 2026, 2048 pas, dt=0,1) : (a) la s\u00e9rie N_v(t) (plaquettes de vorticit\u00e9, \u00e9chantillonn\u00e9e \u00e0 chaque pas) OU la s\u00e9rie L(t) (longueur totale des boucles ferm\u00e9es, \u00e9chantillonn\u00e9e tous les 4 pas) lit Quantique (ReN > 10) \u2014 la dynamique d'annihilation \u00e9v\u00e9nementielle est alors lue comme un profil mono-pic, et le d\u00e9faut r\u00e9v\u00e9l\u00e9 par EXP-012 n'est pas lev\u00e9 par le passage au dynamique ; ou (b) les deux s\u00e9ries donnent des r\u00e9gimes diff\u00e9rents \u2014 l'instrument est alors instable sur deux mesures du m\u00eame processus.",
+ "horodatage": "2026-08-28T00:00:00+00:00",
+ "sha256": "cc04d27d37d11590ac4e68a706d107bdf0ddd7f647bb801d7ad5a7f9e046342f"
+}

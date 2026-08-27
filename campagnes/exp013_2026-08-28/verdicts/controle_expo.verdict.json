@@ -1,0 +1,21 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "20722e3720258bc6b35e7dc27f53f610731cb021d9bb240a3fccee1cc0fb8b76",
+ "contexte": {
+  "domaine": "etalonnage",
+  "etiquette": "controle_expo"
+ },
+ "attente": null,
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 0.0,
+  "Rtop": 0.0,
+  "Rdyn": 1.0,
+  "bande_dominante": "E1"
+ },
+ "verdict": "HORS-CONTRAT",
+ "explication": "ReN = 0 (agr\u00e9gation mediane de 7 fen\u00eatres) \u2192 r\u00e9gime Cosmologique ; Rtop = 0.0, Rdyn = 1, bande dominante E1. Aucune attente enregistr\u00e9e pour le contexte \u00ab controle_expo \u00bb : la mesure est consign\u00e9e sans confrontation. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) \u2014 un ton pur se classe m\u00e9so par construction, cf. LEX-013 ; Rdyn est aveugle au d\u00e9saccord sub-demi-ton, cf. LEX-014.",
+ "horodatage": "2026-08-28T00:00:00+00:00",
+ "sha256": "97d26adff33162197e7e3323ed0482c9927f98b9246327003fac17220c1e2fcb"
+}
