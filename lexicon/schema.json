@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/PORTEMANN/noetic-ash/blob/main/lexicon/schema.json",
-  "title": "Lexique noétique multi-niveaux — passeport d'entrée",
-  "version": "0.1.0",
-  "description": "Schéma du lexique sémantique de l'écosystème Noetic Physics. Chaque entrée associe une signature d'invariants ASH à des interprétations à plusieurs niveaux, chacune portant un statut épistémique non mélangeable (protocole C12.1 étendu à la sémantique).",
+  "title": "Lexique ASH — passeport d'entrée",
+  "version": "0.2.0",
+  "description": "Schéma du lexique d'étalonnage et d'explicabilité de l'ASH (couche acquisition/mesure de l'écosystème Noetic Physics). Chaque entrée associe une signature d'invariants ASH à des interprétations à plusieurs niveaux, chacune portant un statut épistémique non mélangeable (protocole C12.1 étendu à la sémantique). v0.2.0 : le niveau N (machine noétique) est supprimé — l'ASH, conçu pour l'industrie embarquée et la xAI, est antérieur à la machine ; les ponts éventuels sont documentés dans les notes, jamais comme niveau.",
   "type": "object",
   "definitions": {
     "niveau": {
@@ -12,14 +12,14 @@
       "properties": {
         "texte":   { "type": "string", "description": "L'interprétation / le concept associé." },
         "statut":  { "$ref": "#/definitions/statut" },
-        "source":  { "type": "string", "description": "URL ou référence P## de la source." }
+        "source":  { "type": "string", "description": "URL ou référence P## / P##+ de la source." }
       },
       "required": ["texte", "statut"]
     },
     "statut": {
       "type": "string",
       "enum": ["T", "C", "E", "H"],
-      "description": "T = adossé à un théorème ou protocole figé (T1-T4, KO-6, verdict machine 'succès'). C = calibré, vérifié par test reproductible (tests unitaires, propriété B3-FAIL mesurée). E = empirique, issu d'une étude de cas P##. H = hypothèse / conjecture interprétative. Règle d'or : une entrée H ne se présente jamais comme T, C ou E."
+      "description": "T = adossé à un théorème ou protocole figé (T1-T4, KO-6). C = calibré, vérifié par test reproductible (tests unitaires, campagne d'étalonnage, propriété B3-FAIL mesurée). E = empirique, issu d'une étude de cas P##+. H = hypothèse / conjecture interprétative. Règle d'or : une entrée H ne se présente jamais comme T, C ou E."
     },
     "signature": {
       "type": ["object", "null"],
@@ -43,19 +43,19 @@
     "signature":     { "$ref": "#/definitions/signature" },
     "niveaux": {
       "type": "object",
-      "description": "Interprétations par niveau. M = mathématique (définitions exactes des invariants). S = scientifique (references.histoire-des-sciences.eu). N = machine noétique (machine-noetique.histoire-des-sciences.eu, verdicts P0-P33). T = technique/empirique (techniques.histoire-des-sciences.eu, nucléides/CODATA/pont ANU). PHI = philosophique (theosophie.histoire-des-sciences.eu, corpus Blavatsky/Besant & Leadbeater/Bailey — niveau documentaire, jamais présenté comme scientifique).",
+      "description": "Interprétations par niveau. M = mathématique (définitions exactes des invariants, docs/algorithm.md). E = étalonnage (mesuré sur corpus figés C12.1, benchmarks/, SHASUMS.txt ; faits établis adossés à references.histoire-des-sciences.eu). I = industriel/embarqué (cas d'usage opérationnels, examples/, hardware/, techniques.histoire-des-sciences.eu). X = xAI (explicabilité : comment les invariants justifient la décision, formules fermées, zéro paramètre appris). PHI = philosophique documentaire (theosophie.histoire-des-sciences.eu — toujours H, jamais présenté comme scientifique). Distinction : E-niveau (étalonnage) et E-statut (empirique) sont deux axes indépendants.",
       "properties": {
         "M":   { "$ref": "#/definitions/niveau" },
-        "S":   { "$ref": "#/definitions/niveau" },
-        "N":   { "$ref": "#/definitions/niveau" },
-        "T":   { "$ref": "#/definitions/niveau" },
+        "E":   { "$ref": "#/definitions/niveau" },
+        "I":   { "$ref": "#/definitions/niveau" },
+        "X":   { "$ref": "#/definitions/niveau" },
         "PHI": { "$ref": "#/definitions/niveau" }
       },
       "additionalProperties": false
     },
     "statut_global": { "$ref": "#/definitions/statut", "description": "Le plus faible des statuts des niveaux renseignés (T > C > E > H du plus fort au plus faible ; le global est le plancher)." },
     "falsifieur":    { "type": ["string", "null"], "description": "Observation qui tuerait l'entrée. Obligatoire pour les niveaux C et E. Une entrée falsifiée n'est pas supprimée : elle est publiée comme falsifiée (B3-FAIL)." },
-    "sources":       { "type": "array", "items": { "type": "string" }, "description": "URL et références P## (toujours qualifier : 'P32 au sens noetic-ash' vs 'P32 au sens atlas machine' — les deux catalogues se chevauchent)." },
+    "sources":       { "type": "array", "items": { "type": "string" }, "description": "URL et références. Convention de numérotation : P## nu = atlas machine noétique, P##+ = programme noetic-ash (voir LEX-011)." },
     "notes":         { "type": "string" }
   },
   "required": ["id", "titre", "signature", "niveaux", "statut_global", "falsifieur", "sources"]
