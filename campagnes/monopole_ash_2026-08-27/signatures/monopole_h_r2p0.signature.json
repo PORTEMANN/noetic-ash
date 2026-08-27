@@ -1,0 +1,54 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 7
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E1",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "Contrôle H(ξ) du monopole SU(2), ρ=2.0 — consigné sans attente (statut H)",
+    "domaine": "soliton_radial",
+    "etiquette": "monopole_su2_h_controle"
+  },
+  "falsifieur": null,
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.125,
+    "fenetre_s": 7.5,
+    "fs": 136.53333333333333,
+    "n_octaves": 5,
+    "nperseg": 1024,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.096106,
+    "H": 0.972814,
+    "Rc": 8.1e-05,
+    "Rdyn": 1.0,
+    "ReN": 10755.783193,
+    "Rtop": 1.0,
+    "bandes": [
+      0.272894,
+      0.176788,
+      0.034423,
+      0.008452,
+      0.001966,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Quantique",
+  "signal": {
+    "duree_s": 30.0,
+    "n_points": 4096,
+    "sha256": "ccdc86cacbf85c61a74d0442fd3daf37076c3176b7a5453a9157d0fca92e7115",
+    "source": "Campagne monopole_ash C13.1 — Contrôle H(ξ) du monopole SU(2), ρ=2.0 — consigné sans attente (statut H) ; artefact p0_monopole_su2.py sha256=52929bda0603…, minimisation L-BFGS-B grille 4096 pts [30/4096, 30], continuation depuis ρ=0.5"
+  },
+  "sources": [
+    "noetic-machine P0 (artefact 52929bda0603)",
+    "protocole C13.1 figé"
+  ],
+  "statut": "H"
+}

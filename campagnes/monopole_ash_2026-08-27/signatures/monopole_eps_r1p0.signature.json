@@ -1,0 +1,54 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 7
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E1",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "Densité d'énergie radiale ε(ξ) du monopole SU(2), ρ=1.0 (C=1.30007)",
+    "domaine": "soliton_radial",
+    "etiquette": "monopole_su2_radial"
+  },
+  "falsifieur": "Sur les branches convergées ρ ∈ {0,1 ; 0,25 ; 0,5 ; 1 ; 2 ; 4} à protocole C13.1 figé : (a) le profil BPS (branche ρ → 0⁺, ancrée sur ρ = 0,5 calibré C ≃ 1) lit hors méso ; ou (b) ReN n'est pas monotone en ρ (à grille et normalisation communes). L'un des deux tue la correspondance phénoménologique pression/torsion entre le fonctionnel C(ρ) et le ReN.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.125,
+    "fenetre_s": 7.5,
+    "fs": 136.53333333333333,
+    "n_octaves": 5,
+    "nperseg": 1024,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.805319,
+    "H": 0.514374,
+    "Rc": 0.177638,
+    "Rdyn": 1.0,
+    "ReN": 882.748179,
+    "Rtop": 1.0,
+    "bandes": [
+      0.983791,
+      0.178472,
+      0.017864,
+      0.002008,
+      0.000252,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Quantique",
+  "signal": {
+    "duree_s": 30.0,
+    "n_points": 4096,
+    "sha256": "473f16d9f46198ed7d6f148a8154674dfc528ef2566d83f39b89003d8f87d6b3",
+    "source": "Campagne monopole_ash C13.1 — Densité d'énergie radiale ε(ξ) du monopole SU(2), ρ=1.0 (C=1.30007) ; artefact p0_monopole_su2.py sha256=52929bda0603…, minimisation L-BFGS-B grille 4096 pts [30/4096, 30], continuation depuis ρ=0.5"
+  },
+  "sources": [
+    "noetic-machine P0 (artefact 52929bda0603)",
+    "protocole C13.1 figé"
+  ],
+  "statut": "E"
+}
