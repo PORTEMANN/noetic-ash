@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "date": "2026-08-27",
   "description": "Registre d'attentes du pont mesure ↔ interprétation. Chaque attente relie une étiquette de contexte à un régime attendu, avec son statut épistémique (T>C>E>H), sa source et son falsifieur. Une attente de statut H sans prédiction (regime_attendu = null) déclenche le verdict EXPLORATION : la banque consigne, rien n'est conclu. Le pont n'est pas un niveau du lexique (v0.3.0) : ce registre consigne des confrontations datées, jamais des interprétations projetées.",
   "attentes": [
@@ -128,6 +128,26 @@
       "source": "noetic-machine P0 (p0_monopole_su2.py 52929bda0603, p0_r05.json, p0_r1.json) ; campagne monopole_ash à paraître",
       "falsifieur": "Sur les branches convergées ρ ∈ {0,1 ; 0,25 ; 0,5 ; 1 ; 2 ; 4} à protocole C13.1 figé : (a) le profil BPS (branche ρ → 0⁺, ancrée sur ρ = 0,5 calibré C ≃ 1) lit hors méso ; ou (b) ReN n'est pas monotone en ρ (à grille et normalisation communes). L'un des deux tue la correspondance phénoménologique pression/torsion entre le fonctionnel C(ρ) et le ReN.",
       "notes": "Attente CONJECTURALE déclarée AVANT mesure (statut E motivé par la théorie, non calibrée). Raisonnement : la borne de Bogomolny est l'équilibre exact pression (E_gauge + E_pot) ↔ torsion (E_higgs) ; or ReN = (torsion × complexité topologique) / (pression × dispersion). Un équilibre exact des deux doit donc lire au voisinage de la frontière méso (ReN ≈ 1–10), comme un point de transition — pas en régime saturé. La migration monotone attendue : ρ croissant → potentiel dominant → pression croissante → ReN décroissant vers le cosmologique ; ρ → 0⁺ → torsion relativement renforcée → ReN croissant. Le régime lu sur la branche BPS est le verdict central ; les autres ρ tracent la migration et sont consignés contre cette même attente (leurs DIVERGENT éventuels sont la mesure de la migration, pas des échecs). Rappel de propriété : ReN ∝ 1/amplitude (B3-FAIL #1) — normalisation RMS = 1 obligatoire sur tous les profils, déclarée dans chaque signature."
+    },
+    {
+      "id": "EXP-013a",
+      "titre": "Relaxation de vortex E44 (GP amorti) — la dynamique d'annihilation lit méso, pas quantique",
+      "contexte_etiquette": "gp_vortex_relax",
+      "regime_attendu": "Méso",
+      "statut": "E",
+      "source": "noetic-machine src/core/e44_core.py (GP amorti 3D, vorticité plaquette, traceur de filaments) ; campagne exp013 locale (protocole C14 figé)",
+      "falsifieur": "Sur les séries figées du protocole C14 volet a (graine 2026, 2048 pas, dt=0,1) : (a) la série N_v(t) (plaquettes de vorticité, échantillonnée à chaque pas) OU la série L(t) (longueur totale des boucles fermées, échantillonnée tous les 4 pas) lit Quantique (ReN > 10) — la dynamique d'annihilation événementielle est alors lue comme un profil mono-pic, et le défaut révélé par EXP-012 n'est pas levé par le passage au dynamique ; ou (b) les deux séries donnent des régimes différents — l'instrument est alors instable sur deux mesures du même processus.",
+      "notes": "Attente CONJECTURALE déclarée AVANT mesure (statut E, non calibrée). Raisonnement : la relaxation GP amortie après quench est une décroissance par événements discrets (annihilations de paires) superposée à une relaxation modale — signal multi-pics et multi-échelles, ni mono-pic (Quantique saturé, défaut C13.1) ni bruit stationnaire (Cosmologique). C'est la correction directe du défaut EXP-012 : on passe du profil statique ε(ξ) au processus dynamique N_v(t), L(t). Contrôles statut H (HORS-CONTRAT) : bruit blanc graine 43, décroissance exponentielle pure exp(−t/τ) — pour isoler la part « forme monotone » de la part « événements »."
+    },
+    {
+      "id": "EXP-013b",
+      "titre": "Orbitales radiales P1 (fond monopole ρ=1) — la structure nodale est visible : ReN décroît avec le nombre de nœuds",
+      "contexte_etiquette": "p1_orbitale_radiale",
+      "regime_attendu": "Quantique",
+      "statut": "E",
+      "source": "noetic-machine-complete P1 (p1_etats_lies.py, hamiltonien radial sur fond monopole, Coulomb tronqué R_core=3,04, α=1/137,036) ; campagne exp013 locale (protocole C14 figé)",
+      "falsifieur": "Sur les 10 orbitales u_{n,l}(r) figées du protocole C14 volet b (1s,2s,2p,3s,3p,3d,4s,4p,4d,4f) : (a) le fondamental 1s (zéro nœud) lit hors Quantique — l'instrument rate alors le cas mono-bosse de référence ; ou (b) ReN ne décroît pas monotone avec le nombre de nœuds radiaux (n−l−1) — la structure nodale, qui est le contenu spectral de P1, est alors invisible à l'instrument ; ou (c) les orbitales à 2 nœuds et plus (3s, 4s, 4p) lisent Quantique comme 1s — même conclusion que (b). Une seule clause suffit.",
+      "notes": "Attente CONJECTURALE déclarée AVANT mesure. Raisonnement : 1s est une bosse unique (analogue au profil de C13.1, qui a lu Quantique) ; les orbitales excitées ont (n−l−1) nœuds radiaux, donc |u| présente plusieurs pics locaux — Rtop > 1 débloque Rdyn (fallback LEX-013 levé) et ReN doit sortir de la saturation. Le régime attendu déclaré est celui du 1s (Quantique, par continuité avec C13.1) ; la migration vers le méso sur les états excités est le verdict central, tracée par la clause (b). Le régime_attendu 'Quantique' vaut pour le fondamental ; les DIVERGENT des états excités sont la mesure de la migration, pas des échecs."
     }
   ]
 }
