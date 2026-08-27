@@ -32,5 +32,5 @@ bb20c04d7d0de99ba37ed323b14ea97bcda58adca066bf35fb7e417ea27924e6  vibration_mote
 c95a444fc7e681868b55070cf5f3b583e0aed423f8a3cab9cf51a4aaf74c2412  ash_results.csv (archive : benchmarks/results/)
 e477e3746de1859f99c4b3e1ba16ea493bc14e357ca2b7dcf50234afe934c3e9  ash_bands.csv (archive : benchmarks/results/)
 
-# --- Artefact de mesure P35 (régénérable : python3 benchmarks/p35_meso/sweep_meso.py) ---
+# --- Artefact de mesure P35+ (régénérable : python3 benchmarks/p35_meso/sweep_meso.py) ---
 5e52abf20db79fa680aed5850a4d28996b9e5a3461ad1606dfc863abf949f866  results_p35_meso.csv (125 points de mesure)
