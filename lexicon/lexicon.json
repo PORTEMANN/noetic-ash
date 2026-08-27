@@ -1,229 +1,407 @@
 {
-  "version": "0.2.0",
-  "description": "Lexique d'interprétation multi-niveaux de l'écosystème noétique. Chaque entrée possède un passeport : signature spectrale ASH, niveaux d'interprétation (M/S/N/T/PHI), statut épistémique (T>C>E>H), falsifieur, sources. Les entrées falsifiées sont publiées, pas supprimées (C12.1).",
-  "niveaux": {
-    "M": "Mathématique — énoncés exacts sur les invariants ASH (docs/algorithm.md)",
-    "S": "Scientifique — corpus de référence, hypothèses testables (references.histoire-des-sciences.eu)",
-    "N": "Machine noétique — interprétation phénoménologique (machine-noetique.histoire-des-sciences.eu)",
-    "T": "Technique-empirique — protocoles, atome et ANU (techniques.histoire-des-sciences.eu)",
-    "PHI": "Philosophique — cadre documentaire, toujours statut H (theosophie.histoire-des-sciences.eu)"
-  },
-  "statuts": {
-    "T": "Théorème — démontré ou propriété exacte de l'algorithme",
-    "C": "Confirmé — mesuré sur corpus déterministe gelé (C12.1)",
-    "E": "Expérimental — observé, en cours de test",
-    "H": "Heuristique/Historique — documentaire, non falsifiable"
-  },
+  "version": "0.3.0",
+  "date": "2026-08-27",
+  "description": "Lexique d'étalonnage et d'explicabilité de l'ASH (couche acquisition/mesure de l'écosystème). Niveaux : M (mathématique — définitions exactes), E (étalonnage — mesuré sur corpus figés C12.1), I (industriel/embarqué — cas d'usage opérationnels), X (xAI — explicabilité de la décision), PHI (philosophique — documentaire, toujours H). Statuts : T (théorème/protocole figé) > C (calibré/vérifié) > E (empirique/étude de cas) > H (hypothèse). v0.3.0 : le niveau N (machine noétique) est supprimé — l'ASH, conçu pour l'industrie embarquée et la xAI, est antérieur à la machine noétique ; ce sont des approches distinctes. Les ponts éventuels sont des pistes documentées dans les notes, jamais des niveaux.",
   "entrees": [
     {
       "id": "LEX-001",
-      "titre": "Rc — énergie (pression spectrale)",
-      "signature": {"regime": null, "bande_dominante": null, "rtop_min": null, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": null, "ren_max": null},
-      "niveaux": {
-        "M": "Somme des puissances projetées sur la grille f0·2^(n/12), normalisée. Rc ∈ [0,1].",
-        "S": "Analogue d'une pression acoustique totale ramenée au spectre discret.",
-        "N": "Mesure de la « charge » du signal dans l'espace des états.",
-        "T": "Premier invariant calculé ; sert de dénominateur à ReN.",
-        "PHI": "Quantité avant qualité : ce que le signal « pèse » avant de dire ce qu'il « est »."
+      "titre": "Octave pure — deux pics en rapport 2:1 exact",
+      "signature": {
+        "rtop_min": 2,
+        "rtop_max": 2,
+        "rdyn_max": 0.01
       },
-      "statut_global": "T",
-      "falsifieur": "Exhiber un signal dont Rc sort de [0,1] ou dépend d'un paramètre ajusté.",
-      "sources": ["docs/algorithm.md §1"]
+      "niveaux": {
+        "M": {
+          "texte": "Deux pics locaux séparés d'exactement une octave sur la grille f_n = f0·2^(n/12) : r_k = ln 2, dispersion nulle des log-rapports, donc Rdyn = 0.",
+          "statut": "C",
+          "source": "tests/test_ash.py::test_octave_harmonic_purity"
+        },
+        "E": {
+          "texte": "Rapport de fréquence 2:1 : la consonance spectrale maximale. En physique du signal, une raie et sa première harmonique de puissance.",
+          "statut": "C"
+        },
+        "X": {
+          "texte": "Explication élémentaire complète : deux pics, un rapport 2:1 exact, Rdyn = 0 — la pureté est vérifiable à la main, sans boîte noire.",
+          "statut": "C"
+        },
+        "PHI": {
+          "texte": "L'octave comme principe de récurrence cyclique : ce qui se dit sur un plan se redit sur le plan suivant (structure septénaire des corpus).",
+          "statut": "H",
+          "source": "https://theosophie.histoire-des-sciences.eu/index.php?page=tables"
+        }
+      },
+      "statut_global": "H",
+      "falsifieur": "Un signal à octave exacte (rapport 2:1 figé numériquement) donnant Rdyn > 0.01 tue l'entrée — couvert par le test unitaire test_octave_harmonic_purity.",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/tests/test_ash.py",
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/docs/algorithm.md"
+      ],
+      "notes": "v0.3.0 : l'analogie MTR-80 (ex-niveau N) est retirée du lexique — piste documentaire, voir docs/algorithm.md §2.2."
     },
     {
       "id": "LEX-002",
-      "titre": "Rtop — nombre de pics sur la grille",
-      "signature": {"regime": null, "bande_dominante": null, "rtop_min": 1, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": null, "ren_max": null},
-      "niveaux": {
-        "M": "Cardinal des maxima locaux du spectre projeté coïncidant avec des fréquences de la grille.",
-        "S": "Compte des partiels effectivement alignés sur le tempérament 12 TET.",
-        "N": "Nombre de « voix » simultanées entendues par la machine.",
-        "T": "Rtop < 2 force le repli Rdyn = 1.0 (cf. LEX-013).",
-        "PHI": "La multiplicité comme condition de l'harmonie — et de sa mesure."
+      "titre": "Régime Cosmologique — pression dominante (ReN < 1)",
+      "signature": {
+        "ren_max": 1.0
       },
-      "statut_global": "T",
-      "falsifieur": "Montrer un pic spectral évident non compté, ou un comptage sans maximum local.",
-      "sources": ["docs/algorithm.md §2"]
+      "niveaux": {
+        "M": {
+          "texte": "ReN = ((Rdyn+ε)(Rtop·D))/(Rc·(H+ε))×100 < 1 : le dénominateur (pression Rc·H) domine le numérateur (torsion).",
+          "statut": "C",
+          "source": "docs/algorithm.md §4"
+        },
+        "E": {
+          "texte": "Analogue structurel d'un écoulement à nombre de Reynolds bas : régime dominé par la dissipation, stable, prévisible.",
+          "statut": "H"
+        },
+        "X": {
+          "texte": "Le régime se déduit de quatre nombres à formules fermées (Rc, Rtop, Rdyn, ReN) : la classification « pression dominante » est auditable ligne à ligne.",
+          "statut": "C"
+        },
+        "PHI": {
+          "texte": "Terme J_cosmo(z) de l'équation maîtresse ; côté EEG, bandes basses (E1/Delta, sommeil profond).",
+          "statut": "H",
+          "source": "docs/algorithm.md §1.1, §3.1"
+        }
+      },
+      "statut_global": "H",
+      "falsifieur": "Un ECG normal (P33+) ou un moteur sain (P34+) mesuré durablement avec ReN > 10 invaliderait l'usage diagnostique du seuil.",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/docs/algorithm.md",
+        "https://machine-noetique.histoire-des-sciences.eu/fiche.php?c=P4"
+      ],
+      "notes": "v0.3.0 : la conjecture de correspondance avec la phase cœur-jauge de la machine (ex-niveau N) est retirée — l'ASH est antérieur à la machine noétique, approches distinctes."
     },
     {
       "id": "LEX-003",
-      "titre": "Rdyn — mismatch harmonique",
-      "signature": {"regime": null, "bande_dominante": null, "rtop_min": 2, "rtop_max": null, "rdyn_min": 0, "rdyn_max": null, "ren_min": null, "ren_max": null},
-      "niveaux": {
-        "M": "Écart-type sur moyenne des log-ratios entre pics successifs sur la grille.",
-        "S": "Mesure de l'écart entre le spectre réel et une série harmonique idéale.",
-        "N": "Indice de « tension » interne du signal.",
-        "T": "Aveugle au désaccord sub-demi-ton (LEX-014). Repli 1.0 si Rtop < 2.",
-        "PHI": "Le désaccord comme information, non comme défaut."
+      "titre": "Régime Quantique — torsion dominante (ReN > 10)",
+      "signature": {
+        "ren_min": 10.0
       },
-      "statut_global": "T",
-      "falsifieur": "Exhiber deux signaux d'harmonicité auditive égale mais de Rdyn très différents (hors sub-demi-ton).",
-      "sources": ["docs/algorithm.md §3", "P35 famille C"]
+      "niveaux": {
+        "M": {
+          "texte": "ReN > 10 : le numérateur (torsion = (Rdyn+ε)·Rtop·D) domine la pression Rc·(H+ε).",
+          "statut": "C",
+          "source": "docs/algorithm.md §4"
+        },
+        "E": {
+          "texte": "Analogue structurel d'un écoulement à nombre de Reynolds élevé : régime turbulent, multi-échelle, sensible aux conditions initiales.",
+          "statut": "H"
+        },
+        "X": {
+          "texte": "Même auditabilité que LEX-002 : ReN > 10 se réécrit en torsion/pression, sans paramètre appris.",
+          "statut": "C"
+        },
+        "PHI": {
+          "texte": "Terme λT[Ψ] (torsion) dominant ; côté EEG, bandes hautes (E5/bêta haut, tension ; E6-E7/gamma).",
+          "statut": "H",
+          "source": "docs/algorithm.md §1.1, §3.1"
+        }
+      },
+      "statut_global": "H",
+      "falsifieur": "Un bruit blanc stationnaire classé majoritairement quantique (B3-FAIL #2 : mesuré 1 % sur 100 graines) détruirait la spécificité du régime.",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/docs/algorithm.md",
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/CHANGELOG.md"
+      ],
+      "notes": "v0.3.0 : idem pour la conjecture « phase cœur-Higgs » (ex-niveau N) — piste non retenue."
     },
     {
       "id": "LEX-004",
-      "titre": "Méso — frontière entre ordre et chaos (conjecture)",
-      "signature": {"regime": "Méso", "bande_dominante": null, "rtop_min": null, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": 1, "ren_max": 10},
-      "niveaux": {
-        "M": "1 < ReN ≤ 10. Conjecturé comme analogue spectral du point auto-dual ρ*≈0.75.",
-        "S": "FALSIFIÉE en v1.1.0 par le programme P35 (B3-FAIL n°4) : la naissance du chaos logistique (r∞) est invisible à l'ASH ; le méso n'apparaît que sur des îlots épars, pas en couche-frontière.",
-        "N": "Le diagramme de phases de la machine garde son point auto-dual ; la correspondance avec ReN n'existe pas sous cette forme.",
-        "T": "Ne pas utiliser ReN ∈ ]1,10] comme détecteur de transition ordre/chaos.",
-        "PHI": "Une conjecture falsifiée publiée vaut mieux qu'une conjecture décorative : la frontière cherchée existe peut-être ailleurs que dans ReN."
+      "titre": "Régime Méso — zone de transition (1 ≤ ReN ≤ 10)",
+      "signature": {
+        "ren_min": 1.0,
+        "ren_max": 10.0
       },
-      "statut_global": "C",
-      "falsifieur": "Falsifiée par P35 (B3-FAIL n°4). Entrée conservée et publiée comme falsifiée.",
-      "sources": ["benchmarks/p35_meso/README.md", "machine-noetique.histoire-des-sciences.eu"]
+      "niveaux": {
+        "M": {
+          "texte": "Ni pression ni torsion ne dominent franchement : torsion/pression du même ordre de grandeur.",
+          "statut": "C",
+          "source": "docs/algorithm.md §4"
+        },
+        "E": {
+          "texte": "Zone la plus informative pour le diagnostic industriel (changement de régime naissant) — lecture d'usage de l'instrument, pas frontière physique.",
+          "statut": "H"
+        },
+        "X": {
+          "texte": "Avant d'interpréter une lecture méso, vérifier LEX-013 : tout ton pur est méso par construction (fallback Rdyn = 1.0). L'explication tient en une ligne de la spécification.",
+          "statut": "C"
+        }
+      },
+      "statut_global": "H",
+      "falsifieur": "Une distribution des ReN méso structurée autour d'une transition ordre/chaos identifiée, à protocole figé, rouvrirait la piste d'analogie écartée (voir notes).",
+      "sources": [
+        "https://machine-noetique.histoire-des-sciences.eu/fiche.php?c=P4",
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/docs/algorithm.md"
+      ],
+      "notes": "Piste d'analogie avec le point auto-dual ρ* ≈ 0,75 de la machine noétique : évoquée en discussion, non retenue. L'ASH est antérieur à la machine — ce sont des approches distinctes. La campagne d'étalonnage P35+ montre que le méso ne trace aucune frontière ordre/chaos : la naissance du chaos logistique (r∞ = 3,56995) est invisible à l'instrument, et le méso ne survient que sur des îlots épars (max 55,6 % des fenêtres à r = 3,98). L'instrument répond à l'alignement spectral sur la grille f0·2^(n/12), pas à l'ordre dynamique. Voir benchmarks/p35_meso/README.md."
     },
     {
       "id": "LEX-005",
-      "titre": "Régime Cosmologique",
-      "signature": {"regime": "Cosmologique", "bande_dominante": null, "rtop_min": null, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": null, "ren_max": 1},
+      "titre": "Bruit blanc stationnaire — absence de fausse alarme quantique",
+      "signature": null,
       "niveaux": {
-        "M": "ReN < 1. Produit (Rdyn+ε)(Rtop·D) faible devant Rc·(H+ε).",
-        "S": "Signaux à spectre dense ou bruité : bruit blanc s'y classe à ~39 % (B3-FAIL n°2).",
-        "N": "Le « fond » — ce qui ne s'aligne pas encore sur la grille.",
-        "T": "Régime par défaut des signaux chaotiques testés en P35.",
-        "PHI": "L'indifférencié précédant toute mesure."
+        "M": {
+          "texte": "Propriété mesurée sur 100 graines : 39 % cosmologique, 60 % méso, 1 % quantique. Le bruit blanc ne produit NI Rdyn → 1 NI régime quantique en configuration par défaut (lissage de Welch).",
+          "statut": "C",
+          "source": "CHANGELOG.md, B3-FAIL #2 ; tests/test_ash.py::test_white_noise_no_false_quantum_alarm"
+        },
+        "E": {
+          "texte": "Propriété de spécificité : un analyseur de régimes ne doit pas crier au chaos sur un bruit stationnaire. Vérifiée en v1.0.0.",
+          "statut": "C"
+        }
       },
       "statut_global": "C",
-      "falsifieur": "Exhiber un signal structuré harmoniquement classé cosmologique de façon stable.",
-      "sources": ["docs/algorithm.md §4", "B3-FAIL n°2", "P35 famille A"]
+      "falsifieur": "Plus de 5 % de fenêtres quantiques sur le protocole figé 100 graines (seed 42, fs=250 Hz, fenêtre 2 s).",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/CHANGELOG.md",
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/tests/test_ash.py"
+      ],
+      "notes": "Entrée née d'un B3-FAIL : la documentation d'origine (§6.3) affirmait le contraire. La correction est publiée, pas cachée."
     },
     {
       "id": "LEX-006",
-      "titre": "Régime Quantique",
-      "signature": {"regime": "Quantique", "bande_dominante": null, "rtop_min": null, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": 10, "ren_max": null},
+      "titre": "Ramification E3 → E4 — la charnière de la grille",
+      "signature": null,
       "niveaux": {
-        "M": "ReN > 10.",
-        "S": "Attention : atteint par l'ordre périodique multi-composantes (LEX-012), pas seulement par le « microscopique ».",
-        "N": "Régime de haute résolution spectrale.",
-        "T": "Vérifier Rtop et Rdyn avant toute interprétation.",
-        "PHI": "Le nom est une métaphore de la machine, pas une physique."
+        "M": {
+          "texte": "Transition entre la 3e et la 4e octave de la grille (E3 : 4-8 Hz, E4 : 8-16 Hz à f0 = 1 Hz). Structure issue de la minimalité spectrale : dim_spec = 7×12 = 84 avec ramification entre plans E3 et E4.",
+          "statut": "T",
+          "source": "docs/algorithm.md §1.2, §3.1 ; spectral-triple-minimality (T1)"
+        },
+        "E": {
+          "texte": "Côté EEG : frontière alpha (E3, calme) / bêta bas (E4, attention) — la transition la plus documentée de l'électrophysiologie cognitive.",
+          "statut": "E",
+          "source": "docs/algorithm.md §3.1"
+        },
+        "PHI": {
+          "texte": "Dans la constitution septénaire, la charnière entre les sous-plans denses et subtils du plan physique (tables des 7 plans et 49 sous-plans).",
+          "statut": "H",
+          "source": "https://theosophie.histoire-des-sciences.eu/index.php?page=tables"
+        }
       },
-      "statut_global": "C",
-      "falsifieur": "Exhiber un signal de bruit pur classé quantique de façon stable (cf. B3-FAIL n°2 : 1 % seulement).",
-      "sources": ["docs/algorithm.md §4", "P35 famille A"]
+      "statut_global": "H",
+      "falsifieur": null,
+      "sources": [
+        "https://github.com/PORTEMANN/spectral-triple-minimality",
+        "https://theosophie.histoire-des-sciences.eu/index.php?page=tables",
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/docs/algorithm.md"
+      ],
+      "notes": "v0.3.0 : la référence au terme R_3→4[Ψ] de l'équation maîtresse (ex-niveau N, terminologie CTFT historique de docs/algorithm.md §1.1) est retirée du lexique."
     },
     {
       "id": "LEX-007",
-      "titre": "Bandes E1–E7",
-      "signature": {"regime": null, "bande_dominante": "E4", "rtop_min": null, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": null, "ren_max": null},
-      "niveaux": {
-        "M": "Partition de la grille en 7 bandes d'énergie logarithmiques.",
-        "S": "Profil spectral grossier, robuste au bruit.",
-        "N": "« Couleur » énergétique du signal.",
-        "T": "bande_dominante = argmax des 7 énergies.",
-        "PHI": "Sept degrés, comme sept planètes anciennes — analogie documentaire, statut H."
+      "titre": "Exemplaire P32+ (noetic-ash) — EEG intention motrice",
+      "signature": {
+        "regime": "Quantique",
+        "bande_dominante": "E4"
       },
-      "statut_global": "T",
-      "falsifieur": "Exhiber un signal dont l'énergie totale des bandes diffère de l'énergie projetée.",
-      "sources": ["docs/algorithm.md §4"]
+      "niveaux": {
+        "M": {
+          "texte": "Modulation bêta (20 Hz) entre 4 et 7 s : Rtop et D augmentent, ReN ≈ 41,5 en moyenne de fenêtres, ≈ 44 en médiane (agrégation d'interpret.py) → régime quantique pendant l'intention, bande E4 dominante.",
+          "statut": "E",
+          "source": "examples/eeg_motor_intention/eeg_intention.py (seed 42, dataset régénérable)"
+        },
+        "E": {
+          "texte": "L'intention motrice module le rythme bêta (13-30 Hz) : fait électrophysiologique établi (désynchronisation/synchronisation des rythmes mu et bêta).",
+          "statut": "E"
+        },
+        "I": {
+          "texte": "Cible embarquée : casque EEG TGAM + ESP32 (hardware/esp32_neurosky/, prototype CERVEAU-1).",
+          "statut": "E",
+          "source": "hardware/esp32_neurosky/"
+        },
+        "PHI": {
+          "texte": "L'intention comme perturbation orientée du champ : lecture philosophique du protocole P32+, niveau documentaire.",
+          "statut": "H",
+          "source": "https://theosophie.histoire-des-sciences.eu"
+        }
+      },
+      "statut_global": "H",
+      "falsifieur": "La régénération du dataset seedé (SHA-256 228c6155…) ne reproduisant pas ReN > 10 pendant la fenêtre d'intention.",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/tree/main/examples/eeg_motor_intention",
+        "https://github.com/PORTEMANN/noetic-ash/blob/main/benchmarks/SHASUMS.txt"
+      ],
+      "notes": "P32+ : convention noetic-ash (suffixe « + »). Ne pas confondre avec P32 de l'atlas machine (loi Z-dépendante de la frontière r₁₂) — catalogue distinct."
     },
     {
       "id": "LEX-008",
-      "titre": "EEG — lecture de référence",
-      "signature": {"regime": "Cosmologique", "bande_dominante": "E2", "rtop_min": null, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": null, "ren_max": 1},
-      "niveaux": {
-        "M": "Corpus eeg (seed 42) : ReN médian < 1, bande E2 dominante.",
-        "S": "Cohérent avec un spectre EEG large bande de type 1/f.",
-        "N": "Signal de « fond cognitif » dans le langage de la machine.",
-        "T": "Corpus régénérable : examples/eeg/generate.py.",
-        "PHI": "La pensée mesurée comme bruit structuré — image documentaire."
+      "titre": "Exemplaire P33+ (noetic-ash) — ECG normal, coeur en régime cosmologique",
+      "signature": {
+        "regime": "Cosmologique"
       },
-      "statut_global": "C",
-      "falsifieur": "Régénérer le corpus et obtenir un hash différent de celui gelé dans benchmarks/SHASUMS.txt.",
-      "sources": ["benchmarks/SHASUMS.txt", "examples/eeg/"]
+      "niveaux": {
+        "M": {
+          "texte": "ECG synthétique 72 bpm : ReN ≈ 0,59 en moyenne de fenêtres, ≈ 1e-5 en médiane (agrégation d'interpret.py) — les deux très inférieurs à 1. Rythme quasi-périodique, torsion faible, pression dominante.",
+          "statut": "E",
+          "source": "examples/ecg_mitbih/ecg_normal.py (seed 42, dataset régénérable, SHA-256 d25d65f9…)"
+        },
+        "E": {
+          "texte": "Un rythme sinusal normal est quasi-périodique : la classification cosmologique est le comportement attendu. Validation sur données réelles : pipelines MIT-BIH (benchmarks/mitdb/).",
+          "statut": "E",
+          "source": "benchmarks/mitdb/"
+        }
+      },
+      "statut_global": "E",
+      "falsifieur": "Des ECG normaux (MIT-BIH NSRDB, ex. record 16265) classés majoritairement quantiques par le pipeline figé.",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/tree/main/examples/ecg_mitbih",
+        "https://github.com/PORTEMANN/noetic-ash/tree/main/benchmarks/mitdb"
+      ],
+      "notes": "P33+ : convention noetic-ash. Ne pas confondre avec P33 de l'atlas machine (contradiction des contraintes exactes, frontière r₁₂)."
     },
     {
       "id": "LEX-009",
-      "titre": "ECG — lecture de référence",
-      "signature": {"regime": "Méso", "bande_dominante": "E2", "rtop_min": 1, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": 1, "ren_max": 10},
+      "titre": "Exemplaire P34+ (noetic-ash) — vibration de roulement : le défaut comme passage de régime",
+      "signature": null,
       "niveaux": {
-        "M": "Corpus ecg (seed 42) : ReN médian dans ]1,10].",
-        "S": "Rythme quasi-périodique avec variabilité — cohérent physiologiquement.",
-        "N": "Oscillateur biologique stable.",
-        "T": "Corpus régénérable : examples/ecg/generate.py.",
-        "PHI": "Le cœur comme métronome méso — entre le fond et le pic."
+        "M": {
+          "texte": "Moteur sain : ReN ≈ 1,5e-4 (médiane, cosmologique). Roulement défectueux : ReN ≈ 78 (médiane, quantique). Cinq ordres de grandeur d'écart sur le même banc.",
+          "statut": "E",
+          "source": "examples/vibration_bearing/ (seed 42, SHA-256 bb20c04d… et 375d649e…)"
+        },
+        "E": {
+          "texte": "Maintenance prédictive : un défaut de roulement enrichit le spectre (chocs périodiques, modulation) — le passage cosmologique → quantique en est la lecture ASH.",
+          "statut": "E"
+        },
+        "I": {
+          "texte": "Cas d'usage industriel direct : seuil d'alarme ReN > 10 sur capteur vibratoire, zéro apprentissage supervisé, zéro paramètre ajusté.",
+          "statut": "E",
+          "source": "examples/vibration_bearing/"
+        }
       },
-      "statut_global": "C",
-      "falsifieur": "Régénérer le corpus et obtenir un hash différent de celui gelé dans benchmarks/SHASUMS.txt.",
-      "sources": ["benchmarks/SHASUMS.txt", "examples/ecg/"]
+      "statut_global": "E",
+      "falsifieur": "Sur un dataset public de roulements (ex. CWRU), des roulements sains classés quantiques ou des défectueux classés cosmologiques de façon systématique.",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/tree/main/examples/vibration_bearing"
+      ],
+      "notes": "P34+ : convention noetic-ash (suffixe « + »)."
     },
     {
       "id": "LEX-010",
-      "titre": "Moteur — vibration de référence",
-      "signature": {"regime": "Quantique", "bande_dominante": "E3", "rtop_min": 3, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": 10, "ren_max": null},
+      "titre": "Pont ANU ↔ nucléides — le comptage N/18",
+      "signature": null,
       "niveaux": {
-        "M": "Corpus moteur : harmoniques nettes de rotation, ReN > 10.",
-        "S": "Signature classique d'une machine tournante saine (raies + harmoniques).",
-        "N": "L'ordre mécanique lu comme quantique — cf. LEX-012.",
-        "T": "Corpus régénérable : examples/moteur/generate.py.",
-        "PHI": "La machine qui mesure reconnaît la machine qui tourne."
+        "E": {
+          "texte": "Côté vérifié : les 3 557 nucléides NUBASE2020/AME2020 et constantes CODATA 2018 du site techniques. Côté conjecture : la correspondance N/18 — les deux ne doivent pas être fusionnés.",
+          "statut": "H",
+          "source": "https://techniques.histoire-des-sciences.eu"
+        },
+        "I": {
+          "texte": "Les comptages d'« atomes ultimes » (ANU) de la Chimie Occulte (1908), divisés par 18, pointent vers les isotopes dominants des éléments. Pont éprouvé par la machine (chantier P10 atlas).",
+          "statut": "H",
+          "source": "https://techniques.histoire-des-sciences.eu (présenté à titre historique et documentaire) ; https://machine-noetique.histoire-des-sciences.eu/lexique.php (ANU)"
+        },
+        "PHI": {
+          "texte": "L'ANU comme atome ultime observé clairvoyamment : 178 planches des dissociations dans le corpus. Classification des éléments en 7 groupes morphologiques.",
+          "statut": "H",
+          "source": "https://theosophie.histoire-des-sciences.eu/index.php?page=planches"
+        }
       },
-      "statut_global": "C",
-      "falsifieur": "Régénérer le corpus et obtenir un hash différent de celui gelé dans benchmarks/SHASUMS.txt.",
-      "sources": ["benchmarks/SHASUMS.txt", "examples/moteur/"]
+      "statut_global": "H",
+      "falsifieur": "Un test statistique montrant que N/18 ne fait pas mieux que le hasard sur les isotopes dominants (à protocole figé).",
+      "sources": [
+        "https://techniques.histoire-des-sciences.eu",
+        "https://theosophie.histoire-des-sciences.eu/index.php?page=planches",
+        "https://machine-noetique.histoire-des-sciences.eu/lexique.php"
+      ],
+      "notes": "Entrée la plus fragile du lexique : conserver l'étiquette H et la mention documentaire en toutes circonstances. Le pont N/18 a été éprouvé par la machine noétique (chantier P10, atlas) — référence externe, approche distincte et postérieure à l'ASH."
     },
     {
       "id": "LEX-011",
-      "titre": "Collisions de numérotation P##",
-      "signature": {"regime": null, "bande_dominante": null, "rtop_min": null, "rtop_max": null, "rdyn_min": null, "rdyn_max": null, "ren_min": null, "ren_max": null},
+      "titre": "Convention de numérotation — P## (atlas machine) vs P##+ (noetic-ash)",
+      "signature": null,
       "niveaux": {
-        "M": "P32/P33 désignent dans l'atlas machine la frontière r₁₂ (P31→P32→P33) ; dans noetic-ash, des benchmarks EEG/ECG.",
-        "S": "Ambiguïté documentée dans lexicon/README.md ; harmonisation en attente.",
-        "N": "L'atlas machine prime pour la frontière r₁₂.",
-        "T": "Toujours qualifier : « P32 (atlas) » ou « P32 (noetic-ash) ».",
-        "PHI": "Nommer, c'est déjà mesurer — et parfois se tromper de règle."
+        "M": {
+          "texte": "Les numéros nus P0–P33 appartiennent à l'atlas de la machine noétique (ex. trilogie de la frontière r₁₂ : P31 → P32 → P33). Les programmes du présent dépôt portent le suffixe « + » : P32+ (EEG), P33+ (ECG), P34+ (vibrations), P35+ (campagne d'étalonnage du méso).",
+          "statut": "C",
+          "source": "docs/ecosystem.md"
+        }
       },
-      "statut_global": "H",
-      "falsifieur": "Non falsifiable : constat organisationnel.",
-      "sources": ["lexicon/README.md"]
+      "statut_global": "C",
+      "falsifieur": null,
+      "sources": [
+        "https://machine-noetique.histoire-des-sciences.eu/fiche.php?c=P31",
+        "https://machine-noetique.histoire-des-sciences.eu/fiche.php?c=P32",
+        "https://machine-noetique.histoire-des-sciences.eu/fiche.php?c=P33"
+      ],
+      "notes": "Remplace l'entrée historique « Frontière r₁₂ — la machine publie ses propres limites » (v0.2.0) : ce contenu relève du catalogue de la machine, approche distincte et postérieure à l'ASH. La leçon méthodologique demeure : une frontière mesurée vaut mieux qu'une portée exagérée."
     },
     {
       "id": "LEX-012",
       "titre": "Fenêtre de période 3 — l'ordre lu comme quantique",
-      "signature": {"regime": "Quantique", "bande_dominante": null, "rtop_min": 4, "rtop_max": 4, "rdyn_min": 0.3, "rdyn_max": 0.5, "ren_min": 10, "ren_max": null},
+      "signature": null,
       "niveaux": {
-        "M": "Logistique r ∈ [3,83 ; 3,86] : Rtop = 4, Rdyn = 0,396, 100 % des fenêtres quantiques.",
-        "S": "Un attracteur périodique parfaitement ordonné produit la lecture la plus « quantique » du balayage P35.",
-        "N": "Réfute l'assimilation naïve quantique ↔ microscopique/désordonné.",
-        "T": "Mesuré en P35 famille A ; corpus déterministe.",
-        "PHI": "L'ordre et le désordre ne sont pas les axes de cette grille."
+        "M": {
+          "texte": "Map logistique r ∈ [3.83, 3.86] (fenêtre de période 3, dynamique ORDONNÉE) : lue 100 % quantique par ASH (Rtop = 4, Rdyn = 0.396). La période 3 n'est pas une puissance de 2 : la structure est hors-grille d'octaves.",
+          "statut": "C",
+          "source": "benchmarks/p35_meso/sweep_meso.py (famille A, déterministe)"
+        },
+        "E": {
+          "texte": "ReN ne mesure pas l'ordre dynamique mais l'alignement spectral sur la grille 2^(1/12). Réciproquement, le chaos naissant (r ∈ [3.57, 3.73]) est lu cosmologique : la transition de Feigenbaum r∞ est invisible à l'ASH.",
+          "statut": "C",
+          "source": "benchmarks/p35_meso/README.md"
+        }
       },
       "statut_global": "C",
-      "falsifieur": "Régénérer P35 et obtenir pour r ∈ [3,83 ; 3,86] une lecture médiane non quantique.",
-      "sources": ["benchmarks/p35_meso/README.md"]
+      "falsifieur": "Re-exécution de sweep_meso.py ne reproduisant pas 100 % quantique sur r ∈ [3.83, 3.85].",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/tree/main/benchmarks/p35_meso"
+      ],
+      "notes": "Née du programme P35+. Conséquence : 'quantique' ne veut PAS dire 'chaotique' — terminologie à manier avec précision dans les publications."
     },
     {
       "id": "LEX-013",
-      "titre": "Ton pur = méso par construction",
-      "signature": {"regime": "Méso", "bande_dominante": null, "rtop_min": 1, "rtop_max": 1, "rdyn_min": 1.0, "rdyn_max": 1.0, "ren_min": 1, "ren_max": 10},
+      "titre": "Ton pur = méso par construction (fallback Rdyn)",
+      "signature": {
+        "regime": "Méso",
+        "rtop_max": 1
+      },
       "niveaux": {
-        "M": "Un seul pic sur la grille ⇒ repli Rdyn = 1.0 ⇒ ReN ≈ 2,5 ∈ ]1,10].",
-        "S": "Tout ton pur aligné sur la grille est classé méso, quelle que soit sa fréquence.",
-        "N": "Le méso comme régime de la « voix unique ».",
-        "T": "Vérifié en P35 famille B à λ = 0 (ReN ≈ 2,47).",
-        "PHI": "L'unité mesurée n'est ni le fond ni la multiplicité."
+        "M": {
+          "texte": "Rtop = 1 déclenche le fallback Rdyn = 1.0 (pas de paire de pics) : tout signal mono-pic obtient ReN ≈ 2,5 et se classe méso. Propriété de la définition, pas de la physique du signal.",
+          "statut": "C",
+          "source": "benchmarks/p35_meso/sweep_meso.py (famille B, λ = 0)"
+        },
+        "X": {
+          "texte": "Le classement méso d'un ton pur s'explique entièrement par le fallback Rdyn = 1.0 : une seule ligne de la spécification suffit à reproduire la décision.",
+          "statut": "C"
+        }
       },
       "statut_global": "C",
-      "falsifieur": "Exhiber un ton pur aligné sur la grille dont ReN sort de ]1,10].",
-      "sources": ["benchmarks/p35_meso/README.md", "docs/algorithm.md §3"]
+      "falsifieur": "Un sinus pur classé hors méso en configuration generic figée.",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/tree/main/benchmarks/p35_meso"
+      ],
+      "notes": "À connaître avant d'interpréter tout signal quasi-sinusoïdal (machines tournantes saines, ton de calibration…)."
     },
     {
       "id": "LEX-014",
       "titre": "Rdyn est aveugle au désaccord sub-demi-ton",
-      "signature": {"regime": null, "bande_dominante": null, "rtop_min": 2, "rtop_max": null, "rdyn_min": 0, "rdyn_max": 0, "ren_min": null, "ren_max": null},
+      "signature": null,
       "niveaux": {
-        "M": "Octave désaccordée de δ ∈ [0 ; 6] demi-tons : Rdyn = 0 pour tout δ (P35 famille C).",
-        "S": "La résolution de Rdyn est bornée par le pas de la grille 12 TET ; deux composantes séparées de moins d'un demi-ton projettent sur le même voisinage.",
-        "N": "La machine n'entend pas ce que la grille ne résout pas.",
-        "T": "Ne pas utiliser Rdyn pour mesurer un désaccord fin (< 1 demi-ton).",
-        "PHI": "Toute mesure a un grain ; ici, le grain est musical."
+        "M": {
+          "texte": "Deux sinusoïdes désaccordées de δ demi-tons (δ ∈ [0, 6]) donnent Rdyn = 0 pour tout δ : l'interpolation plaque chaque pic sur la note-grille la plus proche, et Rdyn ne mesure que la régularité des espacements ENTRE pics détectés sur la grille.",
+          "statut": "C",
+          "source": "benchmarks/p35_meso/sweep_meso.py (famille C, 13 valeurs)"
+        },
+        "E": {
+          "texte": "Rdyn n'est donc PAS une mesure de désaccord absolu : c'est une mesure de régularité relative des espacements. Toute utilisation comme 'détecteur de désaccord' serait une erreur d'interprétation.",
+          "statut": "C",
+          "source": "benchmarks/p35_meso/README.md"
+        },
+        "X": {
+          "texte": "Angle mort explicite : « Rdyn = 0 » ne certifie pas l'accord, il dit seulement « espacements réguliers sur la grille ». L'explication doit le mentionner.",
+          "statut": "C"
+        }
       },
       "statut_global": "C",
-      "falsifieur": "Exhiber un δ ∈ ]0 ; 6] donnant Rdyn ≠ 0 en régénérant la famille C de P35.",
-      "sources": ["benchmarks/p35_meso/README.md"]
+      "falsifieur": "Une paire de sinusoïdes propres donnant Rdyn > 0 sans pic parasite.",
+      "sources": [
+        "https://github.com/PORTEMANN/noetic-ash/tree/main/benchmarks/p35_meso"
+      ]
     }
   ]
 }
