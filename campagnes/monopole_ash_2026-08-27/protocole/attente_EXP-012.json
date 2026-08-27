@@ -1,0 +1,10 @@
+{
+  "id": "EXP-012",
+  "titre": "Monopole SU(2) radial (P0) — l'équilibre de Bogomolny lit méso, migration monotone avec ρ",
+  "contexte_etiquette": "monopole_su2_radial",
+  "regime_attendu": "Méso",
+  "statut": "E",
+  "source": "noetic-machine P0 (p0_monopole_su2.py 52929bda0603, p0_r05.json, p0_r1.json) ; campagne monopole_ash à paraître",
+  "falsifieur": "Sur les branches convergées ρ ∈ {0,1 ; 0,25 ; 0,5 ; 1 ; 2 ; 4} à protocole C13.1 figé : (a) le profil BPS (branche ρ → 0⁺, ancrée sur ρ = 0,5 calibré C ≃ 1) lit hors méso ; ou (b) ReN n'est pas monotone en ρ (à grille et normalisation communes). L'un des deux tue la correspondance phénoménologique pression/torsion entre le fonctionnel C(ρ) et le ReN.",
+  "notes": "Attente CONJECTURALE déclarée AVANT mesure (statut E motivé par la théorie, non calibrée). Raisonnement : la borne de Bogomolny est l'équilibre exact pression (E_gauge + E_pot) ↔ torsion (E_higgs) ; or ReN = (torsion × complexité topologique) / (pression × dispersion). Un équilibre exact des deux doit donc lire au voisinage de la frontière méso (ReN ≈ 1–10), comme un point de transition — pas en régime saturé. La migration monotone attendue : ρ croissant → potentiel dominant → pression croissante → ReN décroissant vers le cosmologique ; ρ → 0⁺ → torsion relativement renforcée → ReN croissant. Le régime lu sur la branche BPS est le verdict central ; les autres ρ tracent la migration et sont consignés contre cette même attente (leurs DIVERGENT éventuels sont la mesure de la migration, pas des échecs). Rappel de propriété : ReN ∝ 1/amplitude (B3-FAIL #1) — normalisation RMS = 1 obligatoire sur tous les profils, déclarée dans chaque signature."
+}
