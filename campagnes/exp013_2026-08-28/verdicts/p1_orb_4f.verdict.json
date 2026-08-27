@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "4e29c8ebc711881d2e969800c06e16f5a84283036fe1a8df18e99f1d0af91371",
+ "contexte": {
+  "domaine": "spectre_lie",
+  "etiquette": "p1_orbitale_radiale"
+ },
+ "attente": {
+  "id": "EXP-013b",
+  "statut": "E",
+  "regime_attendu": "Quantique",
+  "source": "noetic-machine-complete P1 (p1_etats_lies.py, hamiltonien radial sur fond monopole, Coulomb tronqu\u00e9 R_core=3,04, \u03b1=1/137,036) ; campagne exp013 locale (protocole C14 fig\u00e9)",
+  "falsifieur": "Sur les 10 orbitales u_{n,l}(r) fig\u00e9es du protocole C14 volet b (1s,2s,2p,3s,3p,3d,4s,4p,4d,4f) : (a) le fondamental 1s (z\u00e9ro n\u0153ud) lit hors Quantique \u2014 l'instrument rate alors le cas mono-bosse de r\u00e9f\u00e9rence ; ou (b) ReN ne d\u00e9cro\u00eet pas monotone avec le nombre de n\u0153uds radiaux (n\u2212l\u22121) \u2014 la structure nodale, qui est le contenu spectral de P1, est alors invisible \u00e0 l'instrument ; ou (c) les orbitales \u00e0 2 n\u0153uds et plus (3s, 4s, 4p) lisent Quantique comme 1s \u2014 m\u00eame conclusion que (b). Une seule clause suffit."
+ },
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 0.0,
+  "Rtop": 0.0,
+  "Rdyn": 1.0,
+  "bande_dominante": "E1"
+ },
+ "verdict": "DIVERGENT",
+ "explication": "ReN = 0 (agr\u00e9gation mediane de 6 fen\u00eatres) \u2192 r\u00e9gime Cosmologique ; Rtop = 0.0, Rdyn = 1, bande dominante E1. DIVERGENCE : l'attente EXP-013b (statut E, source : noetic-machine-complete P1 (p1_etats_lies.py, hamiltonien radial sur fond monopole, Coulomb tronqu\u00e9 R_core=3,04, \u03b1=1/137,036) ; campagne exp013 locale (protocole C14 fig\u00e9)) pr\u00e9voit Quantique, le r\u00e9gime mesur\u00e9 est Cosmologique. Consign\u00e9e avec la m\u00eame rigueur qu'une conformit\u00e9 (B3-FAIL) \u2014 falsifieur de l'attente : Sur les 10 orbitales u_{n,l}(r) fig\u00e9es du protocole C14 volet b (1s,2s,2p,3s,3p,3d,4s,4p,4d,4f) : (a) le fondamental 1s (z\u00e9ro n\u0153ud) lit hors Quantique \u2014 l'instrument rate alors le cas mono-bosse de r\u00e9f\u00e9rence ; ou (b) ReN ne d\u00e9cro\u00eet pas monotone avec le nombre de n\u0153uds radiaux (n\u2212l\u22121) \u2014 la structure nodale, qui est le contenu spectral de P1, est alors invisible \u00e0 l'instrument ; ou (c) les orbitales \u00e0 2 n\u0153uds et plus (3s, 4s, 4p) lisent Quantique comme 1s \u2014 m\u00eame conclusion que (b). Une seule clause suffit. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) \u2014 un ton pur se classe m\u00e9so par construction, cf. LEX-013 ; Rdyn est aveugle au d\u00e9saccord sub-demi-ton, cf. LEX-014.",
+ "horodatage": "2026-08-28T00:00:00+00:00",
+ "sha256": "e4fa4146afeb446b1cecf657d9ab5efe3de5269104b9dd1c2f9b06c69af687f9"
+}
