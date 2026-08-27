@@ -1,0 +1,53 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 1
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E2",
+  "contexte": {
+    "date_mesure": "2026-08-28",
+    "description": "Campagne exp013 C14+A1 — GP amorti 3D (e44_core.py blob 2baf8d8d…), quench bruit blanc graine 2026, N=48, γ=0,2, dt=0,1, 2048 pas ; L(t) = longueur totale des boucles fermées, tous les 4 pas",
+    "domaine": "dynamique_vortex",
+    "etiquette": "gp_vortex_relax"
+  },
+  "falsifieur": "Sur les séries figées du protocole C14 volet a (graine 2026, 2048 pas, dt=0,1) : (a) la série N_v(t) (plaquettes de vorticité, échantillonnée à chaque pas) OU la série L(t) (longueur totale des boucles fermées, échantillonnée tous les 4 pas) lit Quantique (ReN > 10) — la dynamique d'annihilation événementielle est alors lue comme un profil mono-pic, et le défaut révélé par EXP-012 n'est pas levé par le passage au dynamique ; ou (b) les deux séries donnent des régimes différents — l'instrument est alors instable sur deux mesures du même processus.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.03125,
+    "fenetre_s": 204.8,
+    "fs": 2.5,
+    "n_octaves": 5,
+    "nperseg": 256,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.085394,
+    "H": 1.595548,
+    "Rc": 1.07635,
+    "Rdyn": 0.552027,
+    "ReN": 27.448757,
+    "Rtop": 10.0,
+    "bandes": [
+      0.436957,
+      0.55401,
+      0.417957,
+      0.468616,
+      0.328409,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Quantique",
+  "signal": {
+    "n_points": 512,
+    "sha256": "d29b5b6fecb79e70efe48b5def5aa07236d6424a14ff303b73b4e1ad347b1f4f",
+    "source": "Campagne exp013 C14+A1 — GP amorti 3D (e44_core.py blob 2baf8d8d…), quench bruit blanc graine 2026, N=48, γ=0,2, dt=0,1, 2048 pas ; L(t) = longueur totale des boucles fermées, tous les 4 pas"
+  },
+  "sources": [
+    "noetic-machine e44_core",
+    "protocole C14+A1 figé"
+  ],
+  "statut": "E"
+}

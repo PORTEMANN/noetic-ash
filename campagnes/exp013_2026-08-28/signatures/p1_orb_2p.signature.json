@@ -1,0 +1,53 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 6
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E1",
+  "contexte": {
+    "date_mesure": "2026-08-28",
+    "description": "Campagne exp013 C14+A2 — orbitale radiale u_{2p}(r), hamiltonien P1 sur fond monopole ρ=1 (C=1,3033), boîte RMAX=4000, NR=4000, dr=1 (table P1 publiée reproduite : 1s ratio 0,9994)",
+    "domaine": "spectre_lie",
+    "etiquette": "p1_orbitale_radiale"
+  },
+  "falsifieur": "Sur les 10 orbitales u_{n,l}(r) figées du protocole C14 volet b (1s,2s,2p,3s,3p,3d,4s,4p,4d,4f) : (a) le fondamental 1s (zéro nœud) lit hors Quantique — l'instrument rate alors le cas mono-bosse de référence ; ou (b) ReN ne décroît pas monotone avec le nombre de nœuds radiaux (n−l−1) — la structure nodale, qui est le contenu spectral de P1, est alors invisible à l'instrument ; ou (c) les orbitales à 2 nœuds et plus (3s, 4s, 4p) lisent Quantique comme 1s — même conclusion que (b). Une seule clause suffit.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.00390625,
+    "fenetre_s": 1024.0,
+    "fs": 1.0,
+    "n_octaves": 5,
+    "nperseg": 1024,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.876814,
+    "H": 0.412458,
+    "Rc": 0.563813,
+    "Rdyn": 1.0,
+    "ReN": 0.0,
+    "Rtop": 0.0,
+    "bandes": [
+      0.99311,
+      0.116296,
+      0.014305,
+      0.001783,
+      0.000223,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Cosmologique",
+  "signal": {
+    "n_points": 4000,
+    "sha256": "769be9798595d53b9c78af282f2ff40d9c4fdc68ac458755a63685ff8e4d64f1",
+    "source": "Campagne exp013 C14+A2 — orbitale radiale u_{2p}(r), hamiltonien P1 sur fond monopole ρ=1 (C=1,3033), boîte RMAX=4000, NR=4000, dr=1 (table P1 publiée reproduite : 1s ratio 0,9994)"
+  },
+  "sources": [
+    "noetic-machine-complete P1",
+    "protocole C14+A2 figé"
+  ],
+  "statut": "E"
+}

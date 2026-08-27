@@ -1,0 +1,52 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 7
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E1",
+  "contexte": {
+    "date_mesure": "2026-08-28",
+    "description": "Campagne exp013 C14 — décroissance exp(−t/40) pure (contrôle)",
+    "domaine": "etalonnage",
+    "etiquette": "controle_expo"
+  },
+  "falsifieur": "Contrôle statut H : consigné sans attente (HORS-CONTRAT), aucune conclusion.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.125,
+    "fenetre_s": 51.2,
+    "fs": 10.0,
+    "n_octaves": 5,
+    "nperseg": 256,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.88306,
+    "H": 0.399092,
+    "Rc": 0.035171,
+    "Rdyn": 1.0,
+    "ReN": 0.0,
+    "Rtop": 0.0,
+    "bandes": [
+      0.993761,
+      0.110701,
+      0.013457,
+      0.001668,
+      0.0002,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Cosmologique",
+  "signal": {
+    "n_points": 2048,
+    "sha256": "1327b3d560dbb2d97709c3b5608e25ba850ef08e31e6caec786c1db72394542d",
+    "source": "Campagne exp013 C14 — décroissance exp(−t/40) pure (contrôle)"
+  },
+  "sources": [
+    "protocole C14 figé"
+  ],
+  "statut": "H"
+}

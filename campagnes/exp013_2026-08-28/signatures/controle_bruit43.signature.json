@@ -1,0 +1,52 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 7
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E5",
+  "contexte": {
+    "date_mesure": "2026-08-28",
+    "description": "Campagne exp013 C14 — bruit blanc gaussien graine 43 (contrôle)",
+    "domaine": "etalonnage",
+    "etiquette": "controle_bruit"
+  },
+  "falsifieur": "Contrôle statut H : consigné sans attente (HORS-CONTRAT), aucune conclusion.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.125,
+    "fenetre_s": 51.2,
+    "fs": 10.0,
+    "n_octaves": 5,
+    "nperseg": 256,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.005251,
+    "H": 1.603564,
+    "Rc": 25.153223,
+    "Rdyn": 0.433903,
+    "ReN": 0.331841,
+    "Rtop": 13.0,
+    "bandes": [
+      0.448537,
+      0.362279,
+      0.404683,
+      0.480157,
+      0.485408,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Cosmologique",
+  "signal": {
+    "n_points": 2048,
+    "sha256": "a3909a6b7611313e91cbcdbef0db4690401d6d43a6b7be420f7794319f528a87",
+    "source": "Campagne exp013 C14 — bruit blanc gaussien graine 43 (contrôle)"
+  },
+  "sources": [
+    "protocole C14 figé"
+  ],
+  "statut": "H"
+}
