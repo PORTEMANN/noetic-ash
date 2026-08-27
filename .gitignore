@@ -21,3 +21,4 @@ ash_bands.csv
 !benchmarks/results/*.csv
 *.png
 !docs/figures/*.png
+bridge/examples/csv/
