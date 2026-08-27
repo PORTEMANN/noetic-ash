@@ -1,0 +1,54 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 39
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E2",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "Roulement sain, charge 2 hp (1750 tr/min), capteur DE 12 kHz",
+    "domaine": "vibration_hf",
+    "etiquette": "vibration_hf_roulement_sain"
+  },
+  "falsifieur": "Un roulement sain réel lu non-quantique, ou avec ReN < 30, sur le protocole vibration_hf déclaré (enveloppe Hilbert 2–5 kHz, RMS=1, grille f0=10 Hz 5 octaves).",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 10.0,
+    "fenetre_s": 0.5,
+    "fs": 12000.0,
+    "n_octaves": 5,
+    "nperseg": 2048,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.309525,
+    "H": 1.445608,
+    "Rc": 0.546258,
+    "Rdyn": 0.771362,
+    "ReN": 177.773327,
+    "Rtop": 6.0,
+    "bandes": [
+      0.47194,
+      0.781465,
+      0.319221,
+      0.187201,
+      0.16455,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "enveloppe_hilbert_2000-5000Hz_rms1",
+  "regime": "Quantique",
+  "signal": {
+    "duree_s": 10.0,
+    "n_points": 120000,
+    "sha256": "cc3557e47afe7746675da10e86720b8a58f42ce2585ae31f863d414f300f14cb",
+    "source": "CWRU bearing dataset, fichier 99.mat (engineering.case.edu), canal DE 12 kHz — données réelles ; signal analysé = enveloppe Hilbert 2–5 kHz normalisée RMS=1"
+  },
+  "sources": [
+    "https://engineering.case.edu/bearingdatacenter",
+    "Roulement sain, charge 2 hp (1750 tr/min), capteur DE 12 kHz"
+  ],
+  "statut": "E"
+}

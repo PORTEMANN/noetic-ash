@@ -1,0 +1,30 @@
+{
+  "attente": {
+    "falsifieur": "Un défaut avéré (bague interne, externe ou bille) avec ReN > 30 sur le protocole vibration_hf déclaré.",
+    "id": "EXP-011",
+    "regime_attendu": [
+      "Méso",
+      "Quantique"
+    ],
+    "source": "campagnes/vibration_hf_2026-08-27/ (CWRU 105/106/118/119/130/131)",
+    "statut": "E"
+  },
+  "contexte": {
+    "domaine": "vibration_hf",
+    "etiquette": "vibration_hf_roulement_defaut"
+  },
+  "explication": "ReN = 17.93 (agrégation mediane de 39 fenêtres) → régime Quantique ; Rtop = 4.0, Rdyn = 0.3062, bande dominante E4. L'attente EXP-011 (statut E, source : campagnes/vibration_hf_2026-08-27/ (CWRU 105/106/118/119/130/131)) prévoit Méso ou Quantique pour le contexte « vibration_hf_roulement_defaut » : régime mesuré dans l'attente.",
+  "format": "ash-verdict/0.1",
+  "horodatage": "2026-08-27T18:00:00Z",
+  "mesure": {
+    "Rdyn": 0.306186,
+    "ReN": 17.932284,
+    "Rtop": 4.0,
+    "bande_dominante": "E4",
+    "regime": "Quantique"
+  },
+  "pont_version": "0.1.0",
+  "sha256": "5f60bbd1154e733c8220c5ab532ae921d1aa26d8a95cd673ec2bce10ea565ea9",
+  "signature_sha256": "a8a62adcc23b3c427e6b92576f1c59250980d0c9ee59ee16b07ccd9e5beb065d",
+  "verdict": "CONFORME"
+}

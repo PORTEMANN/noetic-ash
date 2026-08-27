@@ -1,0 +1,54 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 39
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E2",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "Défaut bille 7 mil, charge 0 hp (1797 tr/min) — BSF/2 ≈ 71 Hz",
+    "domaine": "vibration_hf",
+    "etiquette": "vibration_hf_roulement_defaut"
+  },
+  "falsifieur": "Un défaut avéré (bague interne, externe ou bille) avec ReN > 30 sur le protocole vibration_hf déclaré.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 10.0,
+    "fenetre_s": 0.5,
+    "fs": 12000.0,
+    "n_octaves": 5,
+    "nperseg": 2048,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.025949,
+    "H": 1.60173,
+    "Rc": 1.344661,
+    "Rdyn": 0.614585,
+    "ReN": 3.9763,
+    "Rtop": 6.0,
+    "bandes": [
+      0.472055,
+      0.498004,
+      0.471555,
+      0.424682,
+      0.345759,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "enveloppe_hilbert_2000-5000Hz_rms1",
+  "regime": "Méso",
+  "signal": {
+    "duree_s": 10.0,
+    "n_points": 120000,
+    "sha256": "300069fc1672815697baf01720d088b996241114d863508dd2b43a18344e38cb",
+    "source": "CWRU bearing dataset, fichier 118.mat (engineering.case.edu), canal DE 12 kHz — données réelles ; signal analysé = enveloppe Hilbert 2–5 kHz normalisée RMS=1"
+  },
+  "sources": [
+    "https://engineering.case.edu/bearingdatacenter",
+    "Défaut bille 7 mil, charge 0 hp (1797 tr/min) — BSF/2 ≈ 71 Hz"
+  ],
+  "statut": "E"
+}

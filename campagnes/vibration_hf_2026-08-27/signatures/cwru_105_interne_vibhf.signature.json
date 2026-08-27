@@ -1,0 +1,54 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 39
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E5",
+  "contexte": {
+    "date_mesure": "2026-08-27",
+    "description": "Défaut bague interne 7 mil, charge 0 hp (1797 tr/min) — BPFI ≈ 162 Hz",
+    "domaine": "vibration_hf",
+    "etiquette": "vibration_hf_roulement_defaut"
+  },
+  "falsifieur": "Un défaut avéré (bague interne, externe ou bille) avec ReN > 30 sur le protocole vibration_hf déclaré.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 10.0,
+    "fenetre_s": 0.5,
+    "fs": 12000.0,
+    "n_octaves": 5,
+    "nperseg": 2048,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.00575,
+    "H": 1.542301,
+    "Rc": 1.090227,
+    "Rdyn": 0.384615,
+    "ReN": 1.830508,
+    "Rtop": 5.0,
+    "bandes": [
+      0.204358,
+      0.283711,
+      0.546558,
+      0.524436,
+      0.552309,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "enveloppe_hilbert_2000-5000Hz_rms1",
+  "regime": "Méso",
+  "signal": {
+    "duree_s": 10.0,
+    "n_points": 120000,
+    "sha256": "6a1f63f10bdfa97b8a3afcbd6d37905b7db01f4669802ebbfa68028f245f95f7",
+    "source": "CWRU bearing dataset, fichier 105.mat (engineering.case.edu), canal DE 12 kHz — données réelles ; signal analysé = enveloppe Hilbert 2–5 kHz normalisée RMS=1"
+  },
+  "sources": [
+    "https://engineering.case.edu/bearingdatacenter",
+    "Défaut bague interne 7 mil, charge 0 hp (1797 tr/min) — BPFI ≈ 162 Hz"
+  ],
+  "statut": "E"
+}

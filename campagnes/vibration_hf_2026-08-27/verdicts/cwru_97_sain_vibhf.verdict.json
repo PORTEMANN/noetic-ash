@@ -1,0 +1,27 @@
+{
+  "attente": {
+    "falsifieur": "Un roulement sain réel lu non-quantique, ou avec ReN < 30, sur le protocole vibration_hf déclaré (enveloppe Hilbert 2–5 kHz, RMS=1, grille f0=10 Hz 5 octaves).",
+    "id": "EXP-010",
+    "regime_attendu": "Quantique",
+    "source": "campagnes/vibration_hf_2026-08-27/ (CWRU 97/98/99, charges 0–2 hp)",
+    "statut": "E"
+  },
+  "contexte": {
+    "domaine": "vibration_hf",
+    "etiquette": "vibration_hf_roulement_sain"
+  },
+  "explication": "ReN = 85.29 (agrégation mediane de 39 fenêtres) → régime Quantique ; Rtop = 5.0, Rdyn = 0.6236, bande dominante E2. L'attente EXP-010 (statut E, source : campagnes/vibration_hf_2026-08-27/ (CWRU 97/98/99, charges 0–2 hp)) prévoit Quantique pour le contexte « vibration_hf_roulement_sain » : régime mesuré dans l'attente.",
+  "format": "ash-verdict/0.1",
+  "horodatage": "2026-08-27T18:00:00Z",
+  "mesure": {
+    "Rdyn": 0.62361,
+    "ReN": 85.289117,
+    "Rtop": 5.0,
+    "bande_dominante": "E2",
+    "regime": "Quantique"
+  },
+  "pont_version": "0.1.0",
+  "sha256": "49d25cf877158071df73fba3b67f56dfa9598f8cd88313bf116345da6e5f9cf2",
+  "signature_sha256": "ff53c44572d558ac8ebabeb99423435357fe6028dffc552cb4c06b7e2008f84d",
+  "verdict": "CONFORME"
+}
