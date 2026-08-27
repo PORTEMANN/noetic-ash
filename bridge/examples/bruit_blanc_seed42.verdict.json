@@ -1,0 +1,30 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "9d96194c7280d154954ca25b4cbcc225a2276b173152e7ec0561c92e6e9bb5aa",
+ "contexte": {
+  "domaine": "etalonnage",
+  "etiquette": "bruit_blanc_stationnaire"
+ },
+ "attente": {
+  "id": "EXP-006",
+  "statut": "C",
+  "regime_attendu": [
+   "Cosmologique",
+   "Méso"
+  ],
+  "source": "CHANGELOG v1.0.0 (B3-FAIL #2, 100 graines) ; tests/test_ash.py ; lexique LEX-005",
+  "falsifieur": "Plus de 5 % de fenêtres quantiques sur le protocole figé 100 graines (seed 42, fs = 250 Hz, fenêtre 2 s)."
+ },
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 0.705954,
+  "Rtop": 4,
+  "Rdyn": 0.389776,
+  "bande_dominante": "E3"
+ },
+ "verdict": "CONFORME",
+ "explication": "ReN = 0.706 (agrégation mediane de 9 fenêtres) → régime Cosmologique ; Rtop = 4, Rdyn = 0.3898, bande dominante E3. L'attente EXP-006 (statut C, source : CHANGELOG v1.0.0 (B3-FAIL #2, 100 graines) ; tests/test_ash.py ; lexique LEX-005) prévoit Cosmologique ou Méso pour le contexte « bruit_blanc_stationnaire » : régime mesuré dans l'attente. Mises en garde : ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+ "horodatage": "2026-08-27T12:00:00Z",
+ "sha256": "6c72991925ae8ebc186725ce06a7ce9a4612d2e1a73af456dcb4267059c4235e"
+}

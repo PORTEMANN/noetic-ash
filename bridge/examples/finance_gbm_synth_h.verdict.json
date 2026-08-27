@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "ad6d78c56880747fc1b03eaeb4a4dcd76685b9553ca404308a5477f7be556d1c",
+ "contexte": {
+  "domaine": "finance",
+  "etiquette": "finance_echantillon"
+ },
+ "attente": {
+  "id": "EXP-007",
+  "statut": "H",
+  "regime_attendu": null,
+  "source": "contrib/finance/ ; décision de session du 2026-08-27",
+  "falsifieur": "Sur N séries financières réelles à protocole figé, une distribution des régimes indiscernable de surrogates aléatoires (mêmes statistiques du premier ordre) tue la piste d'une structure spectrale spécifique en finance."
+ },
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 1e-06,
+  "Rtop": 1,
+  "Rdyn": 1.0,
+  "bande_dominante": "E1"
+ },
+ "verdict": "EXPLORATION",
+ "explication": "ReN = 1e-06 (agrégation mediane de 9 fenêtres) → régime Cosmologique ; Rtop = 1, Rdyn = 1, bande dominante E1. L'attente EXP-007 (statut H, source : contrib/finance/ ; décision de session du 2026-08-27) ne porte aucune prédiction (exploration, statut H) : la banque consigne la signature, rien n'est conclu. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) — un ton pur se classe méso par construction, cf. LEX-013 ; Rdyn est aveugle au désaccord sub-demi-ton, cf. LEX-014. ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+ "horodatage": "2026-08-27T12:00:00Z",
+ "sha256": "804b8515fb039ddf160631d7c3a69259dddc3c453949d4b407dc0df4ca9f600c"
+}

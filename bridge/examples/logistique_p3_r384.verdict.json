@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "d6c0961a9cc02216d1ce4188929e45f25f39627a8daf13048e1d1633223141ca",
+ "contexte": {
+  "domaine": "chaos",
+  "etiquette": "logistique_periode3"
+ },
+ "attente": {
+  "id": "EXP-005",
+  "statut": "C",
+  "regime_attendu": "Quantique",
+  "source": "benchmarks/p35_meso/sweep_meso.py (famille A, r ∈ [3.83, 3.86], protocole figé) ; lexique LEX-012",
+  "falsifieur": "Ré-exécution de sweep_meso.py ne reproduisant pas 100 % quantique sur r ∈ [3.83, 3.85]."
+ },
+ "mesure": {
+  "regime": "Quantique",
+  "ReN": 14.374909,
+  "Rtop": 4,
+  "Rdyn": 0.39598,
+  "bande_dominante": "E2"
+ },
+ "verdict": "CONFORME",
+ "explication": "ReN = 14.37 (agrégation mediane de 18 fenêtres) → régime Quantique ; Rtop = 4, Rdyn = 0.396, bande dominante E2. L'attente EXP-005 (statut C, source : benchmarks/p35_meso/sweep_meso.py (famille A, r ∈ [3.83, 3.86], protocole figé) ; lexique LEX-012) prévoit Quantique pour le contexte « logistique_periode3 » : régime mesuré dans l'attente. Mises en garde : ReN ∝ 1/amplitude (B3-FAIL #1) : ne comparer ce ReN à d'autres signatures qu'à normalisation d'amplitude commune déclarée.",
+ "horodatage": "2026-08-27T12:00:00Z",
+ "sha256": "a24f54f03269a0cc4f71032988698b88ae4d8b7056cf34a203c163567abfed26"
+}
