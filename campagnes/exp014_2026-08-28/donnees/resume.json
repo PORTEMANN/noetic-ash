@@ -1,0 +1,266 @@
+{
+  "format": "note-calibration/0.1",
+  "objet": "Calibration d'une grille ASH basse pour les orbitales P1 — échec documenté (B3-FAIL)",
+  "instrument": {
+    "ash_version": "1.0.0",
+    "ash_core_sha256": "338dbda7b499fdc8ea00beb0ddc696270f47eda38253902edc77cba28eedeb0e",
+    "n_octaves": 5,
+    "overlap": 0.5,
+    "normalisation": "rms1",
+    "agregation": "mediane"
+  },
+  "grille_balayee": {
+    "forme": "f0 = 2^-11 * 2^(k/12)",
+    "k_min": -10,
+    "k_max": 13
+  },
+  "pic_welch_1s": 0.0009765625,
+  "ren_1s_par_k": {
+    "-10": {
+      "ReN": 0.838041,
+      "regime": "Cosmologique"
+    },
+    "-9": {
+      "ReN": 0.851142,
+      "regime": "Cosmologique"
+    },
+    "-8": {
+      "ReN": 0.813005,
+      "regime": "Cosmologique"
+    },
+    "-7": {
+      "ReN": 0.709487,
+      "regime": "Cosmologique"
+    },
+    "-6": {
+      "ReN": 0.522359,
+      "regime": "Cosmologique"
+    },
+    "-5": {
+      "ReN": 0.227858,
+      "regime": "Cosmologique"
+    },
+    "-4": {
+      "ReN": 0.22329,
+      "regime": "Cosmologique"
+    },
+    "-3": {
+      "ReN": 0.815341,
+      "regime": "Cosmologique"
+    },
+    "-2": {
+      "ReN": 1.656798,
+      "regime": "Méso"
+    },
+    "-1": {
+      "ReN": 2.795659,
+      "regime": "Méso"
+    },
+    "0": {
+      "ReN": 4.313288,
+      "regime": "Méso"
+    },
+    "1": {
+      "ReN": 6.304342,
+      "regime": "Méso"
+    },
+    "2": {
+      "ReN": 8.555372,
+      "regime": "Méso"
+    },
+    "3": {
+      "ReN": 11.12183,
+      "regime": "Quantique"
+    },
+    "4": {
+      "ReN": 14.076241,
+      "regime": "Quantique"
+    },
+    "5": {
+      "ReN": 17.512137,
+      "regime": "Quantique"
+    },
+    "6": {
+      "ReN": 21.554017,
+      "regime": "Quantique"
+    },
+    "7": {
+      "ReN": 26.348428,
+      "regime": "Quantique"
+    },
+    "8": {
+      "ReN": 32.056996,
+      "regime": "Quantique"
+    },
+    "9": {
+      "ReN": 38.907692,
+      "regime": "Quantique"
+    },
+    "10": {
+      "ReN": 47.092178,
+      "regime": "Quantique"
+    },
+    "11": {
+      "ReN": 56.638038,
+      "regime": "Quantique"
+    },
+    "12": {
+      "ReN": 0.0,
+      "regime": "Cosmologique"
+    },
+    "13": {
+      "ReN": 0.0,
+      "regime": "Cosmologique"
+    }
+  },
+  "ordonnancement_nodal": {
+    "-10": {
+      "f0": 0.0002740385860130305,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "-9": {
+      "f0": 0.0002903337683112112,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "-8": {
+      "f0": 0.0003075979125719905,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "-7": {
+      "f0": 0.00032588863627198105,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "-6": {
+      "f0": 0.00034526698300124393,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "-5": {
+      "f0": 0.0003657976261905961,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "-4": {
+      "f0": 0.0003875490849531737,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "-3": {
+      "f0": 0.0004105939527606028,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "-2": {
+      "f0": 0.00043500913971696254,
+      "mono_s": true,
+      "mono_p": false
+    },
+    "-1": {
+      "f0": 0.00046087612923910817,
+      "mono_s": false,
+      "mono_p": true
+    },
+    "0": {
+      "f0": 0.00048828125,
+      "mono_s": false,
+      "mono_p": true
+    },
+    "1": {
+      "f0": 0.0005173159640426247,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "2": {
+      "f0": 0.000548077172026061,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "3": {
+      "f0": 0.0005806675366224224,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "4": {
+      "f0": 0.000615195825143981,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "5": {
+      "f0": 0.0006517772725439621,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "6": {
+      "f0": 0.0006905339660024879,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "7": {
+      "f0": 0.0007315952523811921,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "8": {
+      "f0": 0.0007750981699063473,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "9": {
+      "f0": 0.0008211879055212056,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "10": {
+      "f0": 0.0008700182794339251,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "11": {
+      "f0": 0.0009217522584782162,
+      "mono_s": true,
+      "mono_p": true
+    },
+    "12": {
+      "f0": 0.0009765625,
+      "mono_s": false,
+      "mono_p": false
+    },
+    "13": {
+      "f0": 0.0010346319280852493,
+      "mono_s": false,
+      "mono_p": false
+    }
+  },
+  "controles": {
+    "controle_bruit43@k0": "Cosmologique",
+    "controle_expo@k0": "Cosmologique",
+    "controle_bruit43@k2": "Cosmologique",
+    "controle_expo@k2": "Cosmologique"
+  },
+  "verdict_calibration": {
+    "clause_a_regime_1s_quantique": "ECHEC — Quantique atteint uniquement dans la rampe de divergence au bord du plancher (ReN 4,31 -> 56,64 -> 0 entre k=0 et k=+12, soit ~6 % de variation de f0) ; aucun plateau stable ; toute grille 'Quantique' serait posée sur l'artefact de bord.",
+    "clause_b_structure_nodale": "SUCCES PARTIEL — ordonnancement nodal présent sur deux plateaux (k<=-3 et k=+1..+2), bande d'instabilité moiré entre k=-2 et k=0 ; Rc croît avec le nombre de nœuds sur toutes les grilles (indicateur le plus robuste).",
+    "specificite_controles": "aucune fausse alarme Quantique (les deux contrôles lisent Cosmologique, contenu hors bande — test trivial)."
+  },
+  "fond_monopole": {
+    "rho": 1.0,
+    "C": 1.3033212195280253,
+    "niter": 509
+  },
+  "energies_P1": {
+    "1s": -2.6610064897776132e-05,
+    "2s": -6.65448906589399e-06,
+    "2p": -6.65642644298677e-06,
+    "3s": -2.9480008257875034e-06,
+    "3p": -2.952088691533941e-06,
+    "3d": -2.9563147838234345e-06,
+    "4s": -1.248363063635614e-06,
+    "4p": -1.3281318342876483e-06,
+    "4d": -1.4562029844275242e-06,
+    "4f": -1.58506047173333e-06
+  }
+}
