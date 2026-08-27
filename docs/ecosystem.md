@@ -38,10 +38,10 @@
 ├─────────────────────────────────────────────────────────────────────┤
 │  COUCHE 7 : ACQUISITION ◄── VOUS ÊTES ICI                           │
 │  noetic-ash                                                         │
-│  • P32 : EEG intention motrice (BCI)                                │
-│  • P33 : ECG surveillance cardiaque                                 │
-│  • P34 : Vibrations maintenance prédictive                          │
-│  • P35+ : (à définir par la communauté)                             │
+│  • P32+ : EEG intention motrice (BCI)                               │
+│  • P33+ : ECG surveillance cardiaque                                │
+│  • P34+ : Vibrations maintenance prédictive                         │
+│  • P35+ : Campagne d'étalonnage du régime Méso                      │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -62,7 +62,7 @@ Signal physique (EEG/ECG/vibration)
          ↓
 ┌─────────────────┐
 │noetic-applications│  ← Validation expérimentale, publication
-│   (vitrine)     │    Études de cas P32-P34+
+│   (vitrine)     │    Études de cas P32+–P34+
 └─────────────────┘
 ```
 
@@ -73,19 +73,25 @@ Signal physique (EEG/ECG/vibration)
 | `spectral-triple-minimality` | noetic-ash ← fondations | La grille 2^(1/12) est justifiée par les théorèmes T1-T4 |
 | `ko6-spectral-solver` | noetic-ash ← solveurs | Les benchmarks B4+ utilisent les méthodes de ko6 |
 | `noetic-machine` | noetic-ash ↔ cœur | Le ReN est interprété physiquement par le modèle SU(2) |
-| `noetic-applications` | noetic-ash → applications | Les études P32-P34 utilisent noetic-ash comme outil de mesure |
+| `noetic-applications` | noetic-ash → applications | Les études P32+–P34+ utilisent noetic-ash comme outil de mesure |
 | `noetic-machine-complete` | noetic-ash → archive | Les résultats ASH sont archivés avec SHA-256 |
 
-## Numérotation des artefacts (P0-P34+)
+## Numérotation des artefacts (P0–P35+)
+
+**Convention** : les numéros **nus** (P0–P33) appartiennent à l'atlas de la
+machine noétique ; les programmes de **noetic-ash** portent le suffixe
+« + » (P32+, P33+, P34+, P35+). L'ASH — couche acquisition/mesure, conçue
+pour l'industrie embarquée et la xAI — est antérieur à la machine : ce sont
+des approches distinctes, et leurs catalogues ne se recouvrent plus.
 
 | Plage | Dépôt | Description |
 |-------|-------|-------------|
 | P0-P6 | spectral-triple-minimality | Fondements mathématiques |
 | P7-P31 | noetic-applications | Études de cas expérimentales |
-| P32 | noetic-ash | EEG intention motrice |
-| P33 | noetic-ash | ECG surveillance cardiaque |
-| P34 | noetic-ash | Vibrations maintenance prédictive |
-| P35+ | noetic-ash | (réservé pour contributions communautaires) |
+| P32+ | noetic-ash | EEG intention motrice |
+| P33+ | noetic-ash | ECG surveillance cardiaque |
+| P34+ | noetic-ash | Vibrations maintenance prédictive |
+| P35+ | noetic-ash | Campagne d'étalonnage du régime Méso (`benchmarks/p35_meso/`) |
 
 ## Protocole de contribution cross-repo
 
