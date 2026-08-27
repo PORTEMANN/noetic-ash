@@ -2,14 +2,20 @@
 interpret.py — Pipeline ASH → invariants → lecture multi-niveaux du lexique.
 
 Usage :
-    python interpret.py signal.csv [type_signal] [--niveaux M,S,N,T,PHI]
+    python interpret.py signal.csv [type_signal] [--niveaux M,E,I,X,PHI]
 
-Niveaux : M (mathématique), S (scientifique), N (machine noétique),
-T (technique/empirique), PHI (philosophique — documentaire).
+Niveaux : M (mathématique), E (étalonnage — mesuré sur corpus figés),
+I (industriel/embarqué), X (xAI — explicabilité de la décision),
+PHI (philosophique — documentaire).
 Statuts : T (théorème/protocole figé) > C (calibré) > E (empirique) > H (hypothèse).
 
 Protocole C12.1 : les niveaux ne sont jamais fusionnés, chaque interprétation
 est affichée avec son statut, et PHI reste toujours H (documentaire).
+
+Note : le niveau N (machine noétique) a été supprimé en lexique v0.3.0 —
+l'ASH (industrie embarquée, xAI) est antérieur à la machine ; ce sont des
+approches distinctes. Les ponts éventuels sont documentés dans les notes
+des entrées, jamais comme niveau.
 """
 
 import argparse
@@ -26,12 +32,12 @@ from ash_core import ASH  # noqa: E402
 import numpy as np  # noqa: E402
 
 ORDRE_STATUTS = {"T": 0, "C": 1, "E": 2, "H": 3}  # du plus fort au plus faible
-NIVEAUX = ["M", "S", "N", "T", "PHI"]
+NIVEAUX = ["M", "E", "I", "X", "PHI"]
 NOMS_NIVEAUX = {
     "M": "Mathématique",
-    "S": "Scientifique",
-    "N": "Machine noétique",
-    "T": "Technique / empirique",
+    "E": "Étalonnage (corpus figés C12.1)",
+    "I": "Industriel / embarqué",
+    "X": "xAI — explicabilité",
     "PHI": "Philosophique (documentaire)",
 }
 
@@ -113,7 +119,7 @@ def formater_lecture(inv, matches, niveaux=None):
     niveaux = niveaux or NIVEAUX
     lignes = []
     lignes.append("=" * 72)
-    lignes.append("LECTURE NOÉTIQUE MULTI-NIVEAUX")
+    lignes.append("LECTURE ASH MULTI-NIVEAUX (instrument — couche acquisition/mesure)")
     lignes.append("=" * 72)
     lignes.append(
         f"Invariants : ReN={inv['ReN']:.4g}  Rtop={inv['Rtop']:.4g}  "
@@ -153,12 +159,12 @@ def analyser_signal(chemin_csv, type_signal="generic", niveaux=None, chemin_lexi
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Lecture multi-niveaux d'un signal via le lexique noétique.")
+    ap = argparse.ArgumentParser(description="Lecture multi-niveaux d'un signal via le lexique ASH.")
     ap.add_argument("csv", nargs="?", help="Fichier CSV du signal (colonnes time,signal ou une colonne)")
     ap.add_argument("type_signal", nargs="?", default="generic",
                     choices=["eeg", "ecg", "vibration", "generic"])
     ap.add_argument("--niveaux", default=None,
-                    help="Niveaux à afficher, ex. M,S,N (défaut : tous, PHI inclus)")
+                    help="Niveaux à afficher, ex. M,E (défaut : tous, PHI inclus)")
     args = ap.parse_args()
     if not args.csv:
         ap.print_help()
