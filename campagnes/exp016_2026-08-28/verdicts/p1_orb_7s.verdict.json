@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "e89470e71a92bfa21896127ce9775b6699f3ca9cfc3b401d6de2dd7ad2662a00",
+ "contexte": {
+  "domaine": "spectre_lie",
+  "etiquette": "p1_orbitale_radiale_n7_n8_boite12000"
+ },
+ "attente": {
+  "id": "EXP-016",
+  "statut": "E",
+  "regime_attendu": "Cosmologique",
+  "source": "noetic-machine-complete P1 (solveur monopole + spectre radial, Coulomb tronqu\u00e9 R_core=3,04, \u03b1=1/137,036) ; bo\u00eete RMAX=NR=12000, dr=1 (cha\u00eene nouvelle C18) ; calibration : campagnes exp014 C15, exp014_mesure C16 et exploration locale 2026-08-28 (bo\u00eete 8000, couches n=2\u20267)",
+  "falsifieur": "Sur les couches n=7 (7s\u20267i) et n=8 (8s\u20268k) du fond \u03c1=1, bo\u00eete RMAX=NR=12000 dr=1, instrument fig\u00e9 (ASH v1.0.0, f0=2\u207b\u00b9\u00b9, fs=1, fen\u00eatre 1024, nperseg 1024, 5 octaves, RMS=1, agr\u00e9gation m\u00e9diane, aucun post-traitement) : (a) ordre nodal \u2014 une inversion du classement Rc par nombre de n\u0153uds sup\u00e9rieure \u00e0 5 % dans la couche n=7 ou n=8 (inversions \u2264 5 % consign\u00e9es comme quasi-d\u00e9g\u00e9n\u00e9rescences) ; ou (b) \u00e9chelle inter-couches \u2014 pour une s\u00e9rie \u00e0 l fixe d'\u00e9tats LI\u00c9S (E<0) mesur\u00e9e \u00e0 RMAX=12000 (n=l+1\u20268), un ratio Rc(n+1,l)/Rc(n,l) hors [1,45 ; 1,75], ou la moyenne g\u00e9om\u00e9trique de l'ensemble des ratios hors \u03b4\u2078 = 2^{2/3} = 1,5874 \u00b1 5 % ; ou (c) r\u00e9gime \u2014 un \u00e9tat mesur\u00e9 hors Cosmologique (ReN \u2265 1). Clause de repli bo\u00eete : tout \u00e9tat non li\u00e9 (E \u2265 0) tronque sa s\u00e9rie aux \u00e9tats li\u00e9s et est consign\u00e9. Une seule clause suffit."
+ },
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 0.054021,
+  "Rtop": 1.0,
+  "Rdyn": 1.0,
+  "bande_dominante": "E1"
+ },
+ "verdict": "CONFORME",
+ "explication": "ReN = 0.05402 (agr\u00e9gation mediane de 22 fen\u00eatres) \u2192 r\u00e9gime Cosmologique ; Rtop = 1.0, Rdyn = 1, bande dominante E1. L'attente EXP-016 (statut E, source : noetic-machine-complete P1 (solveur monopole + spectre radial, Coulomb tronqu\u00e9 R_core=3,04, \u03b1=1/137,036) ; bo\u00eete RMAX=NR=12000, dr=1 (cha\u00eene nouvelle C18) ; calibration : campagnes exp014 C15, exp014_mesure C16 et exploration locale 2026-08-28 (bo\u00eete 8000, couches n=2\u20267)) pr\u00e9voit Cosmologique pour le contexte \u00ab p1_orbitale_radiale_n7_n8_boite12000 \u00bb : r\u00e9gime mesur\u00e9 dans l'attente. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) \u2014 un ton pur se classe m\u00e9so par construction, cf. LEX-013 ; Rdyn est aveugle au d\u00e9saccord sub-demi-ton, cf. LEX-014.",
+ "horodatage": "2026-08-28T00:00:00+00:00",
+ "sha256": "daa7ab83d89fdfd5893bd1bf60871c1872f1a04ceed09fc881f8969940d4aaa3"
+}

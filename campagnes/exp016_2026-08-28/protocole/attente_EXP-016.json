@@ -1,0 +1,12 @@
+[
+  {
+    "id": "EXP-016",
+    "titre": "Couches n=7 et n=8 de P1 (fond ρ=1, boîte RMAX=12000) — ordre nodal et échelle inter-couches δ⁸ sur données jamais mesurées",
+    "contexte_etiquette": "p1_orbitale_radiale_n7_n8_boite12000",
+    "regime_attendu": "Cosmologique",
+    "statut": "E",
+    "source": "noetic-machine-complete P1 (solveur monopole + spectre radial, Coulomb tronqué R_core=3,04, α=1/137,036) ; boîte RMAX=NR=12000, dr=1 (chaîne nouvelle C18) ; calibration : campagnes exp014 C15, exp014_mesure C16 et exploration locale 2026-08-28 (boîte 8000, couches n=2…7)",
+    "falsifieur": "Sur les couches n=7 (7s…7i) et n=8 (8s…8k) du fond ρ=1, boîte RMAX=NR=12000 dr=1, instrument figé (ASH v1.0.0, f0=2⁻¹¹, fs=1, fenêtre 1024, nperseg 1024, 5 octaves, RMS=1, agrégation médiane, aucun post-traitement) : (a) ordre nodal — une inversion du classement Rc par nombre de nœuds supérieure à 5 % dans la couche n=7 ou n=8 (inversions ≤ 5 % consignées comme quasi-dégénérescences) ; ou (b) échelle inter-couches — pour une série à l fixe d'états LIÉS (E<0) mesurée à RMAX=12000 (n=l+1…8), un ratio Rc(n+1,l)/Rc(n,l) hors [1,45 ; 1,75], ou la moyenne géométrique de l'ensemble des ratios hors δ⁸ = 2^{2/3} = 1,5874 ± 5 % ; ou (c) régime — un état mesuré hors Cosmologique (ReN ≥ 1). Clause de repli boîte : tout état non lié (E ≥ 0) tronque sa série aux états liés et est consigné. Une seule clause suffit.",
+    "notes": "Attente CALIBRÉE déclarée AVANT mesure. Valeur prédictive : les couches n=7 et n=8 n'ont JAMAIS été mesurées (à RMAX=8000, n=7 n'était que partiellement liée) — les ratios 7→6 déjà vus en calibration boîte 8000 sont ici re-mesurés dans une boîte neuve (robustesse inter-boîtes de la loi), et les ratios 8→7 ainsi que l'ordre sur 7 et 8 états sont entièrement inconnus. Observation secondaire déclarée (ne modifie pas les clauses) : les états 8s/8p/8d restent faiblement liés à RMAX=12000 (ratio Balmer 0,18–0,31) — le diagnostic boîte calibré prédit leurs ratios 8/7 SOUS 1,45 ; s'ils tombent dans [1,45 ; 1,75] alors que le reste tient, le diagnostic est réfuté et le cas est consigné. Témoins d'intégrité C18 : fond ρ=1 recalculé à RMAX=12000 (table P1 n≤4 Balmer-exacte : n=3 −2,958e-6, n=4 −1,664e-6) et constante monopole C(ρ=1)=1,3033212195 inchangée. Campagne sœur exp015 (EXP-015, ρ=2 boîte 8000) exécutée comme test de robustesse au cœur : dans P1, ρ ne couple à l'hamiltonien orbital que par R_CORE=3,04/√ρ — écart attendu ΔRc ≤ 0,1 % (mesuré en exploration), la campagne le documente honnêtement."
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 22
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E1",
+  "contexte": {
+    "date_mesure": "2026-08-28",
+    "description": "Campagne exp016 C18 — orbitale radiale u_{7f}(r) sur fond monopole ρ=1 (C=1,3033), boîte RMAX=12000, NR=12000, dr=1 (3 nœuds)",
+    "domaine": "spectre_lie",
+    "etiquette": "p1_orbitale_radiale_n7_n8_boite12000"
+  },
+  "falsifieur": "Sur les couches n=7 (7s…7i) et n=8 (8s…8k) du fond ρ=1, boîte RMAX=NR=12000 dr=1, instrument figé (ASH v1.0.0, f0=2⁻¹¹, fs=1, fenêtre 1024, nperseg 1024, 5 octaves, RMS=1, agrégation médiane, aucun post-traitement) : (a) ordre nodal — une inversion du classement Rc par nombre de nœuds supérieure à 5 % dans la couche n=7 ou n=8 (inversions ≤ 5 % consignées comme quasi-dégénérescences) ; ou (b) échelle inter-couches — pour une série à l fixe d'états LIÉS (E<0) mesurée à RMAX=12000 (n=l+1…8), un ratio Rc(n+1,l)/Rc(n,l) hors [1,45 ; 1,75], ou la moyenne géométrique de l'ensemble des ratios hors δ⁸ = 2^{2/3} = 1,5874 ± 5 % ; ou (c) régime — un état mesuré hors Cosmologique (ReN ≥ 1). Clause de repli boîte : tout état non lié (E ≥ 0) tronque sa série aux états liés et est consigné. Une seule clause suffit.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.00048828125,
+    "fenetre_s": 1024.0,
+    "fs": 1.0,
+    "n_octaves": 5,
+    "nperseg": 1024,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.046383,
+    "H": 0.942275,
+    "Rc": 75.151374,
+    "Rdyn": 1.0,
+    "ReN": 0.072069,
+    "Rtop": 1.0,
+    "bandes": [
+      0.725612,
+      0.679229,
+      0.112161,
+      0.009424,
+      0.001087,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Cosmologique",
+  "signal": {
+    "n_points": 12000,
+    "sha256": "a5bc7d5556ce9b9f527d846df1df6e0c68c1f9f2716342547cc5bde48c8d4580",
+    "source": "Campagne exp016 C18 — orbitale radiale u_{7f}(r) sur fond monopole ρ=1 (C=1,3033), boîte RMAX=12000, NR=12000, dr=1 (3 nœuds)"
+  },
+  "sources": [
+    "noetic-machine-complete P1",
+    "protocole C18 figé"
+  ],
+  "statut": "E"
+}
