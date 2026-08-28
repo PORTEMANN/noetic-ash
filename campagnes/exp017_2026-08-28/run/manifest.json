@@ -1,0 +1,14 @@
+{
+  "protocole/PROTOCOLE_C19.md": "82cb03624b1c06b427ac92e5bef82c47332de36953f735c2a21322dabea765fe",
+  "protocole/attente_EXP-017.json": "085f7da3a96488fb5fc025bc4cf8376ee02296b4f0a9824d265f4e902728d4c3",
+  "run/attestation_graine2028.json": "40e3dff405004ae9953e70328cb3bac97531b961e5f5fa8fc531a1175a684a80",
+  "run/c19_comma.py": "e85a02fe4073b126b1648a01a7864ea6dccb351c275b843a8a1e3ec2e8e3a1ee",
+  "run/c19_runner.py": "5d522cac018f99aec5d8a7dc27c054b149dc7314b23279096296d9a1a7966fc1",
+  "run/e44_core.py": "604c22322370eaa8707ddb6e7529b29539ec125c121b7e5368e2287b60ae1ac7",
+  "run/evaluation_clauses.json": "0b01d0ae4e0d9fce6a44fd026c4b7a27dbd4f2310fdbcba3a1a3c154bd215cf5",
+  "run/exploration_comma_noetique_E44_LOCAL.md": "febce33ab7d3ef3387dd6b3a2237a8241f3b60d7c6430fda43712d4ea3295094",
+  "run/manifest_signaux.json": "3a46d67f8f0c57f5e364f05952393531635f02c1efd0eecb62cecb38af3cbfe4",
+  "run/resultats_comma.json": "40be18bd54fbabc00e0bdfeef97fb277f28bd204e56d7348c5874db86024d0ac",
+  "signaux/e44_lt_t_g2028.csv": "2d69477852f9093e089e9743e86d23c8ced508860ea4a8f188850b94ba5a4149",
+  "signaux/e44_nv_t_g2028.csv": "c447b20e35dc492fd8aeaa434c7fa5ad54c5d187010aa664cee20b2b3507ab3a"
+}

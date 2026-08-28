@@ -1,0 +1,39 @@
+{
+  "attente": "EXP-017",
+  "graine": 2028,
+  "clause_a_recurrence_Nv": {
+    "resultat": false,
+    "bandes_significatives": [],
+    "T_minimum": 31.899999999999885,
+    "z_min": -5.846560540215454,
+    "t_eff": 133.8
+  },
+  "clause_b_Lt_sans_bande": {
+    "resultat": true,
+    "bandes_significatives_Lt": [],
+    "z_min_Lt": -0.47202363138936543
+  },
+  "clause_c_Rdyn_borne": {
+    "resultat": true,
+    "Rdyn": 0.19677617886923737,
+    "T_star": 0.09999999999999964,
+    "params_biexpo": [
+      -1004270.4466106783,
+      14.290927082133344,
+      1003819.7617616107,
+      14.353046440316772,
+      37.148561134032775
+    ]
+  },
+  "controles": {
+    "bruit43": {
+      "z_min": -2.812647287616173,
+      "bandes": []
+    },
+    "sinus12": {
+      "z_min": -705.9941647133151,
+      "bandes": []
+    }
+  },
+  "EXP017_conforme_aux_trois_clauses": false
+}
