@@ -1,0 +1,12 @@
+[
+  {
+    "id": "EXP-014",
+    "titre": "Couche n=5 de P1 (fond monopole ρ=1) — la pression spectrale Rc ordonne strictement le nombre de nœuds radiaux",
+    "contexte_etiquette": "p1_orbitale_radiale_n5",
+    "regime_attendu": "Cosmologique",
+    "statut": "E",
+    "source": "noetic-machine-complete P1 (p1_etats_lies.py, boîte RMAX=NR=4000, dr=1, Coulomb tronqué R_core=3,04, α=1/137,036) ; calibration campagne exp014 C15 (campagnes/exp014_2026-08-28) ; campagne exp014_mesure locale (protocole C16 figé)",
+    "falsifieur": "Sur les 5 orbitales figées de la couche n=5 du protocole C16 (5g,5f,5d,5p,5s ; nœuds radiaux 0,1,2,3,4), mesurées par l'instrument figé (ASH v1.0.0, f0=2⁻¹¹, fs=1, fenêtre 1024, nperseg 1024, 5 octaves, RMS=1, agrégation médiane, aucun post-traitement) : (a) Rc ne croît pas strictement le long de l'échelle des nœuds — Rc(5g)<Rc(5f)<Rc(5d)<Rc(5p) strict, et Rc(5s) ≥ 0,99·Rc(5p) (tolérance de jointure p/s calibrée sur la quasi-dégénérescence 4p/4s de C15 : |Δ|/max = 0,018 %) — la structure nodale est alors invisible même pour Rc ; ou (b) l'échelle des rapports ne se transfère pas — r₁=Rc(5f)/Rc(5g) hors [1,7 ; 2,2] ou r₂=Rc(5d)/Rc(5f) hors [1,3 ; 1,6] (pas 0→1 et 1→2 calibrés sur la couche n=4 : 1,96 et 1,45, marge ±12 %) ; ou (c) une des cinq orbitales lit hors Cosmologique (ReN ≥ 1) — l'explication « bosse spectrale large » (C15, clause a) ne se généralise alors pas à une couche entière. Une seule clause suffit.",
+    "notes": "Attente CALIBRÉE déclarée AVANT mesure (précédent EXP-010/011). Calibration : note exp014 C15 (240 mesures sur orbitales n ≤ 4, balayage f0 = 2⁻¹¹·2^(k/12), k = −10…+13) et test local anti-moiré KO-6 (consigné localement, non publié — couche post-ASH rejetée). Faits de calibration : Rc strictement croissant avec le nombre de nœuds sur toutes les grilles k ∈ [−3,+2] (ex. k=0 : 1,41 < 99,72 < 121,17 < 211,65 pour 1s < 2s < 3s < 4s) ; ReN quasi-dégénéré au plancher Cosmologique dans la bande moiré (k=−2…0) — ReN n'est PAS l'observable de cette attente, Rc l'est. Valeur prédictive : la couche n=5 porte un nombre de nœuds distinct par orbitale (0…4) — une échelle complète sur une seule couche, jamais utilisée pour le réglage. Le régime_attendu 'Cosmologique' vaut les cinq états (bosse spectrale large, clause c) ; le verdict central est l'ordonnancement Rc (clauses a et b)."
+  }
+]
