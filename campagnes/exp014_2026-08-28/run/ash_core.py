@@ -44,7 +44,7 @@ RDYN_NO_PEAK_PAIR = 1.0
 class ASH:
     """Analyseur spectral à géométrie harmonique (ASH).
 
-    The equal-temperament grid $f_n = f_0 \cdot 2^{n/12}$ implements the
+    The equal-temperament grid $f_n = f_0 \\cdot 2^{n/12}$ implements the
     minimal spectral discretization compatible with the Koilon's torsion
     field periodicity (see spectral-triple-minimality, Thm T1).
 
