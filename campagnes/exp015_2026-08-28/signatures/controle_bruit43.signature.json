@@ -1,0 +1,52 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 7
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E5",
+  "contexte": {
+    "date_mesure": "2026-08-28",
+    "description": "Campagne exp015 C17 — bruit blanc gaussien graine 43 (CSV octet-identique à exp013, sha256 a3909a6b…)",
+    "domaine": "etalonnage",
+    "etiquette": "controle_bruit"
+  },
+  "falsifieur": "Contrôle statut H : consigné sans attente (HORS-CONTRAT), aucune conclusion.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.00048828125,
+    "fenetre_s": 51.2,
+    "fs": 10.0,
+    "n_octaves": 5,
+    "nperseg": 256,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.106788,
+    "H": 1.59636,
+    "Rc": 10.855368,
+    "Rdyn": 1.0,
+    "ReN": 0.0,
+    "Rtop": 0.0,
+    "bandes": [
+      0.371833,
+      0.385182,
+      0.411878,
+      0.465272,
+      0.57206,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Cosmologique",
+  "signal": {
+    "n_points": 2048,
+    "sha256": "a3909a6b7611313e91cbcdbef0db4690401d6d43a6b7be420f7794319f528a87",
+    "source": "Campagne exp015 C17 — bruit blanc gaussien graine 43 (CSV octet-identique à exp013, sha256 a3909a6b…)"
+  },
+  "sources": [
+    "protocole C17 figé"
+  ],
+  "statut": "H"
+}

@@ -1,0 +1,21 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "3b781deb33a29e01719413ccd8016fe143a6c0ef14c40c507001beb36c2b402d",
+ "contexte": {
+  "domaine": "spectre_lie",
+  "etiquette": "temoin_integrite"
+ },
+ "attente": null,
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 0.160723,
+  "Rtop": 1.0,
+  "Rdyn": 1.0,
+  "bande_dominante": "E1"
+ },
+ "verdict": "HORS-CONTRAT",
+ "explication": "ReN = 0.1607 (agr\u00e9gation mediane de 14 fen\u00eatres) \u2192 r\u00e9gime Cosmologique ; Rtop = 1.0, Rdyn = 1, bande dominante E1. Aucune attente enregistr\u00e9e pour le contexte \u00ab temoin_integrite \u00bb : la mesure est consign\u00e9e sans confrontation. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) \u2014 un ton pur se classe m\u00e9so par construction, cf. LEX-013 ; Rdyn est aveugle au d\u00e9saccord sub-demi-ton, cf. LEX-014.",
+ "horodatage": "2026-08-28T00:00:00+00:00",
+ "sha256": "a56a65cf42b543dab4eb17a8eaab71c98c8514057708b8eec94d3953b8ff682e"
+}

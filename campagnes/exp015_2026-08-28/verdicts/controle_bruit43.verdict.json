@@ -1,0 +1,21 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "3290669dafaab094904377fec43d9a34da30c186d4a4be6749192a279545c106",
+ "contexte": {
+  "domaine": "etalonnage",
+  "etiquette": "controle_bruit"
+ },
+ "attente": null,
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 0.0,
+  "Rtop": 0.0,
+  "Rdyn": 1.0,
+  "bande_dominante": "E5"
+ },
+ "verdict": "HORS-CONTRAT",
+ "explication": "ReN = 0 (agr\u00e9gation mediane de 7 fen\u00eatres) \u2192 r\u00e9gime Cosmologique ; Rtop = 0.0, Rdyn = 1, bande dominante E5. Aucune attente enregistr\u00e9e pour le contexte \u00ab controle_bruit \u00bb : la mesure est consign\u00e9e sans confrontation. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) \u2014 un ton pur se classe m\u00e9so par construction, cf. LEX-013 ; Rdyn est aveugle au d\u00e9saccord sub-demi-ton, cf. LEX-014.",
+ "horodatage": "2026-08-28T00:00:00+00:00",
+ "sha256": "5be6b9765dc67a120470818c6b6686d7f6633af99af7c0c08a16696331636d36"
+}

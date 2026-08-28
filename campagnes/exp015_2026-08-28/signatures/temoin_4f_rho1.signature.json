@@ -1,0 +1,52 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 14
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E1",
+  "contexte": {
+    "date_mesure": "2026-08-28",
+    "description": "Campagne exp015 C17 — témoin d'intégrité 4f sur fond ρ=1 (R_core=3,04, même boîte 8000 ; E=−1,664092e-6 Balmer-exact)",
+    "domaine": "spectre_lie",
+    "etiquette": "temoin_integrite"
+  },
+  "falsifieur": "Contrôle statut H : consigné sans attente (HORS-CONTRAT), aucune conclusion.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.00048828125,
+    "fenetre_s": 1024.0,
+    "fs": 1.0,
+    "n_octaves": 5,
+    "nperseg": 1024,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.057296,
+    "H": 0.942306,
+    "Rc": 43.978951,
+    "Rdyn": 1.0,
+    "ReN": 0.160723,
+    "Rtop": 1.0,
+    "bandes": [
+      0.731081,
+      0.673785,
+      0.11014,
+      0.010199,
+      0.001193,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Cosmologique",
+  "signal": {
+    "n_points": 8000,
+    "sha256": "1521d1445954d4504d3c628818a1ebd6ea6f26ebd14e74b2f00a98b205efbc56",
+    "source": "Campagne exp015 C17 — témoin d'intégrité 4f sur fond ρ=1 (R_core=3,04, même boîte 8000 ; E=−1,664092e-6 Balmer-exact)"
+  },
+  "sources": [
+    "protocole C17 figé"
+  ],
+  "statut": "H"
+}
