@@ -1,0 +1,72 @@
+{
+  "attente": "EXP-024",
+  "modele_nul": "CORRIGÉ (single surrogate décalé)",
+  "note": "Addendum A1 : bug du double surrogate corrigé. Verdicts révisés.",
+  "clause_a_specificite_magnitude": {
+    "resultat": false,
+    "detail": {
+      "97": {
+        "BPFI": -0.40681459775592665,
+        "BPFO": 0.5723489273265293,
+        "BSF": -0.7075468589574415
+      },
+      "98": {
+        "BPFI": -1.172428341457616,
+        "BPFO": 1.0432522573104632,
+        "BSF": -3.2952275401709334
+      },
+      "99": {
+        "BPFI": 0.3418209418191183,
+        "BPFO": 0.25750320998303244,
+        "BSF": 0.25027412640320956
+      },
+      "100": {
+        "BPFI": 0.40129604782713924,
+        "BPFO": 0.8442494245397244,
+        "BSF": -0.36520872913828756
+      }
+    },
+    "fausses_alarmes": [
+      98
+    ]
+  },
+  "clause_b_replication_mecanisme": {
+    "resultat": false,
+    "violations": [
+      209
+    ],
+    "detail": {
+      "209": {
+        "Z": 0.8830066174058346,
+        "AC": 0.21311579410388368,
+        "statut": "VIOLATION"
+      },
+      "210": {
+        "Z": 0.6474142018526843,
+        "AC": 0.021274375374585718,
+        "statut": "HORS-DOMAINE"
+      },
+      "222": {
+        "Z": 1.3161279417337461,
+        "AC": 0.011670131238337638,
+        "statut": "HORS-DOMAINE"
+      },
+      "223": {
+        "Z": 1.3388038482325813,
+        "AC": -0.12124103216341524,
+        "statut": "tenu"
+      },
+      "234": {
+        "Z": 2.126931173548503,
+        "AC": 0.028122100150670824,
+        "statut": "HORS-DOMAINE"
+      },
+      "235": {
+        "Z": 2.6142387752126717,
+        "AC": -0.11267507750507859,
+        "statut": "tenu"
+      }
+    }
+  },
+  "EXP024_conforme_corrige": false
+}

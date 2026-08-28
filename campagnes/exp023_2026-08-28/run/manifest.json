@@ -1,9 +1,13 @@
 {
+  "README.md": "e6159433b5a3930c3973a02c1012d2c389f483b8db94e2989cadfe93819b1298",
+  "protocole/ADDENDUM_A1.md": "403e3642e99d2b45bd70946cf296a87b95df1a7a5df25dbbf25de927a3b68425",
   "protocole/PROTOCOLE_C25.md": "e68b4fd06c9624fddeba81c221213d7080f81b3d34865744eb5891715e8e1697",
   "protocole/attente_EXP-023.json": "4a4f163c1ebe1916b7687d2f6165f9a1dc78f627fa74447ca54f455463414fa4",
   "run/c25_comma.py": "440663997a7c6a87ca3b1b6ec458c07133c26ff92bd2df4fc482a0dd72e9e7df",
   "run/c25_runner.py": "d31e38fdb187553c98fc5648f37dfb600ba59d51903c55105050ec4b492fc1ec",
+  "run/comma_corrige.py": "e5f2ae29787da2dc472e96b7a5cb12c8dc0c3178e564c8a56f5f64c799715e4a",
   "run/evaluation_clauses.json": "cdabed835ca4334acbb9d4bc30ebd23b639ac4b20e1a8bcdc81023435f2126a5",
+  "run/evaluation_corrigee.json": "53c37fdd004296dce89059a7d353e282b50da678adde6be7eced5fe11c02a998",
   "run/exploration_coherence_phase_CWRU_LOCAL.md": "62d3ad5715d52874890f684bb8817cce5934c0c36e8fc4bae6a6715d4f841888",
   "run/manifest_signaux.json": "abb04ad5e568a1225fca1c8f8d0341a114b186e1cc299048da032328cb48db91",
   "signaux/cwru_100.csv": "cd46de44f7ba4ce5614d194d5edde6c196a5952227bb95f750888380af4d2022",

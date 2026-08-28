@@ -1,9 +1,13 @@
 {
+  "README.md": "0aad9885f40a693c66e5306353e3b626508ab389ea721c1f4e33373899644e55",
+  "protocole/ADDENDUM_A1.md": "d3ba1a4f65c498957e90bc41206721ddbde38a47e40cf2578f2716a2dc542c76",
   "protocole/PROTOCOLE_C26.md": "75c180d6e905f48a688335d3e66ebd2377337b6a9309c6e535e3f775f7bda8b5",
   "protocole/attente_EXP-024.json": "ea99daf0b88eb03b0752e0f774f1267be4c9ec0bb6de4105165e355801dd96a7",
   "run/c26_comma.py": "a13862d94ceef953deed6ea170d88c45e8fb42ec124b3300c11730be11771252",
   "run/c26_runner.py": "004936a4d221ab367c9346bee771de82e4c69098f75b14c6f5a473b945f2975c",
+  "run/comma_corrige.py": "e5f2ae29787da2dc472e96b7a5cb12c8dc0c3178e564c8a56f5f64c799715e4a",
   "run/evaluation_clauses.json": "701886a87d5ffa6073989d69fbbad0e37d377122dc00904a4fc176111d8c5c45",
+  "run/evaluation_corrigee.json": "00b5df3ecb345d53f9fe896fab25e76203e4c7e0fe56285f1853a3f3168c5cb1",
   "run/manifest_signaux.json": "24774c9549d7f30ac8d928ee1e0ed668d5695854700b6cb7cb3bc23a77f4f545",
   "signaux/cwru_100_FE.csv": "981cf285a3e62c87db3669c99e22c9e041aced3c2af270fd8c3a5ae38a677aec",
   "signaux/cwru_209_DE.csv": "2d03a5449ab023357cfc01037577b4662d19e84ba955d39b3a877fafcae47744",

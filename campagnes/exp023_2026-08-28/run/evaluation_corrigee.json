@@ -1,0 +1,91 @@
+{
+  "attente": "EXP-023",
+  "modele_nul": "CORRIGÉ (single surrogate décalé)",
+  "note": "Addendum A1 : bug du double surrogate corrigé. Verdicts révisés.",
+  "resultats": {
+    "169": {
+      "Z": 0.32545066013327384,
+      "AC": 0.07396745103990458,
+      "statut": "VIOLATION"
+    },
+    "170": {
+      "Z": -0.7805284767406312,
+      "AC": 0.0422091502454817,
+      "statut": "HORS-DOMAINE"
+    },
+    "185": {
+      "Z": 0.07678472311790176,
+      "AC": 0.0991348238726331,
+      "statut": "VIOLATION"
+    },
+    "186": {
+      "Z": -4.88623698911736,
+      "AC": -0.12121543857813365,
+      "statut": "VIOLATION"
+    },
+    "197": {
+      "Z": 0.7394302498432214,
+      "AC": -0.032854948843836336,
+      "statut": "HORS-DOMAINE"
+    },
+    "198": {
+      "Z": 0.5961274202970772,
+      "AC": -0.025167584818662107,
+      "statut": "HORS-DOMAINE"
+    }
+  },
+  "sain_100_Z": {
+    "BPFI": -0.24476209665526671,
+    "BPFO": 0.5056989509666386,
+    "BSF": 1.0728929855122802
+  },
+  "clause_a_mecanisme": {
+    "resultat": false,
+    "violations": [
+      169,
+      185,
+      186
+    ],
+    "detail": {
+      "169": {
+        "Z": 0.32545066013327384,
+        "AC": 0.07396745103990458,
+        "statut": "VIOLATION"
+      },
+      "170": {
+        "Z": -0.7805284767406312,
+        "AC": 0.0422091502454817,
+        "statut": "HORS-DOMAINE"
+      },
+      "185": {
+        "Z": 0.07678472311790176,
+        "AC": 0.0991348238726331,
+        "statut": "VIOLATION"
+      },
+      "186": {
+        "Z": -4.88623698911736,
+        "AC": -0.12121543857813365,
+        "statut": "VIOLATION"
+      },
+      "197": {
+        "Z": 0.7394302498432214,
+        "AC": -0.032854948843836336,
+        "statut": "HORS-DOMAINE"
+      },
+      "198": {
+        "Z": 0.5961274202970772,
+        "AC": -0.025167584818662107,
+        "statut": "HORS-DOMAINE"
+      }
+    }
+  },
+  "clause_b_specificite": {
+    "resultat": false,
+    "detail": {
+      "BPFI": -0.24476209665526671,
+      "BPFO": 0.5056989509666386,
+      "BSF": 1.0728929855122802
+    }
+  },
+  "EXP023_conforme_corrige": false
+}

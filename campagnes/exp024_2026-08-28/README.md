@@ -1,3 +1,16 @@
+# ⚠️ CORRECTION (addendum A1, 2026-08-28) — verdict révisé
+
+**EXP-024 corrigée : FALSIFIÉE sur les DEUX clauses — la conformité publiée
+était un artefact du bug.** Un bug du modèle nul des surrogates (double appel
+au lieu d'un même surrogate décalé) gonflait le Z-score publié. Au null
+corrigé : (a) le sain FE 98 lit Z = −3,30 au BSF (fausse alarme
+significative) ; (b) 209 viole le signe. Voir `protocole/ADDENDUM_A1.md` ;
+évaluation corrigée : `run/evaluation_corrigee.json` ; chaîne corrigée :
+`run/comma_corrige.py`. Le dossier d'origine est conservé pour la provenance.
+État publié d'origine : CONFORME (les deux clauses).
+
+---
+
 # Campagne exp024 — spécificité du comma à seuil de magnitude + réplication du mécanisme (EXP-024) — CONFORME
 
 Date : 2026-08-28. Attente EXP-024 figée AVANT mesure (bridge/expectations.json

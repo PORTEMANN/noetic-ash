@@ -1,3 +1,16 @@
+# ⚠️ CORRECTION (addendum A1, 2026-08-28) — verdict révisé
+
+**EXP-023 corrigée : FALSIFIÉE sur les DEUX clauses — la « confirmation du
+mécanisme » ne tient PAS.** Un bug du modèle nul des surrogates (double appel
+au lieu d'un même surrogate décalé) gonflait le Z-score publié. Au null
+corrigé, la clause (a) est falsifiée (169, 185, 186) : la loi de cohérence de
+phase ne tient pas. Voir `protocole/ADDENDUM_A1.md` ; évaluation corrigée :
+`run/evaluation_corrigee.json` ; chaîne corrigée : `run/comma_corrige.py`.
+Le dossier d'origine est conservé pour la provenance. État publié d'origine :
+FALSIFIÉE par la clause (b), mécanisme tenu.
+
+---
+
 # Campagne exp023 — le comma au lag caractéristique est un détecteur de cohérence de phase, famille CWRU 14 mil aveugle (EXP-023) — FALSIFIÉE par (b), mécanisme tenu (B3-FAIL)
 
 Date : 2026-08-28. Attente EXP-023 figée AVANT mesure (bridge/expectations.json

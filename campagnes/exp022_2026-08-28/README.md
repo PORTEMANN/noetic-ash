@@ -1,3 +1,14 @@
+# ⚠️ CORRECTION (addendum A1, 2026-08-28) — verdict révisé
+
+**EXP-022 corrigée : FALSIFIÉE sur les DEUX clauses (a et b).** Un bug du
+modèle nul des surrogates (double appel au lieu d'un même surrogate décalé)
+gonflait le Z-score publié. Voir `protocole/ADDENDUM_A1.md` ; évaluation
+corrigée : `run/evaluation_corrigee.json` ; chaîne corrigée :
+`run/comma_corrige.py`. Le dossier d'origine est conservé pour la provenance.
+État publié d'origine : FALSIFIÉE par la clause (a), spécificité tenue.
+
+---
+
 # Campagne exp022 — comma au lag caractéristique sur roulements réels CWRU, 7 fichiers aveugles (EXP-022) — FALSIFIÉE par (a), spécificité tenue (B3-FAIL)
 
 Date : 2026-08-28. Attente EXP-022 figée AVANT mesure (bridge/expectations.json

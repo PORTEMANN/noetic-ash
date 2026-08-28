@@ -1,9 +1,13 @@
 {
+  "README.md": "de5002a8ee11b62c3a02e8451e22329ef46da13be6fa4e5b114518925a9da410",
+  "protocole/ADDENDUM_A1.md": "670ecf5d9920bb82d48afafc69c4980460d18e34cc7599aa55fc37fe2454978d",
   "protocole/PROTOCOLE_C24.md": "9e7e516d51032bff522b07a9913445c053cb314307181eac105825f6160dcbcc",
   "protocole/attente_EXP-022.json": "2bb5822c8c3f3a47aba618d1f80b26125c23c05fe6769d9e21293b9187b4b940",
   "run/c24_comma.py": "95d331b09c9d536f57636c313d386a021c55182aa05bfceffd9834059be8dfeb",
   "run/c24_runner.py": "9113be4401a0cc7b039d888f71d6f9fdbc19ae6c602f40a11efb622b66699b25",
+  "run/comma_corrige.py": "e5f2ae29787da2dc472e96b7a5cb12c8dc0c3178e564c8a56f5f64c799715e4a",
   "run/evaluation_clauses.json": "6edb4344dd0ca37b5204292735bd59e36fd9dd4146a6d71f1f193e86d5117c7b",
+  "run/evaluation_corrigee.json": "b819b7cd659d7bccb79ec8f26a998c5914fe1bd7f7759e729c0ebfaff4036c3f",
   "run/exploration_comma_CWRU_LOCAL.md": "83475eb65d4f578a3de1ab563667064681974f5a8db1210f6ff9918349820f2d",
   "run/manifest_signaux.json": "98c7f89fde5ef8daf9903110fd7e042f67fec6c58ba089cbe7a580bf1f9fdca0",
   "signaux/cwru_106.csv": "9008f21f8a0e02a026c7a6aefea629ebedeb9c6c5460fe421210c975597b56bd",
