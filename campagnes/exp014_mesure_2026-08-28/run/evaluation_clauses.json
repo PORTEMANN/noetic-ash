@@ -1,0 +1,17 @@
+{
+  "Rc": {
+    "5g": 76.526678,
+    "5f": 129.691506,
+    "5d": 231.612627,
+    "5p": 293.13089,
+    "5s": 325.431991
+  },
+  "r1_5f_sur_5g": 1.6947227998058403,
+  "r2_5d_sur_5f": 1.785873525132787,
+  "r3_5p_sur_5d": 1.2656084160731014,
+  "r4_5s_sur_5p": 1.1101934395245754,
+  "clause_a_ordre": true,
+  "clause_b_echelle": false,
+  "clause_c_regime": true,
+  "EXP014_conforme_aux_trois_clauses": false
+}
