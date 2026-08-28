@@ -1,7 +1,0 @@
-{
-  "version": "0.6.0",
-  "date": "2026-08-28",
-  "description": "Registre d'attentes du pont mesure ↔ interprétation. Chaque attente relie une étiquette de contexte à un régime attendu, avec son statut épistémique (T>C>E>H), sa source et son falsifieur. Une attente de statut H sans prédiction (regime_attendu = null) déclenche le verdict EXPLORATION : la banque consigne, rien n'est conclu. Le pont n'est pas un niveau du lexique (v0.3.0) : ce registre consigne des confrontations datées, jamais des interprétations projetées.",
-  "note": "Copie de travail de bridge/expectations.json v0.6.0 (commit 9bce034), embarquée pour l'analyse C16 — contenu identique, sha256 9814d6bc0225e94148c2f1aac00cc0913d47878d59569083ceff34f04e13e489.",
-  "attentes": "voir bridge/expectations.json — la copie intégrale n'est pas dupliquée ici pour éviter toute divergence ; le fichier de référence est bridge/expectations.json v0.6.0"
-}
