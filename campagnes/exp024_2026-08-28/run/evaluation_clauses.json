@@ -1,0 +1,79 @@
+{
+  "attente": "EXP-024",
+  "fenêtre_echantillons": [
+    24000,
+    48000
+  ],
+  "lags_ms": {
+    "BPFI": 6.17,
+    "BPFO": 9.31,
+    "BSF": 7.08
+  },
+  "seuil_magnitude": -3.0,
+  "zone_morte_AC": 0.05,
+  "clause_a_specificite_magnitude": {
+    "resultat": true,
+    "detail": {
+      "97": {
+        "BPFI": 0.2589094297707991,
+        "BPFO": 1.0890589376024273,
+        "BSF": -0.7259678621880424
+      },
+      "98": {
+        "BPFI": 0.29184342165321864,
+        "BPFO": 0.9914575229242905,
+        "BSF": -0.24052909532302227
+      },
+      "99": {
+        "BPFI": 0.07733218882310013,
+        "BPFO": 1.3782640824767518,
+        "BSF": -0.28607454365300716
+      },
+      "100": {
+        "BPFI": 0.23906130619989824,
+        "BPFO": 2.501098874768089,
+        "BSF": -1.092498559249226
+      }
+    },
+    "fausses_alarmes": [],
+    "regle": "sain FE ne lit jamais Z ≤ −3 à un lag"
+  },
+  "clause_b_replication_mecanisme": {
+    "resultat": true,
+    "detail": {
+      "209": {
+        "AC": 0.21311579410388368,
+        "Z": -2.9511050022950474,
+        "statut": "tenu"
+      },
+      "210": {
+        "AC": 0.021274375374585718,
+        "Z": -0.4803653334367492,
+        "statut": "HORS-DOMAINE (|AC|<0,05)"
+      },
+      "222": {
+        "AC": 0.011670131238337638,
+        "Z": -0.37487720339473884,
+        "statut": "HORS-DOMAINE (|AC|<0,05)"
+      },
+      "223": {
+        "AC": -0.12124103216341524,
+        "Z": 1.6346212996214138,
+        "statut": "tenu"
+      },
+      "234": {
+        "AC": 0.028122100150670824,
+        "Z": -0.9108244348025412,
+        "statut": "HORS-DOMAINE (|AC|<0,05)"
+      },
+      "235": {
+        "AC": -0.11267507750507859,
+        "Z": 2.3268989364641564,
+        "statut": "tenu"
+      }
+    },
+    "violations": [],
+    "regle": "21 mil : déclenchement (Z<0) ⟺ cohérence (AC>0) au lag du défaut"
+  },
+  "EXP024_conforme": true
+}
