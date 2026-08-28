@@ -1,0 +1,52 @@
+{
+  "agregation": {
+    "methode": "mediane",
+    "n_fenetres": 6
+  },
+  "ash_version": "1.0.0",
+  "bande_dominante": "E1",
+  "contexte": {
+    "date_mesure": "2026-08-28",
+    "description": "Campagne exp014_mesure C16 — témoin d'intégrité 4f (CSV octet-identique à exp013 p1_orb_4f.csv, sha256 423604b8…)",
+    "domaine": "spectre_lie",
+    "etiquette": "temoin_integrite"
+  },
+  "falsifieur": "Contrôle statut H : consigné sans attente (HORS-CONTRAT), aucune conclusion.",
+  "format": "ash-signature/0.1",
+  "grille": {
+    "f0": 0.00048828125,
+    "fenetre_s": 1024.0,
+    "fs": 1.0,
+    "n_octaves": 5,
+    "nperseg": 1024,
+    "overlap": 0.5
+  },
+  "invariants": {
+    "D": 0.06805,
+    "H": 0.941958,
+    "Rc": 74.239503,
+    "Rdyn": 1.0,
+    "ReN": 0.102742,
+    "Rtop": 1.0,
+    "bandes": [
+      0.735806,
+      0.667756,
+      0.11322,
+      0.009112,
+      0.001043,
+      0.0,
+      0.0
+    ]
+  },
+  "normalisation": "rms1",
+  "regime": "Cosmologique",
+  "signal": {
+    "n_points": 4000,
+    "sha256": "423604b88d31dc88fbd802adfbf68eb5515d7f72b7d25f1f1ddb64244b66f7c4",
+    "source": "Campagne exp014_mesure C16 — témoin d'intégrité 4f (CSV octet-identique à exp013 p1_orb_4f.csv, sha256 423604b8…)"
+  },
+  "sources": [
+    "protocole C16 figé"
+  ],
+  "statut": "H"
+}
