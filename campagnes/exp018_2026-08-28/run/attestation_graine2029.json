@@ -1,0 +1,8 @@
+{
+  "fichier": "e44_graine2029_AVEUGLE.npz",
+  "sha256": "e247a223cd62e8ccbbcf2a409e4e95e5c81905473308e5f210c04b808daff0d7",
+  "genere_le": "2026-08-28T13:31:00.092455+00:00",
+  "graine": 2029,
+  "protocole": "C14 figé (N=48, A=1, gamma=0.2, dt=0.1, 2048 pas)",
+  "statut": "AVEUGLE — aucune inspection avant la mesure EXP-018"
+}

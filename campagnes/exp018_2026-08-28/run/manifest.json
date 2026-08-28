@@ -1,0 +1,14 @@
+{
+  "protocole/PROTOCOLE_C20.md": "7659240e4ff88e28057a86408b671cc5ec7d91f8116b22b47299829c70307e77",
+  "protocole/attente_EXP-018.json": "709d4c0dc4e77bf394eb99993dc0a4a94e7fd63e845e04e579b809ffa06297ce",
+  "run/attestation_graine2029.json": "6c1a1c451e819d690da165a92acbf329c478f1514cb074ac2480e8225bf1dc19",
+  "run/c20_comma.py": "dd8afc0135e99027d4f9158787e74d1642971e609ed249f2a9a751ae5eff9827",
+  "run/c20_runner.py": "57a546e9bcf6d32000fedab3a1e2d9faf97a46acd3a413e97ced6c7d335896f9",
+  "run/e44_core.py": "604c22322370eaa8707ddb6e7529b29539ec125c121b7e5368e2287b60ae1ac7",
+  "run/evaluation_clauses.json": "bd4cf294e19144456940ba6640abeefe52acca8d4a7936d9a55bc2cc13c0da29",
+  "run/exploration_fragmentation_vs_teff_LOCAL.md": "1b09a517a93429eb81bee3a09adaecca1307036278390bcd67db34bbcc0333c1",
+  "run/manifest_signaux.json": "153261c15f1a3fb421e96755ce0b3d9ab6222e5cde68c7664d930cd2f88c252a",
+  "run/resultats_comma.json": "b579370a3f469f981c247b12c9a8dc8b6f313049820d0c46788bf71542f63fad",
+  "signaux/e44_lt_t_g2029.csv": "0cf4c6c3c24dcbf55f5faeb1304b1c5d4233aba2bf1efbce1ffb21405f421be1",
+  "signaux/e44_nv_t_g2029.csv": "bba501de5a818f1b78fd8d0c84c5d4202e40d475eb810db72a4ee94fb139e3cb"
+}

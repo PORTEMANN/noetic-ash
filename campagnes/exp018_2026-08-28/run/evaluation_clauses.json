@@ -1,0 +1,64 @@
+{
+  "attente": "EXP-018",
+  "graine": 2029,
+  "t_eff": 201.3,
+  "clause_a1_existence": {
+    "domaine": "applicable",
+    "resultat": true,
+    "bandes_significatives": [
+      [
+        8.39999999999997,
+        66.19999999999976
+      ]
+    ],
+    "z_min": -12.15593011908897,
+    "T_zmin": 17.899999999999935
+  },
+  "clause_a2_echelle": {
+    "resultat": true,
+    "T_sup": 81.99999999999972,
+    "ratio_T_sup_sur_t_eff": 0.4073522106308977,
+    "bornes_ratio": [
+      0.32,
+      0.44
+    ],
+    "n_points_significatifs": 647
+  },
+  "clause_b_Lt_sans_bande": {
+    "resultat": false,
+    "bandes_significatives_Lt": [
+      [
+        11.60000000000001,
+        64.80000000000005
+      ],
+      [
+        65.60000000000005,
+        78.00000000000007
+      ]
+    ],
+    "z_min_Lt": -16.63229765705687
+  },
+  "clause_c_Rdyn_borne": {
+    "resultat": true,
+    "Rdyn": 0.19778649291076636,
+    "T_star": 0.09999999999999964,
+    "params_biexpo": [
+      -324580.5391565499,
+      14.484988292167492,
+      324062.9106719172,
+      14.674795792757916,
+      120.19072540884622
+    ]
+  },
+  "controles": {
+    "bruit43": {
+      "z_min": -2.882435683787969,
+      "bandes": []
+    },
+    "sinus12": {
+      "z_min": -41.92459139448518,
+      "bandes": []
+    }
+  },
+  "EXP018_conforme_aux_clauses_applicables": false
+}
