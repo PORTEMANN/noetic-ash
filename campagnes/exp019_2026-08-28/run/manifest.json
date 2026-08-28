@@ -1,0 +1,15 @@
+{
+  "protocole/PROTOCOLE_C21.md": "f30baac05b17199bd79a536e3831093648dc23423d903bfa1adea92bdaeaf04b",
+  "protocole/attente_EXP-019.json": "3af016ecec2bb098595614210017f3ee4683c82462b01efe644dc6235e490f7a",
+  "run/attestation_graines2031_2032.json": "bde0f3e49a786ad7bb94dfc72d54ad13950c465eca1c3956e58081618466a933",
+  "run/c21_comma.py": "b74aac7b10ceed7e7ccda5b40c9e5c24b45c17e88cb73c3f9d9513494142d876",
+  "run/c21_runner.py": "2f500fec6ac3cfd8eb80aac765bc4a89774a831c77d11440bc54335946a78780",
+  "run/e44_core.py": "604c22322370eaa8707ddb6e7529b29539ec125c121b7e5368e2287b60ae1ac7",
+  "run/evaluation_clauses.json": "cb7cf28aefdee559bec09a5ba19105d9157bdf8db4be8f1a63421cdf91c78ec0",
+  "run/exploration_seuil_NvLt_resurgence_LOCAL.md": "9ea5926aa2d36d772d62bf2a19c416f67a7614be9c0f2efcc51fda91381f05f6",
+  "run/manifest_signaux.json": "eb91f4fc6764389103bda037dc6d4bada8efbd131f53c6df4d20985e12154461",
+  "signaux/e44_lt_t_g2031.csv": "edfacae3bf491a9a6bb257c08c36de702c76eff843cf5759aa58419f7662b0a2",
+  "signaux/e44_lt_t_g2032.csv": "6932454ff2547aef879e611717bd47b9375e84fc2bbeb8fe84d6e4fd02b4080e",
+  "signaux/e44_nv_t_g2031.csv": "9826565cee306e61542d3c4b087c5963c59682ccc25c254e8af34ed136d6540d",
+  "signaux/e44_nv_t_g2032.csv": "784db0be54b97625c70c4f60e89c495b5158da241a9eef2d0fd2aa0043a164a6"
+}

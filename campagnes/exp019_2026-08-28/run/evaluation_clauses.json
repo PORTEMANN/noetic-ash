@@ -1,0 +1,65 @@
+{
+  "attente": "EXP-019",
+  "graines": [
+    2031,
+    2032
+  ],
+  "par_graine": {
+    "2031": {
+      "t_eff": 204.8,
+      "resurgence": {
+        "resurgence": true,
+        "trou_max": 116.4,
+        "reprise": 4,
+        "n_episodes": 21
+      },
+      "bande_Lt": true,
+      "bandes_Lt": [
+        [
+          27.600000000000023,
+          57.60000000000005
+        ],
+        [
+          58.40000000000005,
+          69.60000000000007
+        ]
+      ],
+      "z_min_Lt": -10.793415656784642,
+      "z_min_Nv": -6.957976777850723,
+      "n_significatifs_Nv": 481,
+      "Rdyn": 0.22443378441794637,
+      "controle_binaire": {
+        "z_min": -12.242150713221815,
+        "delta_Z": 1.4487350564371724,
+        "reproduit": true
+      },
+      "clause_a_biconditionnelle": true,
+      "clause_b_Nv_significatif": true,
+      "clause_c_Rdyn_borne": true
+    },
+    "2032": {
+      "t_eff": 204.8,
+      "resurgence": {
+        "resurgence": false,
+        "trou_max": 13.200000000000001,
+        "reprise": 17,
+        "n_episodes": 28
+      },
+      "bande_Lt": false,
+      "bandes_Lt": [],
+      "z_min_Lt": -1.5473926009833903,
+      "z_min_Nv": -11.775391671572734,
+      "n_significatifs_Nv": 646,
+      "Rdyn": 0.1601359051953946,
+      "controle_binaire": {
+        "z_min": -2.4445269205693783,
+        "delta_Z": 0.897134319585988,
+        "reproduit": true
+      },
+      "clause_a_biconditionnelle": true,
+      "clause_b_Nv_significatif": true,
+      "clause_c_Rdyn_borne": true
+    }
+  },
+  "EXP019_conforme_sur_les_deux_graines": true
+}
