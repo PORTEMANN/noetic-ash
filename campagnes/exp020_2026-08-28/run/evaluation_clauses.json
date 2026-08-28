@@ -1,0 +1,50 @@
+{
+  "attente": "EXP-020",
+  "graines": [
+    2033,
+    2034
+  ],
+  "par_graine": {
+    "2033": {
+      "t_eff": 135.5,
+      "resurgence": {
+        "resurgence": false,
+        "trou_max": 39.2,
+        "reprise": 6,
+        "n_episodes": 26
+      },
+      "bande_Lt": false,
+      "bandes_Lt": [],
+      "z_min_Lt": -1.141549355538743,
+      "z_min_Nv": -6.553982893758163,
+      "n_significatifs_Nv": 281,
+      "Rdyn": 0.17578578690854316,
+      "clause_a_domaine": "HORS-DOMAINE (pas de résurgence)",
+      "clause_a_micro_rythme": null,
+      "detail_permutation": null,
+      "clause_b_Nv_significatif": true,
+      "clause_c_Rdyn_borne": true
+    },
+    "2034": {
+      "t_eff": 83.0,
+      "resurgence": {
+        "resurgence": false,
+        "trou_max": 9.200000000000001,
+        "reprise": 9,
+        "n_episodes": 27
+      },
+      "bande_Lt": false,
+      "bandes_Lt": [],
+      "z_min_Lt": -1.9448158348975009,
+      "z_min_Nv": -2.808690624828755,
+      "n_significatifs_Nv": 0,
+      "Rdyn": 0.18374887447008206,
+      "clause_a_domaine": "HORS-DOMAINE (pas de résurgence)",
+      "clause_a_micro_rythme": null,
+      "detail_permutation": null,
+      "clause_b_Nv_significatif": false,
+      "clause_c_Rdyn_borne": true
+    }
+  },
+  "EXP020_conforme_sur_les_deux_graines": false
+}
