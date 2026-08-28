@@ -1,0 +1,27 @@
+{
+ "format": "ash-verdict/0.1",
+ "pont_version": "0.1.0",
+ "signature_sha256": "e74e1bb4e6af4d0973bafa04fd0bb938ae33f09971eb09b670b50071397d7b9e",
+ "contexte": {
+  "domaine": "spectre_lie",
+  "etiquette": "p1_orbitale_radiale_n5"
+ },
+ "attente": {
+  "id": "EXP-014",
+  "statut": "E",
+  "regime_attendu": "Cosmologique",
+  "source": "noetic-machine-complete P1 (p1_etats_lies.py, bo\u00eete RMAX=NR=4000, dr=1, Coulomb tronqu\u00e9 R_core=3,04, \u03b1=1/137,036) ; calibration campagne exp014 C15 (campagnes/exp014_2026-08-28) ; campagne exp014_mesure locale (protocole C16 fig\u00e9)",
+  "falsifieur": "Sur les 5 orbitales fig\u00e9es de la couche n=5 du protocole C16 (5g,5f,5d,5p,5s ; n\u0153uds radiaux 0,1,2,3,4), mesur\u00e9es par l'instrument fig\u00e9 (ASH v1.0.0, f0=2\u207b\u00b9\u00b9, fs=1, fen\u00eatre 1024, nperseg 1024, 5 octaves, RMS=1, agr\u00e9gation m\u00e9diane, aucun post-traitement) : (a) Rc ne cro\u00eet pas strictement le long de l'\u00e9chelle des n\u0153uds \u2014 Rc(5g)<Rc(5f)<Rc(5d)<Rc(5p) strict, et Rc(5s) \u2265 0,99\u00b7Rc(5p) (tol\u00e9rance de jointure p/s calibr\u00e9e sur la quasi-d\u00e9g\u00e9n\u00e9rescence 4p/4s de C15 : |\u0394|/max = 0,018 %) \u2014 la structure nodale est alors invisible m\u00eame pour Rc ; ou (b) l'\u00e9chelle des rapports ne se transf\u00e8re pas \u2014 r\u2081=Rc(5f)/Rc(5g) hors [1,7 ; 2,2] ou r\u2082=Rc(5d)/Rc(5f) hors [1,3 ; 1,6] (pas 0\u21921 et 1\u21922 calibr\u00e9s sur la couche n=4 : 1,96 et 1,45, marge \u00b112 %) ; ou (c) une des cinq orbitales lit hors Cosmologique (ReN \u2265 1) \u2014 l'explication \u00ab bosse spectrale large \u00bb (C15, clause a) ne se g\u00e9n\u00e9ralise alors pas \u00e0 une couche enti\u00e8re. Une seule clause suffit."
+ },
+ "mesure": {
+  "regime": "Cosmologique",
+  "ReN": 0.023837,
+  "Rtop": 1.0,
+  "Rdyn": 1.0,
+  "bande_dominante": "E1"
+ },
+ "verdict": "CONFORME",
+ "explication": "ReN = 0.02384 (agr\u00e9gation mediane de 6 fen\u00eatres) \u2192 r\u00e9gime Cosmologique ; Rtop = 1.0, Rdyn = 1, bande dominante E1. L'attente EXP-014 (statut E, source : noetic-machine-complete P1 (p1_etats_lies.py, bo\u00eete RMAX=NR=4000, dr=1, Coulomb tronqu\u00e9 R_core=3,04, \u03b1=1/137,036) ; calibration campagne exp014 C15 (campagnes/exp014_2026-08-28) ; campagne exp014_mesure locale (protocole C16 fig\u00e9)) pr\u00e9voit Cosmologique pour le contexte \u00ab p1_orbitale_radiale_n5 \u00bb : r\u00e9gime mesur\u00e9 dans l'attente. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) \u2014 un ton pur se classe m\u00e9so par construction, cf. LEX-013 ; Rdyn est aveugle au d\u00e9saccord sub-demi-ton, cf. LEX-014.",
+ "horodatage": "2026-08-28T00:00:00+00:00",
+ "sha256": "6582262046f566194f865cfb70c0c7043612b422d939021e3d4acc4e3c33f913"
+}
