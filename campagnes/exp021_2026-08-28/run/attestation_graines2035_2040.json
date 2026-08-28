@@ -1,0 +1,42 @@
+{
+  "fichiers": [
+    {
+      "fichier": "e44_graine2035_AVEUGLE.npz",
+      "sha256": "43ba9c1114f10e1bcf67bc28b3a7f095938b3d464fd2c517e3f668ab7c1d06e7",
+      "genere_le": "2026-08-28T18:13:23.161489+00:00",
+      "graine": 2035
+    },
+    {
+      "fichier": "e44_graine2036_AVEUGLE.npz",
+      "sha256": "d95033665d6e4806a28709e3ea3141cf53d96432f512004d14d49101d58cfcd6",
+      "genere_le": "2026-08-28T18:14:00.743011+00:00",
+      "graine": 2036
+    },
+    {
+      "fichier": "e44_graine2037_AVEUGLE.npz",
+      "sha256": "d7d2f4536dafbc431f5e15a9c5e21ec89059395a69d61b296b6a84491aa03418",
+      "genere_le": "2026-08-28T18:14:42.206146+00:00",
+      "graine": 2037
+    },
+    {
+      "fichier": "e44_graine2038_AVEUGLE.npz",
+      "sha256": "e7ca8801caac300d536691805849823cebb09d22847a162c827f9be64efd5685",
+      "genere_le": "2026-08-28T18:15:21.678191+00:00",
+      "graine": 2038
+    },
+    {
+      "fichier": "e44_graine2039_AVEUGLE.npz",
+      "sha256": "593673f52ca71598509025c9cc742bd6dd1b7f85d6a39248534173366015fd3e",
+      "genere_le": "2026-08-28T18:15:59.234082+00:00",
+      "graine": 2039
+    },
+    {
+      "fichier": "e44_graine2040_AVEUGLE.npz",
+      "sha256": "dab3574627e9500c93ea8e06ddcaf401fb7321a8502a8d984b00d13673d61a5e",
+      "genere_le": "2026-08-28T18:16:36.132933+00:00",
+      "graine": 2040
+    }
+  ],
+  "protocole": "C14 figé (N=48, A=1, gamma=0.2, dt=0.1, 2048 pas)",
+  "statut": "AVEUGLE — aucune inspection avant la mesure EXP-021"
+}

@@ -1,0 +1,169 @@
+{
+  "attente": "EXP-021",
+  "graines": [
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040
+  ],
+  "par_graine": {
+    "2035": {
+      "t_eff": 162.0,
+      "resurgence": {
+        "resurgence": false,
+        "trou_max": 39.6,
+        "reprise": 14,
+        "n_episodes": 32
+      },
+      "bande_Lt": false,
+      "bandes_Lt": [],
+      "z_min_Lt": -5.89014725475574,
+      "z_min_Nv": -9.798111390738775,
+      "n_significatifs_Nv": 392,
+      "Rdyn": 0.2266479064998528,
+      "clause_a_domaine": "HORS-DOMAINE (pas de résurgence)",
+      "clause_a_micro_rythme": null,
+      "detail_permutation": null,
+      "clause_b_domaine": "applicable",
+      "clause_b_Nv_significatif": true,
+      "clause_c_Rdyn_borne": true
+    },
+    "2036": {
+      "t_eff": 146.0,
+      "resurgence": {
+        "resurgence": true,
+        "trou_max": 63.2,
+        "reprise": 6,
+        "n_episodes": 27
+      },
+      "bande_Lt": false,
+      "bandes_Lt": [],
+      "z_min_Lt": -8.09876188933486,
+      "z_min_Nv": -9.719695736136108,
+      "n_significatifs_Nv": 214,
+      "Rdyn": 0.19448306369977877,
+      "clause_a_domaine": "applicable",
+      "clause_a_micro_rythme": true,
+      "detail_permutation": {
+        "ecart_medianes": 0.8999999999999755,
+        "p_value": 0.222,
+        "n1": 20,
+        "n2": 5,
+        "mediane_acte1": 1.5000000000000018,
+        "mediane_acte2": 2.3999999999999773
+      },
+      "clause_b_domaine": "applicable",
+      "clause_b_Nv_significatif": true,
+      "clause_c_Rdyn_borne": true
+    },
+    "2037": {
+      "t_eff": 204.8,
+      "resurgence": {
+        "resurgence": true,
+        "trou_max": 66.4,
+        "reprise": 3,
+        "n_episodes": 27
+      },
+      "bande_Lt": true,
+      "bandes_Lt": [
+        [
+          25.600000000000023,
+          50.00000000000004
+        ],
+        [
+          58.40000000000005,
+          71.20000000000006
+        ]
+      ],
+      "z_min_Lt": -10.695206515742807,
+      "z_min_Nv": -10.229309632866125,
+      "n_significatifs_Nv": 532,
+      "Rdyn": 0.19255547797842498,
+      "clause_a_domaine": "HORS-DOMAINE (acte 2 < 5 épisodes)",
+      "clause_a_micro_rythme": null,
+      "detail_permutation": null,
+      "clause_b_domaine": "applicable",
+      "clause_b_Nv_significatif": true,
+      "clause_c_Rdyn_borne": true
+    },
+    "2038": {
+      "t_eff": 173.3,
+      "resurgence": {
+        "resurgence": true,
+        "trou_max": 120.4,
+        "reprise": 8,
+        "n_episodes": 19
+      },
+      "bande_Lt": true,
+      "bandes_Lt": [
+        [
+          9.200000000000008,
+          67.20000000000006
+        ]
+      ],
+      "z_min_Lt": -15.277388281061253,
+      "z_min_Nv": -8.049163691721283,
+      "n_significatifs_Nv": 387,
+      "Rdyn": 0.2080502626035911,
+      "clause_a_domaine": "applicable",
+      "clause_a_micro_rythme": true,
+      "detail_permutation": {
+        "ecart_medianes": 0.5999999999999925,
+        "p_value": 0.2799,
+        "n1": 10,
+        "n2": 7,
+        "mediane_acte1": 1.9999999999999982,
+        "mediane_acte2": 1.4000000000000057
+      },
+      "clause_b_domaine": "applicable",
+      "clause_b_Nv_significatif": true,
+      "clause_c_Rdyn_borne": true
+    },
+    "2039": {
+      "t_eff": 139.9,
+      "resurgence": {
+        "resurgence": false,
+        "trou_max": 84.80000000000001,
+        "reprise": 2,
+        "n_episodes": 19
+      },
+      "bande_Lt": false,
+      "bandes_Lt": [],
+      "z_min_Lt": -4.535748382546484,
+      "z_min_Nv": -8.363062581555127,
+      "n_significatifs_Nv": 334,
+      "Rdyn": 0.21172172331594274,
+      "clause_a_domaine": "HORS-DOMAINE (pas de résurgence)",
+      "clause_a_micro_rythme": null,
+      "detail_permutation": null,
+      "clause_b_domaine": "applicable",
+      "clause_b_Nv_significatif": true,
+      "clause_c_Rdyn_borne": true
+    },
+    "2040": {
+      "t_eff": 90.10000000000001,
+      "resurgence": {
+        "resurgence": false,
+        "trou_max": 6.4,
+        "reprise": 17,
+        "n_episodes": 36
+      },
+      "bande_Lt": false,
+      "bandes_Lt": [],
+      "z_min_Lt": -1.7741025002815634,
+      "z_min_Nv": -2.7172002648339295,
+      "n_significatifs_Nv": 0,
+      "Rdyn": 0.1862827549590004,
+      "clause_a_domaine": "HORS-DOMAINE (pas de résurgence)",
+      "clause_a_micro_rythme": null,
+      "detail_permutation": null,
+      "clause_b_domaine": "HORS-DOMAINE (t_eff=90.1 < 130)",
+      "clause_b_Nv_significatif": null,
+      "clause_c_Rdyn_borne": true
+    }
+  },
+  "n_graines_clause_a_applicables": 2,
+  "EXP021_conforme_sur_les_six_graines": true
+}
