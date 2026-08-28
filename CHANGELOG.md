@@ -2,6 +2,33 @@
 
 ## [Unreleased]
 
+### Corrigé — B3-FAIL (instrument)
+- **Bug du modèle nul des surrogates** dans la chaîne du comma au lag
+  caractéristique (`comma_au_lag`, campagnes exp022/023/024) : `surrogate()`
+  était appelé deux fois par tirage (différence de deux surrogates
+  indépendants) au lieu du comma d'un même surrogate décalé. Le modèle nul
+  était gonflé (≈ √2) et le Z-score exagéré. Campagnes recalculées au null
+  corrigé et verdicts révisés : exp022 FALSIFIÉE (a et b), exp023 FALSIFIÉE
+  (a et b — la confirmation du mécanisme de cohérence de phase ne tient pas),
+  exp024 FALSIFIÉE (a et b — la conformité était un artefact). Addenda A1 +
+  `run/comma_corrige.py` + `run/evaluation_corrigee.json` dans les trois
+  campagnes. Non affectés : la série E44 (exp017–021, null correct dès
+  l'origine) et la séparation spectrale (vibration_hf). Leçon consignée :
+  verrouiller le modèle nul (un seul surrogate décalé) et valider la chaîne
+  contre un cas connu avant mesure.
+
+### Ajouté
+- `src/python/comma_core.py` v1.0.0 (figé, sha256 21c60ed3…) — le comma
+  noétique, première extension mesurée de l'instrument : auto-comma,
+  surrogates à phases randomisées (null corrigé, verrouillé), bande de
+  récurrence, détecteur de résurgence (validé E44), comma contre dynamique
+  idéale (Rdyn), sortie xAI structurée. Le détecteur de cohérence de phase
+  sur capteur (CWRU) y est conservé comme observable NON validée au null
+  corrigé (voir addenda A1), à recalibrer.
+
+
+## [Unreleased]
+
 ### Ajouté
 - `bridge/expectations.json` v0.4.0 : ajout append-only d'EXP-012
   (`monopole_su2_radial`, statut E conjectural déclaré AVANT mesure) —
