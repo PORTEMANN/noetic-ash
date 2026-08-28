@@ -42,8 +42,15 @@ def telecharge(n):
         print(f"[C24] téléchargement {n}.mat …", flush=True)
         urllib.request.urlretrieve(URL.format(n), path)
     d = sio.loadmat(path)
-    cle = [k for k in d if k.endswith("DE_time")][0]
-    return d[cle].ravel()
+    # Canal EXACT X{N}_DE_time : le fichier 99.mat embarque AUSSI les canaux
+    # X098 (artefact documenté de la campagne vibration_hf) — prendre le canal
+    # du fichier, pas le premier canal DE_time du dictionnaire.
+    cible = f"X{n:03d}_DE_time"
+    if cible in d:
+        return d[cible].ravel()
+    cles = [k for k in d if k.endswith("DE_time") and not k.startswith("__")]
+    print(f"[C24] {n}.mat : canal cible {cible} absent, canaux présents {cles}")
+    return d[cles[0]].ravel()
 
 FS = 12000
 for n in FICHIERS:

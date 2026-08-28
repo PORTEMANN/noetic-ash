@@ -70,6 +70,23 @@ python3 run/c24_comma.py    # régénère evaluation_clauses.json
 Empreintes : run/manifest.json. Les fichiers .mat CWRU sont publics et
 retéléchargeables (non commités — règle C13.1 §3).
 
+## Addendum A1 — artefact de canal sur le fichier 99 (corrigé le 2026-08-28)
+
+Le fichier `99.mat` du site CWRU embarque, en plus de ses propres canaux,
+les canaux du fichier 98 (artefact déjà documenté dans la campagne
+vibration_hf). La première version de `run/c24_runner.py` sélectionnait le
+premier canal `DE_time` du dictionnaire — soit `X098_DE_time` au lieu de
+`X099_DE_time` : le `signaux/cwru_99.csv` initialement publié mesurait donc
+le canal de 98 (les Z publiés pour « 99 » étaient ceux du canal X098).
+
+**Correction** : le runner sélectionne désormais le canal exact
+`X{N}_DE_time` ; le fichier 99 a été re-mesuré au bon canal
+(BPFI +0,49 / BPFO +0,85 / BSF +1,04). **Le verdict est inchangé** : la
+clause (b) tient au bon canal (aucun sain ne lit Z < 0 à aucun lag), la
+clause (a) reste falsifiée par 119 et 131. La correction porte sur
+l'intégrité du signal, pas sur le résultat — consignée avec le même soin
+(B3-FAIL s'applique aussi aux données).
+
 ## Corpus
 
 Aucune signature ASH versée : le comma au lag caractéristique n'est pas une
