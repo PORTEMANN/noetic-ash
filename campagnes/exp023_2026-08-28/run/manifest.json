@@ -1,0 +1,16 @@
+{
+  "protocole/PROTOCOLE_C25.md": "e68b4fd06c9624fddeba81c221213d7080f81b3d34865744eb5891715e8e1697",
+  "protocole/attente_EXP-023.json": "4a4f163c1ebe1916b7687d2f6165f9a1dc78f627fa74447ca54f455463414fa4",
+  "run/c25_comma.py": "440663997a7c6a87ca3b1b6ec458c07133c26ff92bd2df4fc482a0dd72e9e7df",
+  "run/c25_runner.py": "d31e38fdb187553c98fc5648f37dfb600ba59d51903c55105050ec4b492fc1ec",
+  "run/evaluation_clauses.json": "cdabed835ca4334acbb9d4bc30ebd23b639ac4b20e1a8bcdc81023435f2126a5",
+  "run/exploration_coherence_phase_CWRU_LOCAL.md": "62d3ad5715d52874890f684bb8817cce5934c0c36e8fc4bae6a6715d4f841888",
+  "run/manifest_signaux.json": "abb04ad5e568a1225fca1c8f8d0341a114b186e1cc299048da032328cb48db91",
+  "signaux/cwru_100.csv": "cd46de44f7ba4ce5614d194d5edde6c196a5952227bb95f750888380af4d2022",
+  "signaux/cwru_169.csv": "b9d236b6a3f5023a95e32de9ab6433704054aef1b0093a6ee25fec88e83a1607",
+  "signaux/cwru_170.csv": "d46aa6dc21148b380550a4d651f17bdc71b1aa9e87561a8b43eeb2aa2536f19f",
+  "signaux/cwru_185.csv": "dd123ef77e4be7d050907f4a5673d7d92470c8b0f832cff951297b9d16ddcf56",
+  "signaux/cwru_186.csv": "60683d00cb9a8832c9edcbebff73b43bf7b4376e873514fdd8e34885ffd197bf",
+  "signaux/cwru_197.csv": "6f8cf2f6fd784ea8d9cd2d05acee1d7afb688b79072135645cf59cbc5a0b567d",
+  "signaux/cwru_198.csv": "6d318fe32158d9da1a4ea624d0b0763dca7a5d0a62fbca5bfd659346e17e7993"
+}
