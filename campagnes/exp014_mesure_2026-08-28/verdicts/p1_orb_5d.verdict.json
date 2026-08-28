@@ -23,5 +23,5 @@
  "verdict": "CONFORME",
  "explication": "ReN = 0.03087 (agr\u00e9gation mediane de 6 fen\u00eatres) \u2192 r\u00e9gime Cosmologique ; Rtop = 1.0, Rdyn = 1, bande dominante E1. L'attente EXP-014 (statut E, source : noetic-machine-complete P1 (p1_etats_lies.py, bo\u00eete RMAX=NR=4000, dr=1, Coulomb tronqu\u00e9 R_core=3,04, \u03b1=1/137,036) ; calibration campagne exp014 C15 (campagnes/exp014_2026-08-28) ; campagne exp014_mesure locale (protocole C16 fig\u00e9)) pr\u00e9voit Cosmologique pour le contexte \u00ab p1_orbitale_radiale_n5 \u00bb : r\u00e9gime mesur\u00e9 dans l'attente. Mises en garde : Rtop < 2 : Rdyn = 1.0 par convention (fallback mono-pic) \u2014 un ton pur se classe m\u00e9so par construction, cf. LEX-013 ; Rdyn est aveugle au d\u00e9saccord sub-demi-ton, cf. LEX-014.",
  "horodatage": "2026-08-28T00:00:00+00:00",
- "sha256": "777f7a05fc6edd203acc2c21c2c664fc99348c8e06164dadb6a9e2866bf3c3"
+ "sha256": "777f7a05fc6edd203acc2c21c2c2c664fc99348c8e06164dadb6a9e2866bf3c3"
 }
