@@ -34,3 +34,7 @@ e477e3746de1859f99c4b3e1ba16ea493bc14e357ca2b7dcf50234afe934c3e9  ash_bands.csv 
 
 # --- Artefact de mesure P35+ (régénérable : python3 benchmarks/p35_meso/sweep_meso.py) ---
 5e52abf20db79fa680aed5850a4d28996b9e5a3461ad1606dfc863abf949f866  results_p35_meso.csv (125 points de mesure)
+
+# --- v1.1.0 (2026-08-31) : re-figeage F18 (pipeline déclaré, C0 vérifié) ---
+1c9430c6f7676798021b0bf0405ebc5fd567146d164474fc8377c8ac2bd30199  results/table_bench_v110.csv (table officielle v1.1.0)
+adbd5094b554c8a146014919f12d79007b7b3c38b31e5fb776613619785c72f5  refreeze_table_v110.py (pipeline déclaré)
