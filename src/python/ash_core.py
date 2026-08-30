@@ -6,7 +6,14 @@ ASH — Analyseur spectral à géométrie harmonique (noyau consolidé).
 noetic-ash, couche 7 (acquisition) de l'écosystème Noetic Physics.
 Auteur : Patrice Portemann
 Licence : MIT
-Version : 1.0.0
+Version : 1.1.0 (31/08/2026)
+
+v1.1.0 : grille EEG étendue à 5 octaves (couverture β — mesuré au
+chantier P45 du corpus : la bouffée β à 20 Hz n'était lue que par
+fuite de Welch ; plan E5 ×3,66 et pic note 52 à 5 octaves). ReN :
+toujours non portable (F16 ouverte — voir docs/ERRATUM-F16-F18.md) ;
+la classification officielle des benchmarks passe aux invariants
+normalisés (Rtop, Rdyn, E1..E7 — 10/10 paires séparées, P45-C3).
 
 Consolidation de : ash_optimized.py (base), noetic_core_analyzer_v3.py
 (formules identiques — vérifié le 26/08/2026), noetic_core_analyzer.py/_v2
@@ -24,7 +31,7 @@ import numpy as np
 import pandas as pd
 from scipy.signal import find_peaks, welch
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 # Régimes dynamiques (classification du nombre de Reynolds noétique)
 REGIME_COSMOLOGICAL = "Cosmologique (pression dominante)"   # ReN < 1
@@ -33,6 +40,9 @@ REGIME_QUANTUM = "Quantique (torsion dominante)"            # ReN > 10
 REGIME_UNDEFINED = "indéfini"
 
 # Seuils de régime (fixés par le protocole C12.1, jamais ajustés sur données)
+# ⚠ F16 (31/08/2026) : ReN ∝ 1/amplitude — NON portable entre gains.
+# Ces seuils ne valent qu'à gain de chaîne fixe et déclaré ; la
+# classification officielle des benchmarks n'utilise plus ReN (v1.1.0).
 REN_THRESHOLD_COSMOLOGICAL = 1.0
 REN_THRESHOLD_QUANTUM = 10.0
 
@@ -63,7 +73,7 @@ class ASH:
 
     #: Default parameters per physical domain (fixed, never fitted).
     DEFAULTS: Dict[str, Dict[str, float]] = {
-        "eeg": {"fs": 250.0, "f0": 1.0, "n_octaves": 4, "window_dur": 2.0},
+        "eeg": {"fs": 250.0, "f0": 1.0, "n_octaves": 5, "window_dur": 2.0},  # v1.1.0 : 5 octaves — la grille 4-octaves (max 15,1 Hz) excluait la bande β (13–30 Hz) ; extension justifiée par le domaine (P45-C4, corpus noetic-machine-complete)
         "ecg": {"fs": 360.0, "f0": 1.0, "n_octaves": 4, "window_dur": 2.0},
         "vibration": {"fs": 1000.0, "f0": 10.0, "n_octaves": 5, "window_dur": 1.0},
         "generic": {"fs": 250.0, "f0": 1.0, "n_octaves": 4, "window_dur": 2.0},
@@ -162,7 +172,10 @@ class ASH:
         dénominateur et croît linéairement avec l'amplitude). Seuls Rtop,
         Rdyn et les bandes normalisées sont strictement invariants par
         changement d'échelle. La §6.1 de docs/algorithm.md a été corrigée
-        en conséquence (B3-FAIL constaté le 26/08/2026).
+        en conséquence (B3-FAIL constaté le 26/08/2026). v1.1.0 : la pente
+        exacte −1 et les franchissements de régime par amplitude seule sont
+        mesurés au chantier P45 du corpus (F16 — voir docs/ERRATUM-F16-F18.md) ;
+        à entropie dégénérée (H≈0), le plancher ε² sature ReN ≈ 1e10.
         """
         total = float(np.sum(bands))
         if total < 1e-12:
@@ -312,7 +325,7 @@ def main() -> None:
     signal_type = sys.argv[2] if len(sys.argv) > 2 else "generic"
     print(f"Analyse de {csv_path} (signal_type={signal_type})")
     try:
-        ash, signal = ASH.from_csv(csv_path, signal_type=signal_type)
+        ash, signal = ASH.from_csv(csv_path, signal_type)
         df = ash.process_signal(signal)
         print("\n=== Résumé ===")
         print(df[["time", "Rc", "Rtop", "Rdyn", "ReN", "regime"]].head())
