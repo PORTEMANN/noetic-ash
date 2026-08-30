@@ -10,7 +10,7 @@ ASH (*Harmonic-Geometry Spectral Analyzer*) est la couche **acquisition** de l'�
 | `Rtop` | Nombre de pics locaux (> 10 % du max) | Singularités topologiques |
 | `Rdyn` | Désaccord harmonique entre pics | Écart à la torsion nulle |
 | `E1..E7` | Projection sur 7 plans (octaves) | Plans noétiques |
-| `ReN` | **Nombre de Reynolds noétique** | Discriminant de régime : **cosmologique** (< 1), **méso** (1–10), **quantique** (> 10) |
+| `ReN` | **Nombre de Reynolds noétique** | ⚠ **Non portable** : ReN ∝ 1/amplitude (erratum F16, chantier P43 du corpus) — indicateur relatif à gain de chaîne fixe uniquement. La classification officielle repose sur les invariants normalisés (Rtop, Rdyn, E1..E7) |
 
 ## Exemple
 
@@ -23,7 +23,7 @@ signal = np.sin(2*np.pi*4*t) + 0.8*np.sin(2*np.pi*8*t)   # octave exacte
 
 ash = ASH(fs=fs, signal_type="generic")   # f0=1 Hz, 4 octaves — paramètres fixés par le domaine
 r = ash.process_window(signal)
-# Rtop=2, Rdyn=0.0 (torsion nulle), ReN≈3e-6 → régime Cosmologique
+# Rtop=2, Rdyn=0.0 (torsion nulle) ; ReN≈3e-6 (lecture à gain fixe — non portable, F16)
 ```
 
 Ligne de commande : `python src/python/ash_core.py mon_signal.csv ecg`
@@ -44,10 +44,10 @@ Carte complète : [docs/ecosystem.md](docs/ecosystem.md) — Formalisme : [docs/
 
 | Chemin | Contenu |
 |---|---|
-| `src/python/ash_core.py` | Noyau consolidé v1.0.0 (classe `ASH`) |
+| `src/python/ash_core.py` | Noyau consolidé v1.1.0 (classe `ASH`) — v1.1.0 : grille EEG 5 octaves (couverture β, P45) |
 | `src/cpp/ash_core.cpp` | Version embarquée (STM32, ESP32 — FFT maison) |
 | `examples/` | P32+ EEG intention motrice · P33+ ECG · P34+ vibrations roulement (datasets régénérés par scripts seedés, voir `benchmarks/SHASUMS.txt`) |
-| `benchmarks/` | Protocole C12.1, MIT-BIH, bruit, résultats figés + `SHASUMS.txt` — incl. P35+ (campagne d'étalonnage du méso) |
+| `benchmarks/` | Protocole C12.1, MIT-BIH, bruit, résultats figés + `SHASUMS.txt` — incl. P35+ (campagne d'étalonnage du méso) ; v1.1.0 : table officielle re-figée (`refreeze_table_v110.py` → `results/table_bench_v110.csv`), errata F16/F18 (`docs/ERRATUM-F16-F18.md`) |
 | `lexicon/` | Lexique d'étalonnage et d'explicabilité (niveaux M/E/I/X/PHI, statuts T>C>E>H) |
 | `contrib/` | `mtr_mapper` (MTR-80), finance, essaims IoT, chaos — hors garantie C12.1 |
 | `tests/` | Tests unitaires des propriétés fondamentales |
