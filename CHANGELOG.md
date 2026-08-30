@@ -1,5 +1,27 @@
 # Changelog
 
+## [Unreleased] — noyau v1.1.0 (2026-08-31) — errata F16/F18 (audit Machine Noétique)
+
+### Corrigé — B3-FAIL (F18, archive)
+- **Table des benchmarks de juin 2026 non reproductible** par les pipelines
+  publiés (P45-C1, corpus noetic-machine-complete) : re-figée par
+  `benchmarks/refreeze_table_v110.py` (pipeline déclaré) →
+  `benchmarks/results/table_bench_v110.csv` (sha256 `1c9430c6…`, C0
+  vérifié). L'ancienne table reste dans l'historique (addenda seulement).
+
+### Modifié
+- **F16 — ReN retiré de la classification officielle** : non portable
+  (ReN ∝ 1/amplitude, pente mesurée −0,996 ; 3/5 signaux du benchmark
+  franchissent un seuil de régime à signal inchangé). ReN reste dans
+  l'API figée comme indicateur relatif à gain fixe. Classification
+  officielle = invariants normalisés (Rtop, Rdyn, E1..E7 — 10/10 paires
+  séparées, invariants à 1e-9 ; P45-C2/C3). Voir `docs/ERRATUM-F16-F18.md`.
+- `src/python/ash_core.py` v1.1.0 : `DEFAULTS["eeg"]["n_octaves"]` 4 → 5
+  (couverture de la bande β 13–30 Hz — justification de domaine C12.1 ;
+  la grille 4-octaves ne lisait β que par fuite de Welch, P45-C4).
+  Tests : `tests/test_ash.py` inchangés (domaine generic).
+
+
 ## [Unreleased]
 
 ### Corrigé — B3-FAIL (instrument)
@@ -128,7 +150,8 @@
   (industriel/embarqué) et X (xAI) ajoutés.
 - **Convention de numérotation** : les programmes de ce dépôt portent le
   suffixe « + » (P32+, P33+, P34+, P35+) ; les numéros nus P0–P33 appartiennent
-  à l'atlas machine. Appliqué rétroactivement dans toute la documentation.
+  à l'atlas de la machine noétique. Appliqué rétroactivement dans toute la
+  documentation.
 
 ## [1.0.0] — 2026-08-26
 
